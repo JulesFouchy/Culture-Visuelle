@@ -1,0 +1,19 @@
+{
+  "name": "culture-visuelle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html ./src/articles/*/index.html --open",
+    "prebuild": "rmdir docs /s /q",
+    "build": "parcel build ./src/index.html ./src/articles/*/index.html --out-dir docs --public-url ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.27.0",
+    "typescript": "^4.0.5"
+  }
+}
