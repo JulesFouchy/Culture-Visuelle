@@ -2,9 +2,13 @@ import p5 from 'p5'
 import vs from './myShader.vert'
 import fs from './myShader.frag'
 
-const initBG = () => new p5((p: p5) => {
+const createBG = () => new p5((p: p5) => {
     
     let myShader: p5.Shader
+
+    p.myScale = 1
+    p.translationX = 0 // in pixels
+    p.translationY = 0 // in pixels
     
     p.setup = function() {
         p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL)
@@ -18,6 +22,12 @@ const initBG = () => new p5((p: p5) => {
         p.noStroke()
         p.shader(myShader)
         myShader.setUniform("uAspectRatio", p.width / p.height)
+        myShader.setUniform("x1", 0)
+        myShader.setUniform("y1", 0)
+        myShader.setUniform("x2", 0.5 * p.width / p.height)
+        myShader.setUniform("y2", 0.5)
+        myShader.setUniform("scale", p.myScale)
+        myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
         p.rect(0, 0, p.width, p.height)
     }
 
@@ -26,4 +36,4 @@ const initBG = () => new p5((p: p5) => {
     }
 })
 
-export default initBG
+export default createBG

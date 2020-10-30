@@ -2,11 +2,8 @@ import h from './framework/h'
 import ArticleNode from './components/ArticleNode'
 import MonSuperArticle from './articles/MonSuperArticle/description'
 import Deuxieme from './articles/Deuxieme/description'
-import InitBG from './background/main'
+import createBG from './background/main'
 
-let myscale = 1
-let translationX = 0 // in pixels
-let translationY = 0 // in pixels
 let prevMouseX: number
 let prevMouseY: number
 let isDragging = false
@@ -17,7 +14,7 @@ const draw = () => {
         id: 'transform-wrapper',
         style: `
             transform-origin: top left;
-            transform: matrix(${myscale}, 0, 0, ${myscale}, ${translationX}, ${translationY});
+            transform: matrix(${bg.myScale}, 0, 0, ${bg.myScale}, ${bg.translationX}, ${bg.translationY});
         `,
     }, [
         ArticleNode(0.5, 0.5, MonSuperArticle),
@@ -25,14 +22,14 @@ const draw = () => {
     ])
 }
 
-InitBG()
+const bg = createBG()
 draw()
 
 window.addEventListener("wheel", (e: WheelEvent) => {
     const s = Math.pow(0.95, e.deltaY > 0 ? 1 : -1)
-    myscale *= s
-    translationX = s * (translationX - e.x) + e.x
-    translationY = s * (translationY - e.y) + e.y
+    bg.myScale *= s
+    bg.translationX = s * (bg.translationX - e.x) + e.x
+    bg.translationY = s * (bg.translationY - e.y) + e.y
     draw()
 })
 
@@ -48,8 +45,8 @@ window.addEventListener("mouseup", (e: MouseEvent) => {
 
 window.addEventListener("mousemove", (e: MouseEvent) => {
     if (isDragging) {
-        translationX += e.x - prevMouseX
-        translationY += e.y - prevMouseY
+        bg.translationX += e.x - prevMouseX
+        bg.translationY += e.y - prevMouseY
         prevMouseX = e.x
         prevMouseY = e.y
         draw()
