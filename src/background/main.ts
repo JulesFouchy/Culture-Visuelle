@@ -9,10 +9,10 @@ const createBG = () => new p5((p: p5) => {
     p.myScale = 1
     p.translationX = 0 // in pixels
     p.translationY = 0 // in pixels
-    p.nodesX1 = [0.1, 0.3]
-    p.nodesY1 = [0.2, 0.4]
-    p.nodesX2 = [0.3, 0.1]
-    p.nodesY2 = [0.4, 0.6]
+    p.nodesX1 = []
+    p.nodesY1 = []
+    p.nodesX2 = []
+    p.nodesY2 = []
     
     p.setup = function() {
         p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL)
@@ -26,9 +26,9 @@ const createBG = () => new p5((p: p5) => {
         p.noStroke()
         p.shader(myShader)
         myShader.setUniform("uAspectRatio", p.width / p.height)
-        myShader.setUniform("x1", p.nodesX1)
+        myShader.setUniform("x1", p.nodesX1.map(x => x * p.width / p.height))
         myShader.setUniform("y1", p.nodesY1)
-        myShader.setUniform("x2", p.nodesX2)
+        myShader.setUniform("x2", p.nodesX2.map(x => x * p.width / p.height))
         myShader.setUniform("y2", p.nodesY2)
         myShader.setUniform("scale", p.myScale)
         myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
