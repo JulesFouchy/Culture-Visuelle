@@ -1,11 +1,12 @@
 import ArticleDescription from '../ArticleDescription'
+import thumbnail from './thumbnail.jpg'
 
 const description: ArticleDescription = {
-    title: "Mon super article",
-    brief: "Je vais vous apprendre un truc trop bien",
-    authors: ["Jules Fouchy", "Jules numéro 2"],
+    title: "Mon 2 super article",
+    brief: "Une étude très intéressante d'un truc vraiment très intéressant",
+    authors: ["Jules Fouchy", "Jules numéro 22222"],
     folderName: "Deuxieme",
-    thumbnail: "thumbnail.jpg"
+    thumbnail: thumbnail
 }
 
 export default description

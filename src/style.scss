@@ -1,13 +1,42 @@
+body {
+    background: #252525;
+    overflow: hidden; 
+}
+
+//
 .article-node {
     margin: 0;
+    position: absolute;
+    &:hover {    
+        cursor: pointer;
+    }
+}
+
+.article-thumbnail {
     position: absolute;
     border-radius: 50%; // Make it a circle
 }
 
-body {
-    background: #252525;
+.article-infos {
+    background-color: white;
+    width: 200px;
+    border-radius: 2px;
+    // height is controlled in ArticleNode.ts
+    //
+    z-index: -10;
+    margin: 0;
+    position: absolute;
+    visibility: hidden;
+    transform: scale(0, 1);
+    transform-origin: 0% 50%;
+    transition: visibility 0s linear 0.3s, transform 0.2s;
 }
-
-* {
-    color: green;
+// Show infos on node hover
+.article-thumbnail:hover + .article-infos,
+.article-infos:hover {
+    visibility: visible;
+    transform: scale(1, 1);
+    border-radius: 2px;
+    transition: visibility 0s, transform 0.2s;
 }
+//

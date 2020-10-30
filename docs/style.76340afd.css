@@ -1,0 +1,2 @@
+body{background:#252525}*{color:green}.article-node{margin:0;position:absolute}.article-node:hover{cursor:pointer}.article-thumbnail{position:absolute;border-radius:50%}.article-infos{background-color:#fff;border-radius:2px;width:200px;transition:all 1.3s;margin:0;position:absolute;display:none}.article-infos:hover{visibility:visible}.article-infos:hover,.article-thumbnail:hover+.article-infos{display:block;transform:scale(2)}
+/*# sourceMappingURL=style.76340afd.css.map */
