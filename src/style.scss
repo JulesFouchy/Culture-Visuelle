@@ -32,6 +32,19 @@ body {
 .article-thumbnail {
     position: absolute;
     border-radius: 50%; // Make it a circle
+    z-index: 5;
+    transition: z-index 0s linear 0.2s;
+    &:hover {
+        z-index: 20;
+        transition: z-index 0s;
+    }
+}
+.article-node:hover .article-thumbnail {
+    z-index: 20;
+}
+
+.article-infos:hover + .article-thumbnail {
+    z-index: 5;
 }
 
 .article-infos {
@@ -39,8 +52,7 @@ body {
     width: 200px;
     border-radius: 2px;
     // height is controlled in ArticleNode.ts
-    //
-    z-index: -10;
+    z-index: 10;
     margin: 0;
     position: absolute;
     visibility: hidden;
