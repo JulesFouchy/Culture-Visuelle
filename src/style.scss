@@ -8,6 +8,14 @@ body {
     top: 0;
     z-index: -10;
 }
+#app {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 //
 .article-node {
