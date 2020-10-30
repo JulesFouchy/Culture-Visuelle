@@ -94,7 +94,6 @@ const draw = () => {
     }, 
         articles.map(article => ArticleNode(article.x, article.y, article.desc))
     )
-    requestAnimationFrame(draw)
 }
 
 const bg = createBG()
@@ -111,7 +110,7 @@ window.addEventListener("wheel", (e: WheelEvent) => {
     bg.myScale *= s
     bg.translationX = s * (bg.translationX - e.x) + e.x
     bg.translationY = s * (bg.translationY - e.y) + e.y
-    // draw()
+    draw()
 })
 
 window.addEventListener("mousedown", (e: MouseEvent) => {
@@ -130,6 +129,6 @@ window.addEventListener("mousemove", (e: MouseEvent) => {
         bg.translationY += e.y - prevMouseY
         prevMouseX = e.x
         prevMouseY = e.y
-        // draw()
+        draw()
     }
 })
