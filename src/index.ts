@@ -2,6 +2,7 @@ import h from './framework/h'
 import ArticleNode from './components/ArticleNode'
 import MonSuperArticle from './articles/MonSuperArticle/description'
 import Deuxieme from './articles/Deuxieme/description'
+import GraphOrganizationOfInformation from './articles/GraphOrganizationOfInformation/description'
 import createBG from './background/main'
 
 let prevMouseX: number
@@ -19,6 +20,7 @@ const draw = () => {
     }, [
         ArticleNode(0.5, 0.5, MonSuperArticle),
         ArticleNode(0.0, 0.0, Deuxieme),
+        ArticleNode(0.8, 0.4, GraphOrganizationOfInformation),
     ])
 }
 
