@@ -38,6 +38,11 @@ body {
         z-index: 20;
         transition: z-index 0s;
     }
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 .article-node:hover .article-thumbnail {
     z-index: 20;
