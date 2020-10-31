@@ -1,10 +1,10 @@
 import ArticleDescription from '../ArticleDescription'
-import thumbnail from './thumbnail.jpg'
+import thumbnail from './thumbnail.png'
 
 const description: ArticleDescription = {
-    title: "Fouchy",
+    title: "Représentation de l'information sous forme de graphe",
     brief: "",
-    authors: [],
+    authors: ['Jules Fouchy'],
     folderName: "Fouchy",
     thumbnail: thumbnail
 }
