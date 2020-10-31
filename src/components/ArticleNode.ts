@@ -27,7 +27,9 @@ export default (x: number, y: number, article: ArticleDescription) => {
         {
             class: "article-infos",
             style: `
-                height: ${radius*2}px;
+                height: ${radius*2-10}px;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 left: ${radius}px;
                 padding-left: ${radius+5}px;
             `,
