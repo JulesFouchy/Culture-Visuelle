@@ -37,6 +37,7 @@ export default (x: number, y: number, article: ArticleDescription) => {
                 h('b', {}, article.title),
                 h('br', {}),
                 h('i', {}, article.brief),
+                h('span', {}, article.authors)
             ]
         )
     ])
