@@ -3,7 +3,7 @@ import thumbnail from './thumbnail.jpg'
 
 const description: ArticleDescription = {
     title: "Sangare",
-    authors: [],
+    authors: ["Laurelenn Sangaré"],
     folderName: "Sangare",
     thumbnail: thumbnail
 }

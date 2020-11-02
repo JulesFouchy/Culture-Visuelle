@@ -3,7 +3,7 @@ import thumbnail from './thumbnail.png'
 
 const description: ArticleDescription = {
     title: "Représentation de l'information sous forme de graphe",
-    authors: ['Jules Fouchy'],
+    authors: ["Jules Fouchy"],
     folderName: "Fouchy",
     thumbnail: thumbnail
 }

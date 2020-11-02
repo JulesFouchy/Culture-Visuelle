@@ -21,7 +21,7 @@ import LL from './articles/Lassare_Lesbats/description'
 import Li from './articles/Lisacek/description'
 import ML from './articles/Mallet_Libert/description'
 import MS from './articles/Mansion_Sgro/description'
-import MSs from './articles/Maurel_Seguy/description'
+import SM from './articles/Maurel_Seguy/description'
 import OM from './articles/Ory_MaryVallee/description'
 import PF from './articles/Pusung_Fan/description'
 import RL from './articles/Rathonie_Lienart/description'
@@ -29,7 +29,7 @@ import RV from './articles/Rosenberg_Vallet/description'
 import Sa from './articles/Sangare/description'
 import SV from './articles/Segaux_Vo/description'
 import Th from './articles/Thiel/description'
-import VV from './articles/Vallee_Veysset/description'
+import VV from './articles/Valley_Veysset/description'
 
 interface ArticleDescriptionAndPosition {
     desc: ArticleDescription,
@@ -56,7 +56,7 @@ const articles: ArticleDescriptionAndPosition[] = [
     { desc: Li, x: 0.6683621870782597, y: 0.333421292647753 },
     { desc: ML, x: 0.647195745919599, y: 0.06967319349711865 },
     { desc: MS, x: 0.5142404229038579, y: -0.2740478944219997 },
-    { desc: MS, x: 0.8003495882808783, y: 0.15353835974166496 },
+    { desc: SM, x: 0.8003495882808783, y: 0.15353835974166496 },
     { desc: OM, x: 0.7994455858327734, y: -0.1795869987508831 },
     { desc: PF, x: 0.7789213821035742, y: 0.8035512982977009 },
     { desc: RL, x: 0.40128577358002987, y: 0.7514733203328646 },
