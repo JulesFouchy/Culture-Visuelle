@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel ./src/index.html --open",
+    "dev": "parcel ./src/index.html ./src/articles/*/index.html --open",
     "prebuild": "rmdir docs /s /q",
     "build": "parcel build ./src/index.html ./src/articles/*/index.html --out-dir docs --public-url ./"
   },
