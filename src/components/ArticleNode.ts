@@ -4,6 +4,7 @@ import ArticleDescription from '../articles/ArticleDescription'
 export default (x: number, y: number, article: ArticleDescription) => {
     const radius = 50 // in pixels
     const followLink = "window.location.href = 'articles/"+ article.folderName +"/index.html'"
+    const rand = Math.floor(Math.random()*2)
     return h(
     'div', 
     {
@@ -38,8 +39,10 @@ export default (x: number, y: number, article: ArticleDescription) => {
             [
                 h('b', {}, article.title),
                 h('br', {}),
-                h('i', {}, article.brief),
-                h('span', {}, article.authors)
+                h('span', {}, article.authors.length == 1
+                              ? article.authors
+                              : `${article.authors[rand]} & ${article.authors[(rand+1)%2]}`
+                )
             ]
         )
     ])
