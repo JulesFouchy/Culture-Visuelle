@@ -1,5 +1,7 @@
 # Magazine de Culture Visuelle
 
+Lien vers le magazine : [julesfouchy.github.io/Culture-Visuelle/](https://julesfouchy.github.io/Culture-Visuelle/)
+
 ## Récupérer et lancer le projet
 
 Il faut avoir npm installé.
