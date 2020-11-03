@@ -11,7 +11,7 @@ Chaque groupe a son dossier, dans ./src/articles ; vous y trouverez :
 
 ## Récupérer et lancer le projet
 
-Si vous voulez tester le rendu de votre article :
+Si vous voulez tester le rendu de votre article :  
 Il faut avoir npm installé. Après avoir cloné le projet, faites
 
 ```
