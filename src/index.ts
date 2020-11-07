@@ -118,6 +118,7 @@ const draw = () => {
     }, 
         articles.map(article => ArticleNode(article.x, article.y, article.desc))
     )
+    
 }
 
 const bg = createBG()
