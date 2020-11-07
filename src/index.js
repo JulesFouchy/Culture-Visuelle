@@ -3,6 +3,9 @@ import { Scene, PerspectiveCamera, WebGLRenderer, Color,Geometry,Vector3,Texture
 let scene, camera, renderer, starGeo, star, stars, sprite, starMaterial;
 
 function init() {
+    window.addEventListener('resize', function() {
+      onResize();
+    });
     scene = new Scene()
     camera = new PerspectiveCamera( 760, window.innerWidth / window.innerHeight, 1, 1000 )
     camera.position.z=1;
@@ -21,7 +24,7 @@ function init() {
         starGeo.vertices.push(star)
     }
     
-    sprite = new TextureLoader().load('https://cdn.glitch.com/c2dd515a-15ba-4349-bd00-42acbf8f4079%2Fcircle.png?v=1604754379086')
+    sprite = new TextureLoader().load('./assets/circle.png')
     starMaterial = new PointsMaterial({
       color : 0xaaaaaa,
       size : 0.7,
@@ -52,4 +55,12 @@ function init() {
    requestAnimationFrame( animate );
 }
 
+function onResize () {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize( window.innerWidth, window.innerHeight )
+}
+
+
 init();
+
