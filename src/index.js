@@ -1,5 +1,7 @@
 import { Scene, PerspectiveCamera, WebGLRenderer,Audio,AudioLoader, AudioListener,Geometry,Vector3,TextureLoader,PointsMaterial,Points } from 'three'
-  
+import image from "./assets/circle.png" 
+import music from "./assets/musique.mp3" 
+
 let scene, camera, renderer, starGeo, star, stars, sprite, starMaterial;
 
 function init() {
@@ -20,7 +22,7 @@ function init() {
   
     // load a sound and set it as the Audio object's buffer
     const audioLoader = new AudioLoader();
-    const audioFile = 'https://cdn.glitch.com/c2dd515a-15ba-4349-bd00-42acbf8f4079%2Fmusique.mp3?v=1604761724266';
+    const audioFile = music;
     const startButton = document.getElementById( 'startButton' );
 		startButton.addEventListener( 'click', function(){
       audioLoader.load( audioFile, function( buffer ) {
@@ -47,11 +49,11 @@ function init() {
       for(let i=0; i<6000;i++){
         star = new Vector3(Math.random()*600-300,Math.random()*600-300,Math.random()*600-300)
         star.velocity = 0
-        star.acceleration = 0.002
+        star.acceleration = 0.0005
         starGeo.vertices.push(star)
     }
     
-    sprite = new TextureLoader().load('https://raw.githubusercontent.com/JulesFouchy/Culture-Visuelle/master/src/assets/circle.png')
+    sprite = new TextureLoader().load(image)
     starMaterial = new PointsMaterial({
       color : 0xaaaaaa,
       size : 0.7,
@@ -62,10 +64,7 @@ function init() {
     scene.add(stars)
     animate()
 }
-  
- function music(){
-   
- }
+
   
  function animate() {
     
@@ -78,7 +77,7 @@ function init() {
       }
     })
     starGeo.verticesNeedUpdate = true;
-    stars.rotation.y +=  0.002;
+    stars.rotation.y +=  0.001;
 
    renderer.render( scene, camera );
    requestAnimationFrame( animate );
