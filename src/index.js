@@ -24,7 +24,7 @@ function init() {
         starGeo.vertices.push(star)
     }
     
-    sprite = new TextureLoader().load('./assets/circle.png')
+    sprite = new TextureLoader().load('https://raw.githubusercontent.com/JulesFouchy/Culture-Visuelle/master/src/assets/circle.png')
     starMaterial = new PointsMaterial({
       color : 0xaaaaaa,
       size : 0.7,
