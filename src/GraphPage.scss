@@ -1,15 +1,23 @@
 body {
-    background: #252525;
+    background: none;
     overflow: hidden; 
 }
 #defaultCanvas0 {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     z-index: -10;
 }
+
+#canvas-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -20;
+} 
 #app {
-    position: fixed;
+    position: absolute;
+    z-index : 2;
     left: 0;
     top: 0;
     -webkit-touch-callout: none;
@@ -19,6 +27,7 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
 
 //
 .article-node {

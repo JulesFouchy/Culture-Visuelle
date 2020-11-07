@@ -26,8 +26,7 @@ void main() {
     for (int i = 0; i < 33; ++i) {
         d = min(d, sdSegment(uv, vec2(x1[i], y1[i]), vec2(x2[i], y2[i]), 0.001));
     }
-    float t = smoothstep(max(d, 0.), 0., 0.002);
-    vec3 col = mix(vec3(1.), vec3(0.1), t);
+    float t = smoothstep(0., max(d, 0.), 0.002);
     
-    gl_FragColor = vec4(col, 1.);
+    gl_FragColor = vec4(vec3(1.), t);
 }
