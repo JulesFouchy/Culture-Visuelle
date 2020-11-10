@@ -25,26 +25,5 @@ export default (x: number, y: number, article: ArticleDescription, idx: number) 
             onclick: followLink,
             src: article.thumbnail,
         }),
-        h('div',
-        {
-            class: "article-infos",
-            style: `
-                height: ${radius*2-10}px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                left: ${radius}px;
-                padding-left: ${radius+5}px;
-            `,
-            onclick: followLink,
-        },
-            [
-                h('b', {}, article.title),
-                h('br', {}),
-                h('span', {}, article.authors.length == 1
-                              ? article.authors
-                              : `${article.authors[rand]} & ${article.authors[(rand+1)%2]}`
-                )
-            ]
-        )
     ])
 }
