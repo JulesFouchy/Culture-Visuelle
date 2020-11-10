@@ -30,8 +30,8 @@ const createBG = () => new p5((p: p5) => {
         for (let i = 0;i < p.edgesLists.length; ++i)
             p.edgesLists[i] = new Array()
         edgesList.forEach((pair, i) => {
-            p.edgesLists[pair[0]].push(i)
-            p.edgesLists[pair[1]].push(i)
+            p.edgesLists[pair[0]].push({idx: i, dir:  1})
+            p.edgesLists[pair[1]].push({idx: i, dir: -1})
         })
     }
 
@@ -69,7 +69,7 @@ const createBG = () => new p5((p: p5) => {
             myShader.setUniform("progress", p.min(time*2, 1))
             let showEdges = new Array(p.nodesX1.length).fill(0)
             p.edgesLists[p.hoveredIdx].forEach(edge => {
-                showEdges[edge] = 1
+                showEdges[edge.idx] = edge.dir
             })
             myShader.setUniform("showEdges", showEdges)
         }
