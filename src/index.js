@@ -57,9 +57,7 @@ function init() {
     starMaterial = new PointsMaterial({
       color : 0xaaaaaa,
       size : 0.7,
-      map : sprite,
-    //   blending: THREE.NormalBlending,
-    transparent: true,
+      map : sprite
     })
     
     stars = new Points(starGeo, starMaterial)
