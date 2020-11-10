@@ -51,6 +51,11 @@ const createBG = () => new p5((p: p5) => {
             {
                 nextHoveredIdx = idx
             }
+        else if (idx === p.hoveredIdx) {
+            p.animatingBackward = false
+            const t = edgeAnimSpeed * ((new Date()).getTime() / 1000 - p.timeOfHover)
+            p.timeOfHover = (new Date()).getTime() / 1000 - p.max((1 - t), 0) / edgeAnimSpeed
+        }
     }
 
     p.onHoverEnd = function() {
