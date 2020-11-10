@@ -15,6 +15,7 @@ const createBG = () => new p5((p: p5) => {
     p.nodesY2 = []
     p.edgesLists
     p.timeOfHover = 0
+    p.animatingBackward = false
     p.hoveredIdx = null
 
     p.setGraph = function (verticesList, edgesList) {
@@ -37,13 +38,17 @@ const createBG = () => new p5((p: p5) => {
 
     p.onHoverStart = function(idx: number) {
         if (p.hoveredIdx === null) {
+            p.animatingBackward = false
             p.timeOfHover = (new Date()).getTime() / 1000
             p.hoveredIdx = idx
         }
     }
 
     p.onHoverEnd = function() {
-        p.hoveredIdx = null
+        if (p.hoveredIdx !== null && !p.animatingBackward) {
+            p.animatingBackward = true
+            p.timeOfHover = (new Date()).getTime() / 1000
+        }
     }
     
     p.setup = function() {
@@ -65,16 +70,28 @@ const createBG = () => new p5((p: p5) => {
         myShader.setUniform("scale", p.myScale)
         myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
         if (p.hoveredIdx !== null) {
-            const time = (new Date()).getTime() / 1000 - p.timeOfHover
-            myShader.setUniform("progress", p.min(time*2, 1))
-            let showEdges = new Array(p.nodesX1.length).fill(0)
-            p.edgesLists[p.hoveredIdx].forEach(edge => {
-                showEdges[edge.idx] = edge.dir
-            })
-            myShader.setUniform("showEdges", showEdges)
-        }
-        else {
-            myShader.setUniform("progress", 0)
+            // Progress
+            const t = 2 * ((new Date()).getTime() / 1000 - p.timeOfHover)
+            if (!p.animatingBackward) {
+                myShader.setUniform("progress", p.min(t, 1))
+            }
+            else {
+                if (t < 1) {
+                    myShader.setUniform("progress", 1-t)
+                }
+                else {
+                    p.hoveredIdx = null
+                    myShader.setUniform("progress", 0)
+                }
+            }
+            // Show or not
+            if (p.hoveredIdx !== null) {
+                let showEdges = new Array(p.nodesX1.length).fill(0)
+                p.edgesLists[p.hoveredIdx].forEach(edge => {
+                    showEdges[edge.idx] = edge.dir
+                })
+                myShader.setUniform("showEdges", showEdges)
+            }
         }
         p.rect(0, 0, p.width, p.height)
     }
