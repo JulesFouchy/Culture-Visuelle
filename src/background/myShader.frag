@@ -9,7 +9,7 @@ uniform float y1[33];
 uniform float x2[33];
 uniform float y2[33];
 
-uniform bool showEdge[33];
+uniform int showEdges[33];
 uniform float progress;
 
 float sdSegment(vec2 p, vec2 a, vec2 b, float r)
@@ -27,11 +27,11 @@ void main() {
 
     float d = 100000.;
     for (int i = 0; i < 33; ++i) {
-        // if (showEdge[i]) {
+        if (showEdges[i] == 1) {
             vec2 p1 = vec2(x1[i], y1[i]);
             vec2 p2 = vec2(x2[i], y2[i]);
             d = min(d, sdSegment(uv, p1, p1 + progress * (p2-p1), 0.001));
-        // }
+        }
     }
     float t = smoothstep(0., max(d, 0.), 0.002);
     

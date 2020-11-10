@@ -108,12 +108,7 @@ let prevMouseY: number
 let isDragging = false
 
 var bg = createBG()
-edges.forEach(pair => {
-    bg.nodesX1.push(articles[pair[0]].x)
-    bg.nodesY1.push(articles[pair[0]].y)
-    bg.nodesX2.push(articles[pair[1]].x)
-    bg.nodesY2.push(articles[pair[1]].y)
-})
+bg.setGraph(articles, edges)
 
 const draw = () => {
     document.getElementById("app").innerHTML = h('div', 

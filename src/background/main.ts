@@ -13,8 +13,27 @@ const createBG = () => new p5((p: p5) => {
     p.nodesY1 = []
     p.nodesX2 = []
     p.nodesY2 = []
+    p.edgesLists
     p.timeOfHover = 0
     p.hoveredIdx = null
+
+    p.setGraph = function (verticesList, edgesList) {
+        // Positions of all the edges
+        edgesList.forEach(pair => {
+            p.nodesX1.push(verticesList[pair[0]].x)
+            p.nodesY1.push(verticesList[pair[0]].y)
+            p.nodesX2.push(verticesList[pair[1]].x)
+            p.nodesY2.push(verticesList[pair[1]].y)
+        })
+        // Lists of edges starting from a given vertex
+        p.edgesLists = new Array(verticesList.length)
+        for (let i = 0;i < p.edgesLists.length; ++i)
+            p.edgesLists[i] = new Array()
+        edgesList.forEach((pair, i) => {
+            p.edgesLists[pair[0]].push(i)
+            p.edgesLists[pair[1]].push(i)
+        })
+    }
 
     p.onHoverStart = function(idx: number) {
         if (p.hoveredIdx === null) {
@@ -47,7 +66,12 @@ const createBG = () => new p5((p: p5) => {
         myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
         if (p.hoveredIdx !== null) {
             const time = (new Date()).getTime() / 1000 - p.timeOfHover
-            myShader.setUniform("progress", p.min(time, 1))
+            myShader.setUniform("progress", p.min(time*2, 1))
+            let showEdges = new Array(p.nodesX1.length).fill(0)
+            p.edgesLists[p.hoveredIdx].forEach(edge => {
+                showEdges[edge] = 1
+            })
+            myShader.setUniform("showEdges", showEdges)
         }
         else {
             myShader.setUniform("progress", 0)
