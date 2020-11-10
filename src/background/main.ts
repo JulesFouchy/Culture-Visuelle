@@ -6,6 +6,8 @@ const createBG = () => new p5((p: p5) => {
     
     let myShader: p5.Shader
 
+    const edgeAnimSpeed = 0.5
+
     p.myScale = 1.1663507799970827
     p.translationX = 240.71507332764804 // in pixels
     p.translationY = 264.15263021428393 // in pixels
@@ -54,7 +56,8 @@ const createBG = () => new p5((p: p5) => {
     p.onHoverEnd = function() {
         if (p.hoveredIdx !== null && !p.animatingBackward) {
             p.animatingBackward = true
-            p.timeOfHover = (new Date()).getTime() / 1000
+            const t = edgeAnimSpeed * ((new Date()).getTime() / 1000 - p.timeOfHover)
+            p.timeOfHover = (new Date()).getTime() / 1000 - p.max((1 - t), 0) / edgeAnimSpeed
         }
         nextHoveredIdx = null
     }
@@ -79,7 +82,7 @@ const createBG = () => new p5((p: p5) => {
         myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
         if (p.hoveredIdx !== null) {
             // Progress
-            const t = 2 * ((new Date()).getTime() / 1000 - p.timeOfHover)
+            const t = edgeAnimSpeed * ((new Date()).getTime() / 1000 - p.timeOfHover)
             if (!p.animatingBackward) {
                 myShader.setUniform("progress", p.min(t, 1))
             }
