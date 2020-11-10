@@ -13,6 +13,19 @@ const createBG = () => new p5((p: p5) => {
     p.nodesY1 = []
     p.nodesX2 = []
     p.nodesY2 = []
+    p.timeOfHover = 0
+    p.hoveredIdx = null
+
+    p.onHoverStart = function(idx: number) {
+        if (p.hoveredIdx === null) {
+            p.timeOfHover = (new Date()).getTime() / 1000
+            p.hoveredIdx = idx
+        }
+    }
+
+    p.onHoverEnd = function() {
+        p.hoveredIdx = null
+    }
     
     p.setup = function() {
         p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL)
@@ -32,6 +45,13 @@ const createBG = () => new p5((p: p5) => {
         myShader.setUniform("y2", p.nodesY2)
         myShader.setUniform("scale", p.myScale)
         myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
+        if (p.hoveredIdx !== null) {
+            const time = (new Date()).getTime() / 1000 - p.timeOfHover
+            myShader.setUniform("progress", p.min(time, 1))
+        }
+        else {
+            myShader.setUniform("progress", 0)
+        }
         p.rect(0, 0, p.width, p.height)
     }
 

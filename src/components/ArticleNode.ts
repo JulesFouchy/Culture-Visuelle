@@ -1,7 +1,7 @@
 import h from '../framework/h'
 import ArticleDescription from '../articles/ArticleDescription'
 
-export default (x: number, y: number, article: ArticleDescription) => {
+export default (x: number, y: number, article: ArticleDescription, idx: number) => {
     const radius = 50 // in pixels
     const followLink = "window.location.href = 'articles/"+ article.folderName +"/index.html'"
     const rand = Math.floor(Math.random()*2)
@@ -13,6 +13,7 @@ export default (x: number, y: number, article: ArticleDescription) => {
             left: calc(${x * 100}vw - ${radius}px);
             top:  calc(${y * 100}vh - ${radius}px);
         `,
+        onmouseover: `window.dispatchEvent(new CustomEvent('articleHovered', {detail: {idx: ${idx}}}))`,
     }, [
         h('img', 
         {
@@ -22,7 +23,7 @@ export default (x: number, y: number, article: ArticleDescription) => {
                 height: ${radius*2}px;
             `,
             onclick: followLink,
-            src: article.thumbnail
+            src: article.thumbnail,
         }),
         h('div',
         {
