@@ -6,7 +6,7 @@ const createBG = () => new p5((p: p5) => {
     
     let myShader: p5.Shader
 
-    const edgeAnimSpeed = 2
+    const edgeAnimSpeed = 4
 
     p.myScale = 1.1663507799970827
     p.translationX = 240.71507332764804 // in pixels
