@@ -17,6 +17,7 @@ const createBG = () => new p5((p: p5) => {
     p.timeOfHover = 0
     p.animatingBackward = false
     p.hoveredIdx = null
+    let nextHoveredIdx = null
 
     p.setGraph = function (verticesList, edgesList) {
         // Positions of all the edges
@@ -42,6 +43,12 @@ const createBG = () => new p5((p: p5) => {
             p.timeOfHover = (new Date()).getTime() / 1000
             p.hoveredIdx = idx
         }
+        else if (
+            (nextHoveredIdx === null && idx !== p.hoveredIdx) ||
+            (nextHoveredIdx !== null && idx !== nextHoveredIdx))
+            {
+                nextHoveredIdx = idx
+            }
     }
 
     p.onHoverEnd = function() {
@@ -49,6 +56,7 @@ const createBG = () => new p5((p: p5) => {
             p.animatingBackward = true
             p.timeOfHover = (new Date()).getTime() / 1000
         }
+        nextHoveredIdx = null
     }
     
     p.setup = function() {
@@ -80,7 +88,15 @@ const createBG = () => new p5((p: p5) => {
                     myShader.setUniform("progress", 1-t)
                 }
                 else {
-                    p.hoveredIdx = null
+                    if (nextHoveredIdx !== null) {
+                        p.hoveredIdx = nextHoveredIdx
+                        nextHoveredIdx = null
+                        p.animatingBackward = false
+                        p.timeOfHover = (new Date()).getTime() / 1000
+                    }
+                    else {
+                        p.hoveredIdx = null
+                    }
                     myShader.setUniform("progress", 0)
                 }
             }
