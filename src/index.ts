@@ -107,6 +107,9 @@ let prevMouseX: number
 let prevMouseY: number
 let isDragging = false
 
+var bg = createBG()
+bg.setGraph(articles, edges)
+
 const draw = () => {
     document.getElementById("app").innerHTML = h('div', 
     {
@@ -116,17 +119,17 @@ const draw = () => {
             transform: matrix(${bg.myScale}, 0, 0, ${bg.myScale}, ${bg.translationX}, ${bg.translationY});
         `,
     }, 
-        articles.map(article => ArticleNode(article.x, article.y, article.desc))
+        articles.map((article, idx) => ArticleNode(article.x, article.y, article.desc, idx))
     )
-    
 }
 
-const bg = createBG()
-edges.forEach(pair => {
-    bg.nodesX1.push(articles[pair[0]].x)
-    bg.nodesY1.push(articles[pair[0]].y)
-    bg.nodesX2.push(articles[pair[1]].x)
-    bg.nodesY2.push(articles[pair[1]].y)
+window.addEventListener('articleHovered', e => {
+    bg.onHoverStart(e.detail.idx)
+})
+window.addEventListener('mousemove', e => {
+    if (e.target.id === "defaultCanvas0") {
+        bg.onHoverEnd()
+    }
 })
 draw()
 
