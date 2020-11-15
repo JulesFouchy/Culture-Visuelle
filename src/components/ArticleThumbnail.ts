@@ -4,9 +4,9 @@ import ArticleDescription from '../articles/ArticleDescription'
 export default (x: number, y: number, article: ArticleDescription, idx: number) => {
     const radius = 50 // in pixels
     const followLink = "window.location.href = 'articles/"+ article.folderName +"/index.html'"
-    return h('img', 
+    return h('i', 
         {
-            class: "article-thumbnail",
+            class: `article-thumbnail fas fa-${article.icon}`,
             style: `
                 left: calc(${x * 100}vw - ${radius}px);
                 top:  calc(${y * 100}vh - ${radius}px);
@@ -15,6 +15,5 @@ export default (x: number, y: number, article: ArticleDescription, idx: number) 
             `,
             onmouseover: `window.dispatchEvent(new CustomEvent('articleHovered', {detail: {idx: ${idx}}}))`,
             onclick: followLink,
-            src: article.thumbnail,
         })
 }

@@ -2,7 +2,7 @@ interface Article {
     title: string,
     authors: string[],
     folderName: string,
-    thumbnail: string,
+    icon: string,
 }
 
 export default Article

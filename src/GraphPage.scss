@@ -29,13 +29,18 @@ body {
 }
 
 .article-thumbnail {
+    background-color: white;
+    font-size: 50px;
+    border-radius: 50%; // Make it a circle
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     &:hover {    
         cursor: pointer;
     }
     position: absolute;
-    border-radius: 50%; // Make it a circle
     // Prevent dragging
     -webkit-user-drag: none;
     -khtml-user-drag: none;
