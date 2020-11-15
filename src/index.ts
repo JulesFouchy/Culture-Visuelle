@@ -1,6 +1,7 @@
 import h from './framework/h'
 import ArticleDescription from './articles/ArticleDescription'
-import ArticleNode from './components/ArticleNode'
+import ArticleThumbnail from './components/ArticleThumbnail'
+import ArticleInfos from './components/ArticleInfos'
 import createBG from './background/main'
 // Articles
 import BK from './articles/Benharira_Koeppel/description'
@@ -111,7 +112,9 @@ var bg = createBG()
 bg.setGraph(articles, edges)
 
 const draw = () => {
-    document.getElementById("app").innerHTML = h('div', 
+    document.getElementById("app").innerHTML = 
+    h('div', {}, articles.map((article, idx) => ArticleInfos(article.desc, idx))) +
+    h('div',
     {
         id: 'transform-wrapper',
         style: `
@@ -119,16 +122,20 @@ const draw = () => {
             transform: matrix(${bg.myScale}, 0, 0, ${bg.myScale}, ${bg.translationX}, ${bg.translationY});
         `,
     }, 
-        articles.map((article, idx) => ArticleNode(article.x, article.y, article.desc, idx))
+        articles.map((article, idx) => ArticleThumbnail(article.x, article.y, article.desc, idx))
     )
 }
 
 window.addEventListener('articleHovered', e => {
-    bg.onHoverStart(e.detail.idx)
+    const idx = e.detail.idx
+    bg.onHoverStart(idx)
+    document.getElementById('article-'+idx).classList.add('visible')
 })
 window.addEventListener('mousemove', e => {
     if (e.target.id === "defaultCanvas0") {
         bg.onHoverEnd()
+        for (let i = 0; i < articles.length; ++i)
+            document.getElementById('article-'+i).classList.remove('visible')
     }
 })
 draw()

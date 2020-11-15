@@ -14,7 +14,8 @@ body {
     left: 0;
     top: 0;
     z-index: -20;
-} 
+}
+
 #app {
     position: absolute;
     left: 0;
@@ -27,17 +28,12 @@ body {
     user-select: none;
 }
 
-
-//
-.article-node {
+.article-thumbnail {
     margin: 0;
     position: absolute;
     &:hover {    
         cursor: pointer;
     }
-}
-
-.article-thumbnail {
     position: absolute;
     border-radius: 50%; // Make it a circle
     // Prevent dragging
@@ -47,4 +43,19 @@ body {
     -o-user-drag: none;
     user-drag: none;
     //
+}
+
+.article-infos {
+    color: white;
+    background-color: black;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &.visible {
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
 }
