@@ -79,6 +79,7 @@ const createBG = () => new p5((p: p5) => {
         p.noStroke()
         p.shader(myShader)
         myShader.setUniform("uAspectRatio", p.width / p.height)
+        myShader.setUniform("uHeight", p.height)
         myShader.setUniform("x1", p.nodesX1.map(x => x * p.width / p.height))
         myShader.setUniform("y1", p.nodesY1)
         myShader.setUniform("x2", p.nodesX2.map(x => x * p.width / p.height))
