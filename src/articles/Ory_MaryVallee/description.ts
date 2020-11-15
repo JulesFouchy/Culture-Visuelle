@@ -3,7 +3,7 @@ import ArticleDescription from '../ArticleDescription'
 const description: ArticleDescription = {
     title: "Ory_MaryVallee",
     icon: "question",
-    authors: ["Baptiste Ory", "Solène Mary-Vallée"],
+    authors: ["Baptiste ORY", "Solène MARY-VALLÉE"],
     // Don't touch the folder name
     folderName: "Ory_MaryVallee",
 }
