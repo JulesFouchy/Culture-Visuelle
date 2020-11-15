@@ -1,11 +1,11 @@
 import ArticleDescription from '../ArticleDescription'
-import thumbnail from './thumbnail.jpg'
 
 const description: ArticleDescription = {
     title: "Daigmorte_DeSmet",
+    icon: "question",
     authors: ["Clara Daigmorte", "Enguerrand de Smet"],
+    // Don't touch the folder name
     folderName: "Daigmorte_DeSmet",
-    thumbnail: thumbnail
 }
 
 export default description
