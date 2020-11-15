@@ -8,9 +8,9 @@ const createBG = () => new p5((p: p5) => {
 
     const edgeAnimSpeed = 4
 
-    p.myScale = 1.1663507799970827
-    p.translationX = 240.71507332764804 // in pixels
-    p.translationY = 264.15263021428393 // in pixels
+    p.myScale = 0.6302494097246083
+    p.translationX = 408.24819815389947 // in pixels
+    p.translationY = 254.4245692715046 // in pixels
     p.nodesX1 = []
     p.nodesY1 = []
     p.nodesX2 = []
