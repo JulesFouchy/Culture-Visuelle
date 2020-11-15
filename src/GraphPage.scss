@@ -48,14 +48,27 @@ body {
 .article-infos {
     color: white;
     background-color: black;
+    margin: 20px 30px;
+    font-size: 19px;
+    font-family: 'Roboto', sans-serif;
+    //
     z-index: 10;
     position: fixed;
     top: 0;
     right: 0;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.25s;
     &.visible {
         opacity: 1;
-        transition: opacity 0.3s;
+        transition: opacity 0.25s;
     }
+}
+
+.article-name {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.article-authors {
+    font-weight: lighter;
 }

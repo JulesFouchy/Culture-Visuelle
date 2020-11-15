@@ -13,7 +13,7 @@ export default (article: ArticleDescription, idx: number) => {
             {
                 class: "article-name"
             },
-                article.title
+                article.title + ", "
             ),
             h('span',
             {
