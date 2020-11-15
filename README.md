@@ -5,8 +5,7 @@ Lien vers le magazine : [julesfouchy.github.io/Culture-Visuelle/](https://julesf
 ## Écrire son article
 
 Chaque groupe a son dossier, dans ./src/articles ; vous y trouverez :
-  - Une image qui représentera votre article dans le graphe, **thumbnail.jpg**, qu'il vous incombe de changer.
-  - Le fichier **description.ts**, dans lequel vous devez renseigner le titre de votre article, et où vous pouvez modifier les noms des auteurs si vous voulez être dénommés différemment. Il faudra aussi adapter le nom de l'image si vous avez renommé "thumbnail.jpg" ou changé l'extension.
+  - Le fichier **description.ts**, dans lequel vous devez renseigner le titre de votre article et l'icone qui le représentera (Choisissez parmi cette liste : [fontawesome.com/cheatsheet](https://fontawesome.com/cheatsheet). Vous pouvez également modifier les noms des auteurs si vous voulez être dénommés différemment.
   - Le fichier **index.html** où vous mettrez votre article. Vous êtes libres de faire ce que vous voulez sur cette page. N'hésitez pas à profiter du format web pour enrichir votre article avec des liens, images, vidéos *etc.* :wink:. Mettez des balises \<h1\>, \<h2>, \<h3> au besoin, \<b> pour le **gras**, \<i> pour l'*italique*... Si vous n'êtes pas à l'aise avec le html ou que vous rencontrez des problèmes pour faire des choses avancées, demandez-moi (jules.fouchy@ntymail.com). Et au pire vous m'enverrez un fichier texte ou pdf et je m'occuperai de faire la conversion.
 
 ## Récupérer et lancer le projet
