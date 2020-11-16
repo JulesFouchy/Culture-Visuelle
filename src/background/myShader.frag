@@ -5,12 +5,12 @@ uniform float uAspectRatio;
 uniform float uHeight;
 uniform float scale;
 uniform vec2 translation;
-uniform float x1[33];
-uniform float y1[33];
-uniform float x2[33];
-uniform float y2[33];
+uniform float x1[100];
+uniform float y1[100];
+uniform float x2[100];
+uniform float y2[100];
 
-uniform int showEdges[33];
+uniform int showEdges[100];
 uniform float progress;
 
 float sdSegment(vec2 p, vec2 a, vec2 b, float r)
@@ -28,7 +28,7 @@ void main() {
 
     float thickness = 0.15 / uHeight;
     float d = 100000.;
-    for (int i = 0; i < 33; ++i) {
+    for (int i = 0; i < 100; ++i) {
         if (showEdges[i] == 1) {
             vec2 p1 = vec2(x1[i], y1[i]);
             vec2 p2 = vec2(x2[i], y2[i]);
