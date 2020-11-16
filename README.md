@@ -8,7 +8,7 @@ Chaque groupe a son dossier dans ./src/articles ; vous y trouverez :
   - Le fichier **description.ts**, dans lequel vous devez renseigner :
     - le **titre** de votre article
     - sa **catégorie** : Technical, Cultural ou Memorisation
-    - l'**icone** qui le représentera, choisi parmi cette liste : [fontawesome.com/cheatsheet](https://fontawesome.com/cheatsheet)).
+    - l'**icone** qui le représentera, choisi parmi cette liste : [fontawesome.com/cheatsheet](https://fontawesome.com/cheatsheet).
     - le nom des auteurs
   - Le fichier **index.html** où vous mettrez votre article. Vous êtes libres de faire ce que vous voulez sur cette page. N'hésitez pas à profiter du format web pour enrichir votre article avec des liens, images, vidéos *etc.* :wink:. Mettez des balises \<h1\>, \<h2>, \<h3> au besoin, \<b> pour le **gras**, \<i> pour l'*italique*... Si vous n'êtes pas à l'aise avec le html ou que vous rencontrez des problèmes pour faire des choses avancées, demandez-moi (jules.fouchy@ntymail.com). Et au pire vous m'enverrez un fichier texte ou pdf et je m'occuperai de faire la conversion.
 
