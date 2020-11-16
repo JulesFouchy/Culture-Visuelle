@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Geslin_Julien",
+    title: "Salut les amis",
     icon: "question",
     category: Category.Cultural,
     authors: ["Thomas GESLIN", "Victor JULIEN"],

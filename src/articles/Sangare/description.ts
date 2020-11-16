@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Sangare",
+    title: "Mythes et mémoire",
     icon: "question",
     category: Category.Cultural,
     authors: ["Laurelenn SANGARÉ"],

@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Lagier",
+    title: "Neurobiologie, Bio Art et Data Art : La mémoire du vivant",
     icon: "question",
     category: Category.Cultural,
     authors: ["Mélody LAGIER"],

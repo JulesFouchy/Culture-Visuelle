@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Thiel",
+    title: "Nature et Culture : la mémoire en informatique et parallèles en sociologie",
     icon: "question",
     category: Category.Technical,
     authors: ["Pierre THIEL"],

@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Durand_Gaillot",
+    title: "Apprendre de nouvelles langues/cultures peut changer nos représentation mentales des informations (hypothèse de Sapir-Whorf)",
     icon: "question",
     category: Category.Technical,
     authors: ["Zoé DURAND", "Mélissande GAILLOT"],

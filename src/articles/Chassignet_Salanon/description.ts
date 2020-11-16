@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Chassignet_Salanon",
+    title: "Table de rappel : convertir les chiffres en images mentales",
     icon: "question",
     category: Category.Memorisation,
     authors: ["Clélie CHASSIGNET", "Bastien SALANON"],

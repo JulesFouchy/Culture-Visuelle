@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Daigmorte_DeSmet",
+    title: "Narration interactive ou mémoire de nos actions dans une histoire",
     icon: "question",
     category: Category.Technical,
     authors: ["Clara DAIGMORTE", "Enguerrand DE SMET"],

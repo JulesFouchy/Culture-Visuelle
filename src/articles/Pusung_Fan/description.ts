@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Pusung_Fan",
+    title: "Mémoire dans les jeux vidéo: the legend of Zelda",
     icon: "question",
     category: Category.Cultural,
     authors: ["Jacklyn PUSUNG", "Yu FAN"],

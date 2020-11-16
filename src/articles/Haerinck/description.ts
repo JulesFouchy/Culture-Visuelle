@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Haerinck",
+    title: "Apprendre à créer un Palais mental sur Unreal",
     icon: "question",
     category: Category.Technical,
     authors: ["Guillaume HAERINCK"],

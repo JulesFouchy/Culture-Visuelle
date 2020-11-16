@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Rathonie_Lienart",
+    title: "Organisation des ouvrages des bibliothèques",
     icon: "question",
     category: Category.Technical,
     authors: ["Line RATHONIE", "Nicolas LIENART"],

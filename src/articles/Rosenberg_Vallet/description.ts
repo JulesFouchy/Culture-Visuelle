@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Rosenberg_Vallet",
+    title: "Synesthésie et représentation du son en art numérique",
     icon: "question",
     category: Category.Cultural,
     authors: ["Maéva ROSENBERG", "Gaëlle VALLET"],

@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Mansion_Sgro",
+    title: "Mémoire des lieux dans le dessin et la peinture",
     icon: "question",
     category: Category.Cultural,
     authors: ["Amélia MANSION", "Manon SGRO"],

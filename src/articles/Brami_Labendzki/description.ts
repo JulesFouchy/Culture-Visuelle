@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Brami_Labendzki",
+    title: "Phrase mnémotechnique",
     icon: "question",
     category: Category.Memorisation,
     authors: ["Ruben BRAMI", "Pierre LABENDZKI"],

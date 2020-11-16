@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Benharira_Koeppel",
+    title: "Comment  l'émergence du numérique modifie notre rapport à la mémoire ?",
     icon: "question",
     category: Category.Technical,
     authors: ["Éva BENHARIRA", "Yoann KŒPPEL"],

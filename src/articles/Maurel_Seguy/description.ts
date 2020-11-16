@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Maurel_Seguy",
+    title: "Palais mental dans les séries et films",
     icon: "question",
     category: Category.Cultural,
     authors: ["Victorine MAUREL", "Margaux SÉGUY"],

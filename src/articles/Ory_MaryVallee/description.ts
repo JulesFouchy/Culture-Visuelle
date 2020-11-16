@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Ory_MaryVallee",
+    title: "« Hub World » dans les jeux vidéo : la mémoire des niveaux",
     icon: "question",
     category: Category.Cultural,
     authors: ["Baptiste ORY", "Solène MARY-VALLÉE"],

@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Kohlmuller_Boyer",
+    title: "La mémoire génétique dans les jeux Assassin's Creed",
     icon: "question",
     category: Category.Cultural,
     authors: ["Amandine KOHLMULLER", "Sophie BOYER"],

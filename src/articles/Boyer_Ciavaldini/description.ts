@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Boyer_Ciavaldini",
+    title: "L'art de la mémoire chez David Lynch",
     icon: "question",
     category: Category.Cultural,
     authors: ["Johan BOYER", "Élisa CIAVALDINI"],

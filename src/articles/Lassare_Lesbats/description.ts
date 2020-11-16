@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Lassare_Lesbats",
+    title: "La visualisation d’objet au service de la mémorisation",
     icon: "question",
     category: Category.Memorisation,
     authors: ["Cyrielle LASSARE", "Lucie LESBATS"],

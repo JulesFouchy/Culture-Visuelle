@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Haudegond_Guyonneau",
+    title: "Mémoire dans les arts du spectacle",
     icon: "question",
     category: Category.Cultural,
     authors: ["Julien HAUDEGOND", "Barbara GUYONNEAU"],
