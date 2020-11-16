@@ -1,8 +1,9 @@
-import ArticleDescription from '../ArticleDescription'
+import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Lassare_Lesbats",
     icon: "question",
+    category: Category.Memorisation,
     authors: ["Cyrielle LASSARE", "Lucie LESBATS"],
     // Don't touch the folder name
     folderName: "Lassare_Lesbats",

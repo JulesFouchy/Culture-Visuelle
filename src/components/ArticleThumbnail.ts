@@ -1,10 +1,13 @@
 import h from '../framework/h'
-import ArticleDescription from '../articles/ArticleDescription'
+import { ArticleDescription, Category } from '../articles/ArticleDescription'
 
 export default (x: number, y: number, article: ArticleDescription, idx: number) => {
     const radius = 50 // in pixels
     const followLink = "window.location.href = 'articles/"+ article.folderName +"/index.html'"
-    const color = '200, 100, 255'
+    const color = article.category === Category.Cultural     ? ' 60, 209,  52' :
+                  article.category === Category.Memorisation ? '200, 100, 255' :
+                  article.category === Category.Technical    ? ' 59, 156, 247'
+                  : '255, 255, 255'
     return h('i', 
         {
             class: `article-thumbnail fas fa-${article.icon}`,

@@ -1,8 +1,15 @@
-interface Article {
-    title: string,
-    authors: string[],
-    folderName: string,
-    icon: string,
+enum Category {
+    Technical,
+    Cultural,
+    Memorisation,
 }
 
-export default Article
+interface ArticleDescription {
+    title: string,
+    authors: string[],
+    icon: string,
+    category: Category,
+    folderName: string,
+}
+
+export { ArticleDescription, Category }
