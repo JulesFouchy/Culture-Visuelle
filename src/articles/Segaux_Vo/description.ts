@@ -2,7 +2,7 @@ import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Mémoire dans la mode",
-    icon: "question",
+    icon: "mask",
     category: Category.Cultural,
     authors: ["Anya SÉGAUX", "Minh-Tri VO"],
     // Don't touch the folder name

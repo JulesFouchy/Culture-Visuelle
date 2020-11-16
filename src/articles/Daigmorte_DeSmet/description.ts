@@ -2,7 +2,7 @@ import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Narration interactive ou mémoire de nos actions dans une histoire",
-    icon: "question",
+    icon: "vr-cardboard",
     category: Category.Technical,
     authors: ["Clara DAIGMORTE", "Enguerrand DE SMET"],
     // Don't touch the folder name

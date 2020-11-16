@@ -2,7 +2,7 @@ import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Topologie des mindmaps",
-    icon: "question",
+    icon: "sitemap",
     category: Category.Technical,
     authors: ["Flora MALLET", "Antoine LIBERT"],
     // Don't touch the folder name
