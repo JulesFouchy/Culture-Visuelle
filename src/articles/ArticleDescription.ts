@@ -1,3 +1,5 @@
+import Point from '../components/Point'
+
 enum Category {
     Technical,
     Cultural,
@@ -12,4 +14,10 @@ interface ArticleDescription {
     folderName: string,
 }
 
-export { ArticleDescription, Category }
+interface ArticleDescriptionAndPosition {
+    desc: ArticleDescription,
+    currentPos: Point,
+    initPos: Point
+}
+
+export { ArticleDescription, Category , ArticleDescriptionAndPosition}

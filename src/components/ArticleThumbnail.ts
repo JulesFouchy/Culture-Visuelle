@@ -1,19 +1,19 @@
 import h from '../framework/h'
-import { ArticleDescription, Category } from '../articles/ArticleDescription'
+import { Category , ArticleDescriptionAndPosition } from '../articles/ArticleDescription'
 
-export default (x: number, y: number, article: ArticleDescription, idx: number) => {
+export default (article : ArticleDescriptionAndPosition, idx: number) => {
     const radius = 50 // in pixels
-    const followLink = "window.location.href = 'articles/"+ article.folderName +"/index.html'"
-    const color = article.category === Category.Cultural     ? ' 60, 209,  52' :
-                  article.category === Category.Memorisation ? '200, 100, 255' :
-                  article.category === Category.Technical    ? ' 59, 156, 247'
+    const followLink = "window.location.href = 'articles/"+ article.desc.folderName +"/index.html'"
+    const color = article.desc.category === Category.Cultural     ? ' 60, 209,  52' :
+                  article.desc.category === Category.Memorisation ? '200, 100, 255' :
+                  article.desc.category === Category.Technical    ? ' 59, 156, 247'
                   : '255, 255, 255'
     return h('i', 
         {
-            class: `article-thumbnail fas fa-${article.icon}`,
+            class: `article-thumbnail fas fa-${article.desc.icon}`,
             style: `
-                left: calc(${x * 100}vw - ${radius}px);
-                top:  calc(${y * 100}vh - ${radius}px);
+                left: calc(${article.currentPos.x * 100}vw - ${radius}px);
+                top:  calc(${article.currentPos.y * 100}vh - ${radius}px);
                 width:  ${radius*2}px;
                 height: ${radius*2}px;
                 color: rgb(${color});
