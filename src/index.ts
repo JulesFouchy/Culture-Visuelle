@@ -112,6 +112,10 @@ window.addEventListener("mousedown", (e: MouseEvent) => {
     isDragging = true
     prevMouse = Point.fromObject(e)
 
+    // Added link behavior here because updating the dom elements for the animation cancels the "onclick" mechanism.
+    if(currentHoveArticle != undefined) {
+        window.location.href = `articles/${articles[currentHoveArticle].desc.folderName}/index.html`
+    }
 })
 
 window.addEventListener("mouseup", (e: MouseEvent) => {
