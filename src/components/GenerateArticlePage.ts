@@ -29,6 +29,7 @@ const BackArrow = () => h(
     })
 
 export default (description: ArticleDescription) => {
+    document.title = description.title
     document.getElementById('header').innerHTML = Header(description)
     document.getElementById('wrapper').innerHTML += BackArrow()
 }
