@@ -3,13 +3,19 @@ html {
 }
 
 #canvas-bg{
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: -10;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 #wrapper {
+    width: 80%;
     background-color: rgba($color: black, $alpha: 0.8);
     border: white solid 2px;
     display: flex;
