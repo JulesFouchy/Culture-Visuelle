@@ -1,6 +1,5 @@
 import { Scene, PerspectiveCamera, WebGLRenderer,Audio,AudioLoader, AudioListener,Geometry,Vector3,TextureLoader,PointsMaterial,Points } from 'three'
-import image from "./assets/circle.png" 
-import music from "./assets/musique.mp3" 
+import image from "./assets/circle.png"
 
 let scene, camera, renderer, starGeo, star, stars, sprite, starMaterial;
 
@@ -13,32 +12,6 @@ function init() {
     camera.position.z=1;
     camera.rotation.x=Math.PI/2;
 
-    // create an AudioListener and add it to the camera
-    const listener = new AudioListener();
-    camera.add( listener );
-
-    // create a global audio source
-    const sound = new Audio( listener );
-  
-    // load a sound and set it as the Audio object's buffer
-    const audioLoader = new AudioLoader();
-    const audioFile = music;
-    const startButton = document.getElementById( 'startButton' );
-		startButton.addEventListener( 'click', function(){
-      audioLoader.load( audioFile, function( buffer ) {
-        sound.setBuffer( buffer );
-        sound.setLoop( true );
-        sound.setVolume( 0.5 );
-        sound.play();
-      });
-    } );
-
-    const stopButton = document.getElementById( 'stopButton' );
-		stopButton.addEventListener( 'click', function(){
-
-        sound.stop();
-
-    } );
     renderer = new WebGLRenderer()
     renderer.setSize( window.innerWidth, window.innerHeight )
     renderer.domElement.id = 'canvas-bg';
