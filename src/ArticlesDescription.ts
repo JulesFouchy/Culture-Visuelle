@@ -27,7 +27,7 @@ import RV from './articles/Rosenberg_Vallet/description'
 import Sa from './articles/Sangare/description'
 import SV from './articles/Segaux_Vo/description'
 import Th from './articles/Thiel/description'
-import VV from './articles/Valley_Veysset/description'
+import VV from './articles/Vallee_Veysset/description'
 
 const articlesDescription: Array<ArticleDescription> = [ BK, BC, BL, CS, CL, DD, Du, DG, Fo, GJ, Ha, HG, KB, La, LL, Li, ML, MS, SM, OM, PF, RL, RV, Sa, SV, Th, VV ]
 

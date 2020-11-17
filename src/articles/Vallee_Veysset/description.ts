@@ -4,9 +4,9 @@ const description: ArticleDescription = {
     title: "Mémoire dans les rêves",
     icon: "cloud",
     category: Category.Cultural,
-    authors: ["Roxane VALLEY", "Sarah VEYSSET"],
+    authors: ["Roxane VALLÉE", "Sarah VEYSSET"],
     // Don't touch the folder name
-    folderName: "Valley_Veysset",
+    folderName: "Vallee_Veysset",
 }
 
 export default description
