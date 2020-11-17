@@ -1,9 +1,16 @@
 html {
-    background: #252525;
     color: white;
 }
 
-body {
+#canvas-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+
+#wrapper {
+    background-color: rgba($color: black, $alpha: 0.8);
     border: white solid 2px;
     display: flex;
     flex-direction: column;
