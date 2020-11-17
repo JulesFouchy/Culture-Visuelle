@@ -27,21 +27,41 @@ ArticlesDescription.forEach((d, id) => {
     })
 })
 
-// generate edges links
-const getNeighbourBydist = (idx : number) => articles.map((a, id) => [id, a]).sort((a, b) => { 
-    return articles[idx].currentPos.squareDistanceTo(a[1].currentPos) - articles[idx].currentPos.squareDistanceTo(b[1].currentPos)
-}).map(([id, a]) => id);
-
-const randInt = (max) => Math.floor(Math.random() * max)
-
-const edges = []
-for (let i = 0; i < articles.length; ++i) {
-    const nIdx = getNeighbourBydist(i) // get neighbouring articles index ordered by distance
-    // j = 1 because the closest point to a point is itself (index = 0 in the list)
-    for (let j = 1; j < Math.min(nIdx.length, 3+randInt(3)); ++j) { 
-        edges.push([i, nIdx[j]]);
-    }
-}
+const edges = [
+    [0, 1],
+    [0, 2],
+    [4, 1],
+    [3, 4],
+    [6, 2],
+    [7, 8],
+    [8, 6],
+    [5, 4],
+    [5, 6],
+    [11, 9],
+    [25, 8],
+    [16, 17],
+    [10, 24],
+    [22, 24],
+    [10, 22],
+    [12, 22],
+    [10, 11],
+    [11, 6],
+    [26, 24],
+    [23, 17],
+    [23, 8],
+    [4, 23],
+    [3, 17],
+    [16, 19],
+    [14, 15],
+    [7, 15],
+    [7, 20],
+    [14, 20],
+    [15, 21],
+    [25, 21],
+    [2, 13],
+    [12, 26],
+    [16, 18],
+]
 
 let prevMouse: Point
 let isDragging = false
