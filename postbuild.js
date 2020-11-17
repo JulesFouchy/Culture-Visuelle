@@ -13,15 +13,21 @@ fs.readdir(path.join(__dirname, articlesDir), function (err, list) {
             from: 'href="ArticlePage.',
             to: 'href="../../ArticlePage.'
         })
+        // replace.sync({
+        //     files: path.join(__dirname, articlesDir, dirName, 'index.html'),
+        //     from: 'script src="generate.',
+        //     to: 'script src="../../generate.'
+        // })
+        // replace.sync({
+        //     files: path.join(__dirname, articlesDir, dirName, 'index.html'),
+        //     from: 'script src="starBackground.',
+        //     to: 'script src="../../starBackground.'
+        // })
+        // Replace all local scripts (but will mess up scripts from the internet)
         replace.sync({
             files: path.join(__dirname, articlesDir, dirName, 'index.html'),
-            from: 'script src="generate.',
-            to: 'script src="../../generate.'
-        })
-        replace.sync({
-            files: path.join(__dirname, articlesDir, dirName, 'index.html'),
-            from: 'script src="starBackground.',
-            to: 'script src="../../starBackground.'
+            from: 'src="',
+            to: 'src="../../'
         })
     })
 })
