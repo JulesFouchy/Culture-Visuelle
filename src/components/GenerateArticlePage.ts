@@ -21,6 +21,14 @@ const Header = (description: ArticleDescription) => {
     )
 }
 
+const BackArrow = () => h(
+    'a',
+    {
+        class: 'back-arrow fas fa-arrow-left',
+        href: '/index.html',
+    })
+
 export default (description: ArticleDescription) => {
     document.getElementById('header').innerHTML = Header(description)
+    document.getElementById('wrapper').innerHTML += BackArrow()
 }

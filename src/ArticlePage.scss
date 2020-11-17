@@ -18,6 +18,15 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+.back-arrow {
+    position: fixed;
+    left: 40px;
+    top: 40px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
 #header {
     display: flex;
     flex-direction: column;
