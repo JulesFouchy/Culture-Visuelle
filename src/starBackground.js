@@ -1,5 +1,4 @@
 import { Scene, PerspectiveCamera, WebGLRenderer,Audio,AudioLoader, AudioListener,Geometry,Vector3,TextureLoader,PointsMaterial,Points } from 'three'
-import image from "./assets/circle.png"
 
 let scene, camera, renderer, starGeo, star, stars, sprite, starMaterial;
 
@@ -26,11 +25,9 @@ function init() {
         starGeo.vertices.push(star)
     }
     
-    sprite = new TextureLoader().load(image)
     starMaterial = new PointsMaterial({
       color : 0xaaaaaa,
       size : 0.7,
-      map : sprite
     })
     
     stars = new Points(starGeo, starMaterial)
