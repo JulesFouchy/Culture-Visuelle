@@ -13,21 +13,21 @@ fs.readdir(path.join(__dirname, articlesDir), function (err, list) {
             from: 'href="ArticlePage.',
             to: 'href="../../ArticlePage.'
         })
-        // replace.sync({
-        //     files: path.join(__dirname, articlesDir, dirName, 'index.html'),
-        //     from: 'script src="generate.',
-        //     to: 'script src="../../generate.'
-        // })
-        // replace.sync({
-        //     files: path.join(__dirname, articlesDir, dirName, 'index.html'),
-        //     from: 'script src="starBackground.',
-        //     to: 'script src="../../starBackground.'
-        // })
-        // Replace all local scripts (but will mess up scripts from the internet)
         replace.sync({
             files: path.join(__dirname, articlesDir, dirName, 'index.html'),
-            from: 'src="',
-            to: 'src="../../'
+            from: 'script src="generate.',
+            to: 'script src="../../generate.'
+        })
+        replace.sync({
+            files: path.join(__dirname, articlesDir, dirName, 'index.html'),
+            from: 'script src="starBackground.',
+            to: 'script src="../../starBackground.'
+        })
+        // Enguerrand
+        replace.sync({
+            files: path.join(__dirname, articlesDir, dirName, 'index.html'),
+            from: 'src="3dnodes.',
+            to: 'src="../../3dnodes.'
         })
     })
 })
