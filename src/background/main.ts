@@ -2,6 +2,8 @@ import p5 from 'p5'
 import vs from './myShader.vert'
 import fs from './myShader.frag'
 
+import Point from '../components/Point'
+
 const createBG = () => new p5((p: p5) => {
     
     let myShader: p5.Shader
@@ -9,34 +11,36 @@ const createBG = () => new p5((p: p5) => {
     const edgeAnimSpeed = 4
 
     p.myScale = 0.6302494097246083
-    p.translationX = 408.24819815389947 // in pixels
-    p.translationY = 254.4245692715046 // in pixels
-    p.nodesX1 = []
-    p.nodesY1 = []
-    p.nodesX2 = []
-    p.nodesY2 = []
-    p.edgesLists
+    p.translation = new Point(0, 0) // in pixels
+
+    p.articlesList = []
+    p.edgesList = []
+
     p.timeOfHover = 0
     p.animatingBackward = false
     p.hoveredIdx = null
     let nextHoveredIdx = null
 
-    p.setGraph = function (verticesList, edgesList) {
-        // Positions of all the edges
-        edgesList.forEach(pair => {
-            p.nodesX1.push(verticesList[pair[0]].x)
-            p.nodesY1.push(verticesList[pair[0]].y)
-            p.nodesX2.push(verticesList[pair[1]].x)
-            p.nodesY2.push(verticesList[pair[1]].y)
+    p.linkGraph = function (articlesList, edgesList) {
+        p.articlesList = articlesList
+        p.edgesList = edgesList
+    }
+
+    p.nodesStartPos = () => p.edgesList.map(e => p.articlesList[e[0]].currentPos);
+    p.nodesendPos = () => p.edgesList.map(e => p.articlesList[e[1]].currentPos);
+
+    p.getAdjEdgesListIdx = function(Idx: number) {
+        const list = []
+
+        p.edgesList.forEach((e, i) => {
+            if (e[0] == Idx) {
+                list.push({idx: i, dir:  1})
+            }else if (e[1] == Idx) {
+                list.push({idx: i, dir:  -1})
+            }
         })
-        // Lists of edges starting from a given vertex
-        p.edgesLists = new Array(verticesList.length)
-        for (let i = 0;i < p.edgesLists.length; ++i)
-            p.edgesLists[i] = new Array()
-        edgesList.forEach((pair, i) => {
-            p.edgesLists[pair[0]].push({idx: i, dir:  1})
-            p.edgesLists[pair[1]].push({idx: i, dir: -1})
-        })
+
+        return list
     }
 
     p.onHoverStart = function(idx: number) {
@@ -80,12 +84,16 @@ const createBG = () => new p5((p: p5) => {
         p.shader(myShader)
         myShader.setUniform("uAspectRatio", p.width / p.height)
         myShader.setUniform("uHeight", p.height)
-        myShader.setUniform("x1", p.nodesX1.map(x => x * p.width / p.height))
-        myShader.setUniform("y1", p.nodesY1)
-        myShader.setUniform("x2", p.nodesX2.map(x => x * p.width / p.height))
-        myShader.setUniform("y2", p.nodesY2)
+
+        const nodesStartPos = p.nodesStartPos()
+        const nodesendPos = p.nodesendPos()
+
+        myShader.setUniform("x1", nodesStartPos.map(pt => pt.x * p.width / p.height))
+        myShader.setUniform("y1", nodesStartPos.map(pt => pt.y))
+        myShader.setUniform("x2", nodesendPos.map(pt => pt.x * p.width / p.height))
+        myShader.setUniform("y2", nodesendPos.map(pt => pt.y))
         myShader.setUniform("scale", p.myScale)
-        myShader.setUniform("translation", [p.translationX / p.height, p.translationY / p.height])
+        myShader.setUniform("translation", p.translation.clone().divideScalar(p.height).toArray() )
         if (p.hoveredIdx !== null) {
             // Progress
             const t = edgeAnimSpeed * ((new Date()).getTime() / 1000 - p.timeOfHover)
@@ -111,9 +119,11 @@ const createBG = () => new p5((p: p5) => {
             }
             // Show or not
             if (p.hoveredIdx !== null) {
-                let showEdges = new Array(p.nodesX1.length).fill(0)
-                p.edgesLists[p.hoveredIdx].forEach(edge => {
-                    showEdges[edge.idx] = edge.dir
+
+                const showEdges = new Array(p.edgesList.length).fill(0)
+
+                p.getAdjEdgesListIdx(p.hoveredIdx).forEach(e => {
+                    showEdges[e.idx] = e.dir
                 })
                 myShader.setUniform("showEdges", showEdges)
             }
