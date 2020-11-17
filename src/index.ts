@@ -18,7 +18,7 @@ const pointsSampling = pds.fill() // generate poisson disk sampling
 
 ArticlesDescription.forEach((d, id) => {
     // Use our generated poison disk sampling and add random fallback if needed
-    let randomPos: Point = pointsSampling[id] != null ? Point.fromArray(pointsSampling[id]) : Point.random();
+    let randomPos: Point = pointsSampling[id] != null ? Point.fromArray(pointsSampling[id]).addScalar(0.25) : Point.random();
 
     articles.push({
         desc: d,
@@ -82,12 +82,8 @@ const jitterPos = function() {
 }
 
 const init = () => {
-    document.body.innerHTML += h('div', {}, articles.map((article, idx) => ArticleInfos(article.desc, idx)))
-}
-
-const draw = () => {
-    document.getElementById("app").innerHTML =
-    h('div',
+    document.getElementById("app").innerHTML = h('div', {}, articles.map((article, idx) => ArticleInfos(article.desc, idx)))
+    + h('div',
     {
         id: 'transform-wrapper',
         style: `
@@ -95,10 +91,19 @@ const draw = () => {
             transform: matrix(${bg.myScale}, 0, 0, ${bg.myScale}, ${bg.translation.x}, ${bg.translation.y});
         `,
     }, 
-        articles.map((article, idx) => ArticleThumbnail(article, idx))
+        articles.map((article, idx) => ArticleThumbnail(article, idx, 50))
     )
+}
+
+const draw = () => {
+
     jitterPos()
-    requestAnimationFrame( draw );
+    for (let i = 0; i < articles.length; i++) {
+        document.getElementById(`article-thumbnail-${i}`).style.left = `calc(${articles[i].currentPos.x * 100}vw - 50px`;
+        document.getElementById(`article-thumbnail-${i}`).style.top = `calc(${articles[i].currentPos.y * 100}vh - 50px`;
+    }
+    
+    requestAnimationFrame(draw);
 }
 
 window.addEventListener('articleHovered', e => {
@@ -126,6 +131,7 @@ window.addEventListener("wheel", (e: WheelEvent) => {
     bg.myScale *= s
     const delta: Point = Point.fromObject(e);
     bg.translation.subtract(delta).multiplyScalar(s).add(delta);
+    document.getElementById(`transform-wrapper`).style.transform = `matrix(${bg.myScale}, 0, 0, ${bg.myScale}, ${bg.translation.x}, ${bg.translation.y})`;
 })
 
 window.addEventListener("mousedown", (e: MouseEvent) => {
@@ -147,5 +153,6 @@ window.addEventListener("mousemove", (e: MouseEvent) => {
         const delta: Point = Point.fromObject(e);
         bg.translation.add(delta.subtract(prevMouse))
         prevMouse = Point.fromObject(e)
+        document.getElementById(`transform-wrapper`).style.transform = `matrix(${bg.myScale}, 0, 0, ${bg.myScale}, ${bg.translation.x}, ${bg.translation.y})`;
     }
 })

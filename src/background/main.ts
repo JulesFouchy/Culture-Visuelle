@@ -11,7 +11,7 @@ const createBG = () => new p5((p: p5) => {
     const edgeAnimSpeed = 4
 
     p.myScale = 0.6302494097246083
-    p.translation = new Point(408.24819815389947, 254.4245692715046) // in pixels
+    p.translation = new Point(0, 0) // in pixels
 
     p.articlesList = []
     p.edgesList = []

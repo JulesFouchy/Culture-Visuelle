@@ -1,8 +1,7 @@
 import h from '../framework/h'
 import { Category , ArticleDescriptionAndPosition } from '../articles/ArticleDescription'
 
-export default (article : ArticleDescriptionAndPosition, idx: number) => {
-    const radius = 50 // in pixels
+export default (article : ArticleDescriptionAndPosition, idx: number, radius: number = 50) => {
     const followLink = "window.location.href = 'articles/"+ article.desc.folderName +"/index.html'"
     const color = article.desc.category === Category.Cultural     ? ' 60, 209,  52' :
                   article.desc.category === Category.Memorisation ? '200, 100, 255' :
@@ -10,6 +9,7 @@ export default (article : ArticleDescriptionAndPosition, idx: number) => {
                   : '255, 255, 255'
     return h('i', 
         {
+            id: `article-thumbnail-${idx}`,
             class: `article-thumbnail fas fa-${article.desc.icon}`,
             style: `
                 left: calc(${article.currentPos.x * 100}vw - ${radius}px);
