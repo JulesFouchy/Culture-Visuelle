@@ -97,7 +97,7 @@ const init = () => {
 
 const draw = () => {
 
-    jitterPos()
+    // jitterPos()
     for (let i = 0; i < articles.length; i++) {
         document.getElementById(`article-thumbnail-${i}`).style.left = `calc(${articles[i].currentPos.x * 100}vw - 50px`;
         document.getElementById(`article-thumbnail-${i}`).style.top = `calc(${articles[i].currentPos.y * 100}vh - 50px`;
