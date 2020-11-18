@@ -5,8 +5,8 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../framework/h":"yeGW"}],"QlFj":[function(require,module,exports) {
 "use strict";var e;Object.defineProperty(exports,"__esModule",{value:!0}),exports.Category=void 0,function(e){e[e.Technical=0]="Technical",e[e.Cultural=1]="Cultural",e[e.Memorisation=2]="Memorisation"}(e||(e={})),exports.Category=e;
 },{}],"QViX":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../ArticleDescription"),r={title:"La mémoire génétique dans les jeux Assassin's Creed",icon:"dna",category:e.Category.Cultural,authors:["Amandine KOHLMULLER","Sophie BOYER"],folderName:"Kohlmuller_Boyer"};exports.default=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../ArticleDescription"),r={title:"La mémoire génétique dans la franchise Assassin's Creed",icon:"dna",category:e.Category.Cultural,authors:["Amandine KOHLMULLER","Sophie BOYER"],folderName:"Kohlmuller_Boyer"};exports.default=r;
 },{"../ArticleDescription":"QlFj"}],"sQro":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("../../components/GenerateArticlePage")),r=e(require("./description"));t.default(r.default);
 },{"../../components/GenerateArticlePage":"jvMo","./description":"QViX"}]},{},["sQro"], null)
-//# sourceMappingURL=generate.dc79f00d.js.map
+//# sourceMappingURL=generate.c03e7242.js.map
