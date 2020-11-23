@@ -34,4 +34,4 @@ et allez à [localhost:1234/index.html](http://localhost:1234/index.html).
   
 ## Envoyer son article
 
-Le plus simple pour moi est que vous fassiez une *pull request* ; si vous ne savez pas faire, c'est l'occasion d'apprendre :wink: ; et si jamais vous n'y arrivez pas, envoyez-moi votre dossier par mail (jules.fouchy@ntymail.com).
+Le plus simple pour moi est que vous fassiez une *pull request* ; si vous ne savez pas faire, c'est l'occasion d'apprendre :wink: ; et si jamais vous n'y arrivez pas, envoyez-moi vos fichiers par mail (jules.fouchy@ntymail.com).
