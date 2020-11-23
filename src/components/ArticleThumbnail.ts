@@ -2,12 +2,15 @@ import h from '../framework/h'
 import { Category , ArticleDescriptionAndPosition } from '../types/ArticleDescription'
 
 export default (article : ArticleDescriptionAndPosition, idx: number, radius: number = 50) => {
-    const followLink = "window.location.href = './"+ article.desc.folderName +".html'"
     const color = article.desc.category === Category.Cultural     ? ' 255, 184, 0' :
                   article.desc.category === Category.Memorisation ? '39, 218, 121' :
                   article.desc.category === Category.Technical    ? ' 110, 51, 206'
                   : '255, 255, 255'
-    return h('i', 
+    return h('a', 
+        {
+            href: `./${article.desc.folderName}.html`
+        },
+        h('i', 
         {
             id: `article-thumbnail-${idx}`,
             class: `article-thumbnail fas fa-${article.desc.icon}`,
@@ -22,6 +25,6 @@ export default (article : ArticleDescriptionAndPosition, idx: number, radius: nu
                 -moz-box-shadow: 0px 0px 10px 3px rgba(${color}, 0.5);
             `,
             onmouseover: `window.dispatchEvent(new CustomEvent('articleHovered', {detail: {idx: ${idx}}}))`,
-            onclick: followLink,
         })
+    )
 }
