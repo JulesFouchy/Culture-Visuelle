@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Apprendre à créer un Palais mental sur Unreal",
+    title: "L'évolution de la représentation du Palais Mental",
     icon: "robot",
     category: Category.Technical,
     authors: ["Guillaume HAERINCK"],
