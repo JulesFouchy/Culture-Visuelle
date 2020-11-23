@@ -1,4 +1,4 @@
-import { ArticleDescription, Category } from '../ArticleDescription'
+import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Palais mental et mécanique de jeu dans le jeu vidéo",

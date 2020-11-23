@@ -1,4 +1,4 @@
-import { ArticleDescription, Category } from '../ArticleDescription'
+import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Comment  l'émergence du numérique modifie notre rapport à la mémoire ?",

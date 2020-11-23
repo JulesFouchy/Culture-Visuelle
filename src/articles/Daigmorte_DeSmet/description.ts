@@ -1,4 +1,4 @@
-import { ArticleDescription, Category } from '../ArticleDescription'
+import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Narration interactive ou mémoire de nos actions dans une histoire",

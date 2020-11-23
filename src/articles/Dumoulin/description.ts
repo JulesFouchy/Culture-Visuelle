@@ -1,4 +1,4 @@
-import { ArticleDescription, Category } from '../ArticleDescription'
+import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Représenter et construire son palais mental à travers le numérique : comment mémoriser ses cours grâce à Minecraft ?",
