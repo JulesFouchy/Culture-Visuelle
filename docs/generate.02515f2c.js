@@ -5,8 +5,8 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../framework/h":"yeGW"}],"QlFj":[function(require,module,exports) {
 "use strict";var e;Object.defineProperty(exports,"__esModule",{value:!0}),exports.Category=void 0,function(e){e[e.Technical=0]="Technical",e[e.Cultural=1]="Cultural",e[e.Memorisation=2]="Memorisation"}(e||(e={})),exports.Category=e;
 },{}],"GmLf":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../ArticleDescription"),r={title:"Apprendre à créer un Palais mental sur Unreal",icon:"robot",category:e.Category.Technical,authors:["Guillaume HAERINCK"],folderName:"Haerinck"};exports.default=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../ArticleDescription"),t={title:"L'évolution de la représentation du Palais Mental",icon:"robot",category:e.Category.Technical,authors:["Guillaume HAERINCK"],folderName:"Haerinck"};exports.default=t;
 },{"../ArticleDescription":"QlFj"}],"tjAI":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("../../components/GenerateArticlePage")),r=e(require("./description"));t.default(r.default);
 },{"../../components/GenerateArticlePage":"jvMo","./description":"GmLf"}]},{},["tjAI"], null)
-//# sourceMappingURL=generate.7627701f.js.map
+//# sourceMappingURL=generate.02515f2c.js.map
