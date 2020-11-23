@@ -140,7 +140,7 @@ window.addEventListener("mousedown", (e: MouseEvent) => {
 
     // Added link behavior here because updating the dom elements for the animation cancels the "onclick" mechanism.
     if(currentHoveArticle != undefined) {
-        window.location.href = `articles/${articles[currentHoveArticle].desc.folderName}/index.html`
+        window.location.href = `./${articles[currentHoveArticle].desc.folderName}.html`
     }
 })
 

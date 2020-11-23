@@ -1,5 +1,5 @@
 
-import  { ArticleDescription } from './articles/ArticleDescription'
+import  { ArticleDescription } from './types/ArticleDescription'
 
 import BK from './articles/Benharira_Koeppel/description'
 import BC from './articles/Boyer_Ciavaldini/description'

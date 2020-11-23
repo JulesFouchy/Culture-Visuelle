@@ -25,7 +25,7 @@ const BackArrow = () => h(
     'a',
     {
         class: 'back-arrow fas fa-arrow-left',
-        href: '../../index.html',
+        href: './index.html',
     })
 
 export default (description: ArticleDescription) => {

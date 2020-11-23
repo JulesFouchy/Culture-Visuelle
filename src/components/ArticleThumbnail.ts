@@ -1,8 +1,8 @@
 import h from '../framework/h'
-import { Category , ArticleDescriptionAndPosition } from '../articles/ArticleDescription'
+import { Category , ArticleDescriptionAndPosition } from '../types/ArticleDescription'
 
 export default (article : ArticleDescriptionAndPosition, idx: number, radius: number = 50) => {
-    const followLink = "window.location.href = 'articles/"+ article.desc.folderName +"/index.html'"
+    const followLink = "window.location.href = './"+ article.desc.folderName +".html'"
     const color = article.desc.category === Category.Cultural     ? ' 255, 184, 0' :
                   article.desc.category === Category.Memorisation ? '39, 218, 121' :
                   article.desc.category === Category.Technical    ? ' 110, 51, 206'
