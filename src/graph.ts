@@ -192,15 +192,21 @@ const Graph = function (canvasId) {
         for (let i = 0; i < articles.length; ++i) {
             const article: ArticleDescription = articles[i];
             if(article.currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2() < scope.config.pointsRadius*scope.config.pointsRadius) {
-                id= i;
+                id = i;
                 break;
             }
         };
         if(scope.currentHoveArticle)
             document.getElementById('article-'+scope.currentHoveArticle).classList.remove('visible')
-        scope.currentHoveArticle = id;
+
+        if(scope.currentHoveArticle  != id) {
+            scope.currentHoveArticle = id;
+            document.body.style.cursor = scope.currentHoveArticle ? 'pointer' : 'default';
+        }
+
         if(scope.currentHoveArticle)
             document.getElementById('article-'+scope.currentHoveArticle).classList.add('visible')
+
         return scope.currentHoveArticle;
     };
 
