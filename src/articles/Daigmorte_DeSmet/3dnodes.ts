@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
 import* as TWEEN from '@tweenjs/tween.js';
 import * as dat from 'dat.gui';
  
@@ -17,7 +18,8 @@ const App = function () {
 
     // Global variables
     const scene: THREE.Scene = new THREE.Scene();
-    const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+    let renderer: THREE.WebGLRenderer;
+    let rendererCss: CSS3DRenderer;
     let camera: THREE.PerspectiveCamera;
 
     // const postprocessing = {};
@@ -31,16 +33,12 @@ const App = function () {
         maxParticles: 10000,
         animate: true,
         speed: 0.5,
-        // dof: {
-        //     focus: 500.0,
-        //     aperture: 5,
-        //     maxblur: 0.01
-        // },
     };
 
     let mouse: THREE.Vector2 = new THREE.Vector2();
 
     // Scene variables
+    let cssContainer: THREE.Object3D;
     let particles: THREE.Points;
     let particlesGeom: THREE.Geometry;
     let particlesMat: THREE.PointsMaterial;
@@ -81,12 +79,21 @@ const App = function () {
     }
 
     const initThreeJs = function() {
-        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.0001, 1000);
         camera.position.z = 10;
         camera.lookAt(textPosition);
 
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+        renderer.setClearColor( 0x000000, 1 );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        // renderer.shadowMap.enabled = true;
+        // renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
+        document.getElementById('canvas').appendChild(renderer.domElement);
+
+        rendererCss = new CSS3DRenderer();
+        rendererCss.setSize( window.innerWidth, window.innerHeight);
+        document.getElementById('canvasCss').appendChild(rendererCss.domElement);
     }
 
     const initGui = function() {
@@ -94,11 +101,6 @@ const App = function () {
         settingsFolder.add(options, 'particlesCount', 10, options.maxParticles, 1).listen();
         settingsFolder.add(options, 'animate').listen();
         settingsFolder.add(options, 'speed', 0.1, 3).listen();
-        // const dofFolder = gui.addFolder('Depth Of field');
-        // dofFolder.add( options.dof, "focus", 1.0, 3000.0, 10 ).onChange( updateDof );
-        // dofFolder.add( options.dof, "aperture", 0, 10, 0.1 ).onChange( updateDof );
-        // dofFolder.add( options.dof, "maxblur", 0.0, 0.01, 0.001 ).onChange( updateDof );
-
         settingsFolder.open();
     }
 
@@ -115,29 +117,35 @@ const App = function () {
 
         boundingBoxTextsSpawn.translate(new THREE.Vector3(0, 0, -30));
     }
+    
+    function getDomElem(id, width) {
+        const obj = new THREE.Object3D();
+        
+        const source = document.getElementById(id);
 
-    // const initPostprocessing = function() {
+        // const element = document.createElement('div');
+        // element.style.width = width+'px';
+        // element.style.height = height+'px';
+        // element.innerHTML = source.innerHTML;
+        const element = source.cloneNode(true);
+        element.style.width = width+'px';
 
-    //     const renderPass = new RenderPass( scene, camera );
-    //     const bokehPass = new BokehPass( scene, camera, {
-    //         focus: 1.0,
-    //         aperture: 0.025,
-    //         maxblur: 0.01,
-
-    //         width: window.innerWidth,
-    //         height: window.innerHeight
-    //     } );
-
-    //     const composer = new EffectComposer( renderer );
-    //     composer.addPass( renderPass );
-    //     composer.addPass( bokehPass );
-
-    //     postprocessing.composer = composer;
-    //     postprocessing.bokeh = bokehPass;
-    // }
+        var css3dObject = new CSS3DObject(element);
+        obj.css3dObject = css3dObject;
+        obj.add(css3dObject);
+    
+        return obj
+    }
 
     const setupScene = function() {
 
+        cssContainer = getDomElem('wrapper', 1000);
+        
+        cssContainer.position.z = -50;
+        cssContainer.scale.multiplyScalar(0.12);
+
+        scene.add( cssContainer );
+        
         // particles
         particlesGeom = new THREE.Geometry();
 
@@ -147,7 +155,7 @@ const App = function () {
             const vertex: THREE.Vector3 = rand.multiplyScalar(2).subScalar(1).multiply(boxSize);
             particlesGeom.vertices.push(vertex);
         }
-        particlesMat = new THREE.PointsMaterial({ color: 0x0011ff, size: 0.1 });
+        particlesMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
         particles = new THREE.Points(particlesGeom, particlesMat);
 
         // particles.geometry.dynamic = true;
@@ -155,10 +163,10 @@ const App = function () {
 
         scene.add(particles);
 
-        // texts
-        texts = messages.map((m , id) => generateText(m, id))
+        // // texts
+        // texts = messages.map((m , id) => generateText(m, id))
         
-        texts.forEach(t => scene.add(t));
+        // texts.forEach(t => scene.add(t));
 
     }
 
@@ -218,19 +226,22 @@ const App = function () {
             
     }
 
-    // const updateDof = function ( ) {
-    //     postprocessing.bokeh.uniforms[ "focus" ].value = options.dof.focus;
-    //     postprocessing.bokeh.uniforms[ "aperture" ].value = options.dof.aperture * 0.00001;
-    //     postprocessing.bokeh.uniforms[ "maxblur" ].value = options.dof.maxblur;
-    // };
-
     const updateTextRotation = () => {
         
         const windowsSize = new THREE.Vector2(window.innerWidth, window.innerHeight);
         let nmc = new THREE.Vector2().copy(mouse).divide(windowsSize).multiplyScalar(2).subScalar(1); // normalized mouse coord
         nmc.y *= -1; // flip y axis
         nmc.multiplyScalar(0.5); // reduce effect
-        texts[currentMsgId].lookAt(nmc.x, nmc.y, 0.5);
+        // texts[currentMsgId].lookAt(nmc.x, nmc.y, 0.5);
+        cssContainer.lookAt(nmc.x, nmc.y, 0.5);
+    }
+
+    const updateDOMRotation = () => {
+        const windowsSize = new THREE.Vector2(window.innerWidth, window.innerHeight);
+        let nmc = new THREE.Vector2().copy(mouse).divide(windowsSize).multiplyScalar(2).subScalar(1); // normalized mouse coord
+        nmc.y *= -1; // flip y axis
+        nmc.multiplyScalar(2.0); // increase effect
+        cssContainer.lookAt(nmc.x, nmc.y, 0.5);
     }
 
     const updateParticleCount = () => {
@@ -260,8 +271,8 @@ const App = function () {
             // cube.rotation.x += 0.001;
             // cube.rotation.y += 0.001;
 
-            const h = (360 * time % 360) / 360;
-            particlesMat.color.setHSL(h, 1., 0.8);
+            // const h = (360 * time % 360) / 360;
+            // particlesMat.color.setHSL(h, 1., 0.8);
 
 
             particlesGeom.rotateY(0.0002);
@@ -276,7 +287,7 @@ const App = function () {
 
     const render = function() {
         renderer.render(scene, camera);
-        // postprocessing.composer.render(0.1);
+        rendererCss.render( scene, camera );
     }
 
     this.connect = function () {
@@ -307,6 +318,7 @@ const App = function () {
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
         renderer.setSize(w, h);
+        rendererCss.setSize(w, h);
         // postprocessing.composer.setSize(w, h);
         // render();       
     }
@@ -320,8 +332,9 @@ const App = function () {
     const onDocumentMouseMove = function(e) {
         mouse.set(e.clientX, e.clientY); // update mouse
         
-        if(enableRotation)
-            updateTextRotation();
+        if(enableRotation) {
+            updateDOMRotation();
+        }
         /*
         // intersects = raycaster.intersectObject(cube);
         const intersects = raycaster.intersectObjects(cubes);
