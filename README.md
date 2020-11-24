@@ -10,7 +10,7 @@ Dans le dossier **./src/articles** vous trouverez :
     - sa **catégorie** : Technical, Cultural ou Memorisation
     - l'**icone** qui le représentera, choisi parmi cette liste : [fontawesome.com/cheatsheet](https://fontawesome.com/cheatsheet).
     - le nom des auteurs
-  - Le fichier **\[vos_noms\].html** où vous mettrez votre article **dans le div "mon-article"**. Vous êtes libres de faire ce que vous voulez sur cette page.
+  - Le fichier **\[vos_noms\].html** où vous mettrez votre article **dans le div "mon-article"**. Vous êtes libres de faire ce que vous voulez sur cette page. Un style de base est déjà appliqué à toutes les pages, donc pas besoin de vous embêter avec ça. Ceci dit, si vous voulez rajouter votre style bien particulier c'est tout à fait possible.
     - N'hésitez pas à profiter du format web pour enrichir votre article avec des liens, images, vidéos *etc.* :wink:.
     - Mettez des balises \<h1\>, \<h2>, \<h3> au besoin, \<b> pour le **gras**, \<i> pour l'*italique*...
     - Utilisez **\<br/>** pour revenir à la ligne et **\<br/>\<br/>** pour un saut de ligne.
