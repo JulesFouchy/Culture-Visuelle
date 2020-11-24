@@ -5,8 +5,8 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../framework/h":"AvVX"}],"XNoJ":[function(require,module,exports) {
 "use strict";var e;Object.defineProperty(exports,"__esModule",{value:!0}),exports.Category=void 0,function(e){e[e.Technical=0]="Technical",e[e.Cultural=1]="Cultural",e[e.Memorisation=2]="Memorisation"}(e||(e={})),exports.Category=e;
 },{}],"w8dq":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../types/ArticleDescription"),r={title:"Un surprenant problème de connexion",icon:"square-root-alt",category:e.Category.Technical,authors:["Jules FOUCHY"],folderName:"Fouchy"};exports.default=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../types/ArticleDescription"),t={title:"Si seulement la Terre était un donut. . .",icon:"square-root-alt",category:e.Category.Technical,authors:["Jules FOUCHY"],folderName:"Fouchy"};exports.default=t;
 },{"../../types/ArticleDescription":"XNoJ"}],"WHbs":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("../../components/GenerateArticlePage")),r=e(require("./description"));t.default(r.default);
 },{"../../components/GenerateArticlePage":"NkeW","./description":"w8dq"}]},{},["WHbs"], null)
-//# sourceMappingURL=generate.6dfd1bee.js.map
+//# sourceMappingURL=generate.7dd4973c.js.map
