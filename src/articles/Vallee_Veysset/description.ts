@@ -3,6 +3,7 @@ import { ArticleDescription, Category } from '../../types/ArticleDescription'
 const description: ArticleDescription = {
     title: "Mémoire dans les rêves",
     icon: "cloud",
+    iconUnicode: "\uf0c2",
     category: Category.Cultural,
     authors: ["Roxane VALLÉE", "Sarah VEYSSET"],
     // Don't touch the folder name
