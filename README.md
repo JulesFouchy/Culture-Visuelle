@@ -13,6 +13,7 @@ Dans le dossier **./src/articles** vous trouverez :
   - Le fichier **\[vos_noms\].html** où vous mettrez votre article **dans le div "mon-article"**. Vous êtes libres de faire ce que vous voulez sur cette page.
     - N'hésitez pas à profiter du format web pour enrichir votre article avec des liens, images, vidéos *etc.* :wink:.
     - Mettez des balises \<h1\>, \<h2>, \<h3> au besoin, \<b> pour le **gras**, \<i> pour l'*italique*...
+    - Utilisez **\<br/>** pour revenir à la ligne et **\<br/>\<br/>** pour un saut de ligne.
     - Vous pouvez rajouter **\<span class="indent"\>\</span\>** au début de vos paragraphes pour leur mettre un alinéa.
     - Vous pouvez ajouter toutes les ressources que vous voulez dans votre dossier (image, css, son, *etc.*) et les lier *en utilisant un chemin relatif*, par exemple **\<img src="./\[vos_noms\]/mon_image.jpg"\>**
 
