@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Un surprenant problème de connexion",
+    title: "Si seulement la Terre était un donut. . .",
     icon: "square-root-alt", //"network-wired",
     category: Category.Technical,
     authors: ["Jules FOUCHY"],
