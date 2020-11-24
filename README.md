@@ -15,7 +15,7 @@ Dans le dossier **./src/articles** vous trouverez :
     - Mettez des balises \<h1\>, \<h2>, \<h3> au besoin, \<b> pour le **gras**, \<i> pour l'*italique*...
     - Utilisez **\<br/>** pour revenir à la ligne et **\<br/>\<br/>** pour un saut de ligne.
     - Vous pouvez rajouter **\<span class="indent"\>\</span\>** au début de vos paragraphes pour leur mettre un alinéa.
-    - Vous pouvez ajouter toutes les ressources que vous voulez dans votre dossier (image, css, son, *etc.*) et les lier *en utilisant un chemin relatif*, par exemple **\<img src="./\[vos_noms\]/mon_image.jpg"\>**
+    - Vous pouvez ajouter toutes les ressources que vous voulez dans votre dossier (image, css, son, *etc.*) et les lier *en utilisant un chemin relatif*, par exemple **\<img src="./\[vos_noms\]/mon_image.jpg"/\>**
 
 Si vous n'êtes pas à l'aise avec le html ou que vous rencontrez des problèmes pour faire des choses avancées, demandez-moi (jules.fouchy@ntymail.com). Et au pire vous m'enverrez un fichier texte ou pdf et je m'occuperai de faire la conversion.
 
