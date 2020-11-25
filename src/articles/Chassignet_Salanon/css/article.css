@@ -1,0 +1,154 @@
+body{
+	margin-left: 3%;
+	margin-right: 3%;
+	font-family: 'Montserrat Light', arial;
+	color:#2C2C2C;
+}
+#wrapper{
+	background-color: #FEFFF2;
+}
+h1, h3{
+	font-family: 'Abril Fatface Regular', arial;
+	letter-spacing: 3px;	
+}
+.article-name{
+	font-family: 'Abril Fatface Regular', arial;
+	text-shadow: -0.07em -0.08em #F0E68C;
+	color: black;
+	letter-spacing: 3px;
+
+}
+
+h1{
+	text-shadow: -0.07em -0.08em #F0E68C;
+	color: black;
+}
+
+.conclusion_titre{
+	text-shadow: -0.07em -0.08em #F0E68C;
+	color: black;
+	font-family: 'Abril Fatface Regular', arial;
+	margin-top: 2em;
+}
+
+h5{
+	font-family: 'Montserrat Light', arial;
+	letter-spacing: 0.5px;
+}
+
+h4{
+	font-family: 'Montserrat Light', arial;
+}
+
+
+.texte{
+	text-align: center;
+}
+
+.rectangle1{ 
+	background:#2C2C2C;
+	padding-top: 10px;
+}
+
+.rectangle1 p, .rectangle1 ul{
+	color: white;
+}
+
+.rectangle2, .rectangle1{
+	width:100%;
+	height:100%;
+	margin-top: 15px;
+}
+
+.rectangle2 h4, .def{
+	text-align: justify;
+	padding: 0 15px 0 15px;
+}
+
+.rectangle1 h4{
+	color: white;
+	text-align: justify;
+	padding: 0 15px 0 15px;
+}
+
+.container{
+	padding:0;
+	text-align: center;
+}
+
+p{
+	text-align: justify;
+	padding: 15px;
+}
+
+hr{
+	height:1.5px;
+	background-color: black;
+}
+
+@media (min-width: 40rem) {
+	body{
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
+
+.abstrait{
+	color:#F0E68C !important;
+}
+
+.def{
+	font-size: 13px;
+	color: white;
+	padding-top: 5px;
+}
+
+.defBlack{
+	font-size: 13px;
+	padding-top: 5px;
+	padding: 0 20px 0 20px;
+	text-align: center;
+}
+
+ul{
+	text-align: justify;
+	padding: 0 35px 0 35px;
+}
+
+
+
+
+.tiret {
+   list-style-type: none;
+}
+
+.tiret li:before {
+   content: '- ';
+}
+
+#source{
+	list-style-type: none;
+}
+
+#source li a{
+	color: #87CEEB;
+}
+
+* {box-sizing: border-box;}
+        
+.wrapper > div {
+ 
+    padding: 1em;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 10px;
+}
+
+
+.wrapper p a {
+	color: #87CEEB;
+}
