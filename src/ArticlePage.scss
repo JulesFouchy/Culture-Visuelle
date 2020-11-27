@@ -1,5 +1,5 @@
 html {
-    color: white;
+    color: black;
 }
 
 #canvas-bg{
@@ -15,25 +15,43 @@ body {
 }
 
 #wrapper {
-    width: 80%;
-    background-color: rgba($color: black, $alpha: 0.8);
+    width: 65%;
+    background-color: rgba($color: white, $alpha: 0.95);
     border: white solid 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .mon-article {
     margin: 40px;
     margin-top: 0;
     text-align: justify !important;
+    p {
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 0.9em;
+        text-align: justify;
+    }
+    h1, h2 {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 1.5em;
+        text-align: left;
+        text-transform: uppercase;
+    }
     img {
-        width: 650px;
+        /*width: 650px;*/
         max-width: 100%;
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    a {
+        color: #FFB800;
+        font-weight: bold;
     }
 }
 
@@ -57,16 +75,22 @@ body {
     margin-top: 20px;
     margin-bottom: 40px;
     text-align: center;
+    color: black;
+    ;
 }
 
 .article-name {
+    font-family: 'Source Sans Pro';
     font-style: italic;
-    font-weight: bold;
-    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2.2em;
     margin-bottom: 15px;
 }
 
 .article-authors {
-    font-weight: lighter;
-    font-size: 22px;
+    font-family: Noto Sans;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.1em;
 }
