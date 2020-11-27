@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "La mémoire génétique dans la franchise Assassin's Creed",
+    title: "Le traitement de la mémoire génétique dans la franchise Assassin's Creed",
     icon: "dna",
     iconUnicode: "\uf471",
     category: Category.Cultural,
