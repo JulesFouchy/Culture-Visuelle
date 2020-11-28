@@ -33,13 +33,11 @@ body {
     margin: 40px;
     margin-top: 0;
     text-align: justify !important;
-    p {
-        font-family: 'Noto Sans';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 0.9em;
-        text-align: justify;
-    }
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.9em;
+    text-align: justify;
     h1, h2 {
         font-family: 'Source Sans Pro';
         font-style: normal;
@@ -92,7 +90,7 @@ $header_H_padding: 30px;
 #header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     width: 100%;
     color: white;
     &.cultural {
