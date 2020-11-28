@@ -255,7 +255,14 @@ const Graph = function (canvasId) {
             console.log('click', scope.currentHoveArticle);
             
             if(scope.currentHoveArticle) {
-                window.location.href = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
+                const link = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
+                if (e.ctrlKey) {
+                    // Open in a new tab
+                    window.open(link)
+                }
+                else {
+                    window.location.href = link
+                }
             }
         });
 
