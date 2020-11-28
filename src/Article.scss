@@ -9,20 +9,7 @@ html {
     color: black;
 }
 
-#canvas-bg{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -10;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-}
-
 #wrapper {
-    width: 65%;
     background-color: rgba($color: white, $alpha: 0.95);
     display: flex;
     flex-direction: column;
@@ -30,24 +17,15 @@ body {
 }
 
 .mon-article {
-    margin: 40px;
-    margin-top: 0;
-    text-align: justify !important;
     font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: normal;
     font-size: 0.9em;
-    text-align: justify;
     h1, h2 {
         font-family: 'Source Sans Pro';
-        font-style: normal;
         font-weight: 900;
         font-size: 1.5em;
-        text-align: left;
         text-transform: uppercase;
     }
     img {
-        /*width: 650px;*/
         max-width: 100%;
         display: block;
         margin-left: auto;
@@ -73,20 +51,6 @@ body {
     }
 }
 
-.indent {
-    margin: 15px;
-}
-
-.back-arrow {
-    position: fixed;
-    left: 40px;
-    top: 40px;
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-}
-
-$header_H_padding: 30px;
 #header {
     display: flex;
     flex-direction: column;
@@ -106,27 +70,15 @@ $header_H_padding: 30px;
 
 .article-name {
     font-family: 'Source Sans Pro';
-    font-style: italic;
-    font-weight: 900;
     text-transform: uppercase;
+    font-weight: 900;
     font-size: 2.2em;
-    margin: 0 $header_H_padding;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    line-height: 100%;
 }
 
 .article-authors {
     font-family: Noto Sans;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin: 0 $header_H_padding;
-    margin-bottom: 15px;
 }
 
 .article-date {
     font-family: Noto Sans;
-    margin: 0 $header_H_padding;
-    margin-bottom: 20px;
 }

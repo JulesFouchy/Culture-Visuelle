@@ -30,8 +30,8 @@
     font-weight: 800;
     font-size: 3em;
     width: 100%;
-    text-align: center;
-    margin-bottom: 0;
+    /* text-align: center; */
+    /* margin-bottom: 0; */
 }
 
 #header .article-authors {
@@ -68,6 +68,7 @@
     font-size: 3em;
     text-transform: uppercase;
     margin: 20px 0;
+    text-align: left;
 }
 
 #partie1 .paragraph p,#partie3 .paragraph p {
@@ -151,10 +152,6 @@ width: 100%;
         column-count: 2;
     }
 
-    .citation {
-        text-align: left;
-    }
-
     #partie_analyse {
         flex-direction: column;
     }
@@ -166,4 +163,10 @@ width: 100%;
 }
 
 
+img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
