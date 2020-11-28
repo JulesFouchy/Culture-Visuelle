@@ -1,5 +1,5 @@
 import h from '../framework/h'
-import { ArticleDescription } from '../articles/ArticleDescription'
+import { ArticleDescription, Category } from '../types/ArticleDescription'
 
 const Header = (description: ArticleDescription) => {
     const rand = Math.floor(Math.random()*2)
@@ -17,7 +17,14 @@ const Header = (description: ArticleDescription) => {
         },    
             description.authors.length == 1
             ? description.authors
-            : `${description.authors[rand]} & ${description.authors[(rand+1)%2]}`
+            : `${description.authors[rand]}, ${description.authors[(rand+1)%2]}`
+    )
+    + h(
+        'div',
+        {
+            class: 'article-date'
+        },    
+            '08.12.2020'
     )
 }
 
@@ -31,5 +38,15 @@ const BackArrow = () => h(
 export default (description: ArticleDescription) => {
     document.title = description.title
     document.getElementById('header').innerHTML = Header(description)
+    document.getElementById('header').classList.add(
+          (description.category === Category.Technical) ? 'technical'
+        : (description.category === Category.Cultural)  ? 'cultural'
+        :                                                 'memorisation'
+    )
+    document.getElementsByClassName('mon-article')[0].classList.add(
+          (description.category === Category.Technical) ? 'technical'
+        : (description.category === Category.Cultural)  ? 'cultural'
+        :                                                 'memorisation'
+    )
     document.getElementById('wrapper').innerHTML += BackArrow()
 }

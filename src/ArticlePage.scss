@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+$technical_color: #6E33CE;
+$cultural_color: #FFB800;
+$memorisation_color: #27DA79;
+
 html {
     color: black;
 }
@@ -17,7 +24,6 @@ body {
 #wrapper {
     width: 65%;
     background-color: rgba($color: white, $alpha: 0.95);
-    border: white solid 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,8 +56,22 @@ body {
         margin-right: auto;
     }
     a {
-        color: #FFB800;
         font-weight: bold;
+    }
+    &.cultural {
+        a {
+            color: $cultural_color;
+        }
+    }
+    &.technical {
+        a {
+            color: $technical_color;
+        }
+    }
+    &.memorisation {
+        a {
+            color: $memorisation_color;
+        }
     }
 }
 
@@ -68,15 +88,22 @@ body {
     text-decoration: none;
 }
 
+$header_H_padding: 30px;
 #header {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    text-align: center;
-    color: black;
-    ;
+    margin-bottom: 35px;
+    width: 100%;
+    color: white;
+    &.cultural {
+        background-color: $cultural_color;
+    }
+    &.technical {
+        background-color: $technical_color;
+    }
+    &.memorisation {
+        background-color: $memorisation_color;
+    }
 }
 
 .article-name {
@@ -85,7 +112,10 @@ body {
     font-weight: 900;
     text-transform: uppercase;
     font-size: 2.2em;
+    margin: 0 $header_H_padding;
+    margin-top: 25px;
     margin-bottom: 15px;
+    line-height: 100%;
 }
 
 .article-authors {
@@ -93,4 +123,12 @@ body {
     font-style: italic;
     font-weight: bold;
     font-size: 1.1em;
+    margin: 0 $header_H_padding;
+    margin-bottom: 15px;
+}
+
+.article-date {
+    font-family: Noto Sans;
+    margin: 0 $header_H_padding;
+    margin-bottom: 20px;
 }
