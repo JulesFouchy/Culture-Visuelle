@@ -255,7 +255,7 @@ const Graph = function (canvasId) {
             console.log('click', scope.currentHoveArticle);
             
             if(scope.currentHoveArticle) {
-                window.location.href = `/${articles[scope.currentHoveArticle].desc.folderName}.html`
+                window.location.href = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
             }
         });
 
