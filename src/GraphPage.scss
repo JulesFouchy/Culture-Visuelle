@@ -2,11 +2,9 @@ body {
     background: none;
     overflow: hidden; 
 }
-#defaultCanvas0 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -10;
+
+#graph {
+    font-family: 'Font Awesome 5 Free';
 }
 
 #canvas-bg{
@@ -27,14 +25,12 @@ body {
 }
 
 .fullscreen {
-    position: absolute;
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-
-#graph {
-font-family: 'Font Awesome 5 Free';
 }
 
 
