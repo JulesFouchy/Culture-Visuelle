@@ -1,0 +1,57 @@
+#canvas-bg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper {
+    width: 65%;
+}
+
+
+.mon-article {
+    margin: 40px;
+    margin-top: 0;
+    text-align: justify !important;
+}
+
+.indent {
+    margin: 15px;
+}
+
+.back-arrow {
+    position: fixed;
+    left: 40px;
+    top: 40px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+$header_H_padding: 30px;
+.article-name {
+    font-style: italic;
+    margin: 0 $header_H_padding;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    line-height: 100%;
+}
+
+.article-authors {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0 $header_H_padding;
+    margin-bottom: 15px;
+}
+
+.article-date {
+    margin: 0 $header_H_padding;
+    margin-bottom: 20px;
+}

@@ -16,6 +16,7 @@ Dans le dossier **./src/articles** vous trouverez :
     - Utilisez **\<br/>** pour revenir à la ligne et **\<br/>\<br/>** pour un saut de ligne.
     - Vous pouvez rajouter **\<span class="indent"\>\</span\>** au début de vos paragraphes pour leur mettre un alinéa.
     - Vous pouvez ajouter toutes les ressources que vous voulez dans votre dossier (image, css, son, *etc.*) et les lier *en utilisant un chemin relatif*, par exemple **\<img src="./\[vos_noms\]/mon_image.jpg"/\>**
+    - **Si vous faites votre propre style** et que le style de base vous gêne trop, vous n'êtes pas obligés d'inclure *Article.scss* (mais gardez *ArticleMin.scss* !)
 
 Si vous n'êtes pas à l'aise avec le html ou que vous rencontrez des problèmes pour faire des choses avancées, demandez-moi (jules.fouchy@ntymail.com). Et au pire vous m'enverrez un fichier texte ou pdf et je m'occuperai de faire la conversion.
 
