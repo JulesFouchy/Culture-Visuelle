@@ -117,11 +117,6 @@ const Graph = function (canvasId) {
         enableClear: true
     };
 
-    this.edgesEasing = {
-        current: 0.8,
-        old: 0,
-    }
-
     this.currentEdges = {
         fromEdge: 0,
         toEdges: [], 
@@ -130,13 +125,6 @@ const Graph = function (canvasId) {
     }
 
     this.oldEdgesBuffer = []
-
-    this.oldEdges = {
-        fromEdge: 0,
-        toEdges: [], 
-        easing: 1,
-        action: undefined,
-    }
 
     this.mousePosition = Point.zero();
     this.currentHoveArticle = undefined;
@@ -262,15 +250,15 @@ const Graph = function (canvasId) {
                 break;
             }
         };
-        if(scope.currentHoveArticle)
+        if(scope.currentHoveArticle != undefined)
             document.getElementById('article-'+scope.currentHoveArticle).classList.remove('visible')
 
-        if(scope.currentHoveArticle  != id) {
+        if(scope.currentHoveArticle != id) {
             scope.currentHoveArticle = id;
-            document.body.style.cursor = scope.currentHoveArticle ? 'pointer' : 'default';
+            document.body.style.cursor = scope.currentHoveArticle != undefined ? 'pointer' : 'default';
         }
 
-        if(scope.currentHoveArticle)
+        if(scope.currentHoveArticle != undefined)
             document.getElementById('article-'+scope.currentHoveArticle).classList.add('visible')
 
         return scope.currentHoveArticle;
@@ -323,7 +311,7 @@ const Graph = function (canvasId) {
         scope.canvas.addEventListener('mousedown',  function (e) {
             console.log('click', scope.currentHoveArticle);
             
-            if(scope.currentHoveArticle) {
+            if(scope.currentHoveArticle != undefined) {
                 const link = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
                 if (e.ctrlKey) {
                     // Open in a new tab
