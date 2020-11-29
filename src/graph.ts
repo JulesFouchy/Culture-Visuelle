@@ -6,6 +6,8 @@ import perlin from 'perlin.js'
 import ArticlesDescription from './ArticlesDescription'
 import ArticleInfos from './components/ArticleInfos'
 
+import* as TWEEN from '@tweenjs/tween.js';
+
 const articles: ArticleDescriptionAndPosition[] = []
 
 const articleColor = function (article: ArticleDescriptionAndPosition) {
@@ -101,7 +103,6 @@ const Graph = function (canvasId) {
 
     this.canvas = document.getElementById(canvasId);
     
-    console.log(this.canvas );
     this.context = this.canvas.getContext("2d");
 
     this.config = {
@@ -116,6 +117,27 @@ const Graph = function (canvasId) {
         enableClear: true
     };
 
+    this.edgesEasing = {
+        current: 0.8,
+        old: 0,
+    }
+
+    this.currentEdges = {
+        fromEdge: 0,
+        toEdges: [], 
+        easing: 1,
+        action: undefined,
+    }
+
+    this.oldEdgesBuffer = []
+
+    this.oldEdges = {
+        fromEdge: 0,
+        toEdges: [], 
+        easing: 1,
+        action: undefined,
+    }
+
     this.mousePosition = Point.zero();
     this.currentHoveArticle = undefined;
     this.nearestArticleId = 0;
@@ -127,13 +149,30 @@ const Graph = function (canvasId) {
         scope.context.lineWidth = scope.config.linethickness;
         scope.context.beginPath();
 
-        edges.forEach((edge, id) => {
-            if(!onlySelected || (onlySelected && scope.currentHoveArticle && (scope.currentHoveArticle == edge[0] || scope.currentHoveArticle == edge[1]))) {
+        if(!onlySelected) {
+            edges.forEach(edge => {
                 scope.context.moveTo(articles[edge[0]].currentPos.x * scope.canvas.width, articles[edge[0]].currentPos.y * scope.canvas.height);
                 scope.context.lineTo(articles[edge[1]].currentPos.x * scope.canvas.width, articles[edge[1]].currentPos.y * scope.canvas.height);
+            });
+        }else {
+            {
+                const fromPos = articles[scope.currentEdges.fromEdge].currentPos;
+                scope.currentEdges.toEdges.forEach(edgeId => {
+                    const dir = articles[edgeId].currentPos.clone().subtract(fromPos).multiplyScalar(scope.currentEdges.easing);
+                    scope.context.moveTo(fromPos.x * scope.canvas.width, fromPos.y * scope.canvas.height);
+                    scope.context.lineTo((fromPos.x + dir.x) * scope.canvas.width, (fromPos.y + dir.y) * scope.canvas.height);
+                });
             }
-        });
 
+            scope.oldEdgesBuffer.forEach(oeb => {
+                const fromPos = articles[oeb.fromEdge].currentPos;
+                oeb.toEdges.forEach(edgeId => {
+                    const dir = articles[edgeId].currentPos.clone().subtract(fromPos).multiplyScalar(oeb.easing);
+                    scope.context.moveTo(fromPos.x * scope.canvas.width, fromPos.y * scope.canvas.height);
+                    scope.context.lineTo((fromPos.x + dir.x) * scope.canvas.width, (fromPos.y + dir.y) * scope.canvas.height);
+                });
+            });
+        }
         scope.context.stroke();
     };
 
@@ -145,13 +184,40 @@ const Graph = function (canvasId) {
         ++scope.time
     }
 
+    this.updateEdges = function() {
+        const currentNearestArticleId = scope.nearestArticleId;
+        scope.computeNearest();
+
+
+        if(currentNearestArticleId != scope.nearestArticleId) {
+
+            // add old to buffer animation edges
+            scope.oldEdgesBuffer.push(
+                {
+                    fromEdge: scope.currentEdges.fromEdge,
+                    toEdges: scope.currentEdges.toEdges,
+                    easing: scope.currentEdges.easing,
+                    action: undefined
+                }
+            );
+            scope.oldEdgesBuffer[scope.oldEdgesBuffer.length-1].action = new TWEEN.Tween(scope.oldEdgesBuffer[scope.oldEdgesBuffer.length-1]).easing(TWEEN.Easing.Cubic.Out).to({"easing": 0.0}, 800).start();
+
+            // new edges
+            scope.currentEdges.fromEdge = scope.nearestArticleId
+            scope.currentEdges.toEdges = edges.filter(e => e.includes(scope.nearestArticleId)).map(e => e[0] == scope.nearestArticleId ? e[1] : e[0]);
+            scope.currentEdges.easing = 0.0;
+            if(scope.currentEdges.action) scope.currentEdges.action.stop();
+            scope.currentEdges.action = new TWEEN.Tween(scope.currentEdges).easing(TWEEN.Easing.Cubic.Out).to({"easing": 1.0}, 800).start();
+        }
+    }
+
     this.computeNearest = function () {
-        let nearestDist = articles[scope.nearestArticleId].currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2();
+        let currentNearestDist = articles[scope.nearestArticleId].currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2();
 
         for (let i = 0; i < articles.length; i++) {
             const dist = articles[i].currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2();
-            if (dist < nearestDist) {
-                nearestDist = dist;
+            if (dist < currentNearestDist) {
+                currentNearestDist = dist;
                 scope.nearestArticleId = i
             }
         }
@@ -225,6 +291,8 @@ const Graph = function (canvasId) {
         scope.jitter();
         scope.drawEges(true);
         scope.drawCircles();
+        TWEEN.update();
+        scope.oldEdgesBuffer = scope.oldEdgesBuffer.filter(edges => edges.easing > 0)
         requestAnimationFrame(scope.update);
     };
 
@@ -242,7 +310,8 @@ const Graph = function (canvasId) {
         scope.canvas.addEventListener("mousemove", function (e) {
             scope.getMouseInput(e);
             scope.getOverArticleId();
-            scope.computeNearest();
+            // scope.computeNearest();
+            scope.updateEdges();
              
         });
 
