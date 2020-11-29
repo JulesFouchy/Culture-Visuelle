@@ -17,7 +17,7 @@ const Header = (description: ArticleDescription) => {
         },    
             description.authors.length == 1
             ? description.authors
-            : `${description.authors[rand]}, ${description.authors[(rand+1)%2]}`
+            : `${description.authors[rand]} & ${description.authors[(rand+1)%2]}`
     )
     + h(
         'div',
