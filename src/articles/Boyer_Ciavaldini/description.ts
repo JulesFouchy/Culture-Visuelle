@@ -5,7 +5,7 @@ const description: ArticleDescription = {
     icon: "film",
     iconUnicode: "\uf008",
     category: Category.Cultural,
-    authors: ["Johan Boyer", "Elisa Ciavaldini"],
+    authors: ["Johan BOYER", "Elisa CIAVALDINI"],
     // Don't touch the folder name
     folderName: "Boyer_Ciavaldini",
 }
