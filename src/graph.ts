@@ -97,7 +97,7 @@ const edges = [
 ]
 
 const Graph = function (canvasId) {
-    var scope = this;
+    let scope = this;
 
     this.canvas = document.getElementById(canvasId);
     
@@ -270,4 +270,7 @@ const Graph = function (canvasId) {
 
 };
 
-let mainGraph = new Graph('graph')
+
+window.addEventListener("load", function(){
+    const mainGraph = new Graph('graph');
+});
