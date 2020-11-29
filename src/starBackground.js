@@ -1,6 +1,6 @@
 import {Scene, PerspectiveCamera, WebGLRenderer,Geometry,Vector3,PointsMaterial,Points } from 'three'
 
-const StartBackground = function(wrapperId) {
+const StarBackground = function(wrapperId) {
   let scope = this;
 
   let scene, camera, renderer, starGeo, star, stars, starMaterial;
@@ -61,6 +61,6 @@ const StartBackground = function(wrapperId) {
 }
 
 window.addEventListener("load", function(){
-  const startBackground = new StartBackground('startBackground');
+  const starBackground = new StarBackground('starBackground');
 });
 
