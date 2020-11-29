@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+html {
+    background: none;
+}
+
 #wrapper {
 	border:none;
 	background-color: #f1c0bb;
@@ -30,14 +34,15 @@
     font-weight: 800;
     font-size: 3em;
     width: 100%;
-    /* text-align: center; */
-    /* margin-bottom: 0; */
+    text-align: center;
+    margin-bottom: 0;
 }
 
 #header .article-authors {
 	font-family: 'EB Garamond',serif;
     font-weight: 400;
     font-size: 2em;
+    text-align: center;
 }
 
 .intro{
@@ -68,7 +73,6 @@
     font-size: 3em;
     text-transform: uppercase;
     margin: 20px 0;
-    text-align: left;
 }
 
 #partie1 .paragraph p,#partie3 .paragraph p {
@@ -152,6 +156,10 @@ width: 100%;
         column-count: 2;
     }
 
+    .citation {
+        text-align: left;
+    }
+
     #partie_analyse {
         flex-direction: column;
     }
@@ -160,13 +168,5 @@ width: 100%;
         width: 100%;
     }
 
-}
-
-
-img {
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
