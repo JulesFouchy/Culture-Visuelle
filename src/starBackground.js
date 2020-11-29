@@ -22,7 +22,7 @@ const StarBackground = function(wrapperId) {
   }
   
   this.init = function() {
-    window.addEventListener('resize', onResize);
+    window.addEventListener('resize', () => onResize())
 
     scene = new Scene()
     camera = new PerspectiveCamera(760, window.innerWidth / window.innerHeight, 1, 1000)
