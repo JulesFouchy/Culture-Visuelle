@@ -1,11 +1,9 @@
-import { Scene, PerspectiveCamera, WebGLRenderer,Audio,AudioLoader, AudioListener,Geometry,Vector3,TextureLoader,PointsMaterial,Points } from 'three'
-
-
+import {Scene, PerspectiveCamera, WebGLRenderer,Geometry,Vector3,PointsMaterial,Points } from 'three'
 
 const StartBackground = function(wrapperId) {
   let scope = this;
 
-  let scene, camera, renderer, starGeo, star, stars, sprite, starMaterial;
+  let scene, camera, renderer, starGeo, star, stars, starMaterial;
 
   this.animate = function() {
     starGeo.vertices.forEach(p=>{
