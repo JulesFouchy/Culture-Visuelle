@@ -8,17 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../GraphPage.scss">
+    <link rel="stylesheet" type="text/css" href="../Graph.scss">
     <title>Culture Visuelle</title>
 </head>
 <body>
-    <p style="color: white;">Musique : Remix d'Interstellar par Ross Bugden</p>
-    <i class="fas fa-play" id="startButton"></i>
-    <i class="fas fa-stop" id="stopButton"></i>
-    
-    <span id = "app"></span>
-    <script src="../index.ts"></script>
-    <script src="../starBackground.js"></script>
+    <div id="starBackground"></div>
+
+    <div id="musicPlay">
+        <p style="color: white;">Musique : Remix d'Interstellar par Ross Bugden</p>
+        <i class="fas fa-play" id="startButton"></i>
+        <i class="fas fa-stop" id="stopButton"></i>
+    </div>
+    <span id = "articlesInfos"></span>
+
+    <div class="fullscreen">
+        <canvas id="graph"></canvas>
+    </div>
+
+    <!-- <script src="../index.ts"></script> -->
     <script src="../music.js"></script>
+    <script src="../graph.ts"></script>
+    <script src="../starBackground.js"></script>
 </body>
 </html>

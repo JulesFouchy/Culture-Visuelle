@@ -26,6 +26,12 @@ export default class Point {
     return this;
   }
 
+  addValues(x: number, y: number) {
+    this.x += x;
+    this.y += y;
+    return this;
+  }
+
   addScalar(val: number) {
     this.x += val;
     this.y += val;
@@ -35,6 +41,12 @@ export default class Point {
   subtract(p: Point) {
     this.x -= p.x;
     this.y -= p.y;
+    return this;
+  }
+
+  subtractValues(x: number, y: number) {
+    this.x -= x;
+    this.y -= y;
     return this;
   }
 
@@ -50,6 +62,12 @@ export default class Point {
     return this;
   }
 
+  multiplyValues(x: number, y: number) {
+    this.x *= x;
+    this.y *= y;
+    return this;
+  }
+
   multiplyScalar(val: number) {
     this.x *= val;
     this.y *= val;
@@ -59,6 +77,12 @@ export default class Point {
   divide(p: Point) {
     this.x /= p.x;
     this.y /= p.y;
+    return this;
+  }
+
+  divideValues(x: number, y: number) {
+    this.x /= x;
+    this.y /= y;
     return this;
   }
 
@@ -87,6 +111,8 @@ export default class Point {
   }
 
   mag() { return Math.sqrt(this.x * this.x + this.y * this.y); }
+
+  mag2() { return this.x * this.x + this.y * this.y; }
 
   distanceTo(p: Point) { return Math.sqrt((p.x - this.x) * (p.x - this.x) + (p.y - this.y) * (p.y - this.y)); }
 

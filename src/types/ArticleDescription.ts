@@ -10,6 +10,7 @@ interface ArticleDescription {
     title: string,
     authors: string[],
     icon: string,
+    iconUnicode: string,
     category: Category,
     folderName: string,
 }
