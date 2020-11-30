@@ -309,7 +309,6 @@ const Graph = function (canvasId) {
         });
 
         scope.canvas.addEventListener('mousedown',  function (e) {
-            console.log('click', scope.currentHoveArticle);
             
             if(scope.currentHoveArticle != undefined) {
                 const link = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
