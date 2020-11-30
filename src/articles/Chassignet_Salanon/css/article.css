@@ -1,44 +1,72 @@
-
 body{
 	/* margin-left: 3%;
 	margin-right: 3%; */
 	font-family: 'Montserrat Light', arial;
 	color:#2C2C2C;
 }
+
 #wrapper{
 	background-color: #FEFFF2;
 }
+
+.mon-article h1, .mon-article h2 {
+    font-family: 'Abril Fatface Regular', arial;
+    font-weight: 900;
+  	font-size: 3em;
+  	    font-weight: 500;
+    line-height: 1.2;
+    }
+
+ .mon-article h3{
+ 	font-size: 1.7rem;
+ 	    font-weight: 500;
+    line-height: 1.2;
+ }
+
 h1, h3{
 	font-family: 'Abril Fatface Regular', arial;
-	letter-spacing: 3px;	
+	letter-spacing: 3px;
+	margin: 5px;	
 }
+
 .article-name{
 	font-family: 'Abril Fatface Regular', arial;
 	text-shadow: -0.07em -0.08em #F0E68C;
 	color: black;
 	letter-spacing: 3px;
-
 }
 
 h1{
 	text-shadow: -0.07em -0.08em #F0E68C;
 	color: black;
+
 }
+
+
 
 .conclusion_titre{
 	text-shadow: -0.07em -0.08em #F0E68C;
 	color: black;
 	font-family: 'Abril Fatface Regular', arial;
 	margin-top: 2em;
+	text-align: center;
+    margin-bottom: 0;
+    font-size: 2em;
 }
 
 h5{
 	font-family: 'Montserrat Light', arial;
 	letter-spacing: 0.5px;
+	font-size: 1em;
 }
 
 h4{
 	font-family: 'Montserrat Light', arial;
+	margin: 5px;
+	font-size: 1.7em;
+	font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 
@@ -136,11 +164,11 @@ ul{
 }
 
 * {box-sizing: border-box;}
-        
+/*       
 .wrapper > div {
  
     padding: 1em;
-}
+}*/
 
 .wrapper {
 	display: grid;
@@ -153,3 +181,23 @@ ul{
 .wrapper p a {
 	color: #87CEEB;
 }
+
+.mon-article{
+	margin:10px;
+}
+
+.mon-article.memorisation a {
+    /* color: #27DA79; */
+    color: #87CEEB;
+    }
+
+ @media (min-width: 40rem){
+	  body {
+	    margin-left: 2%;
+	   margin-right: 2%;
+	    }
+    }
+
+ #header{
+   		display: none;
+ }
