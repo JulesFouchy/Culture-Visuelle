@@ -1,6 +1,6 @@
 body{
-	margin-left: 3%;
-	margin-right: 3%;
+	/* margin-left: 3%;
+	margin-right: 3%; */
 	font-family: 'Montserrat Light', arial;
 	color:#2C2C2C;
 }
@@ -115,12 +115,12 @@ hr{
 	background-color: black;
 }
 
-@media (min-width: 40rem) {
+/* @media (min-width: 40rem) {
 	body{
 		margin-left: 15%;
 		margin-right: 15%;
 	}
-}
+} */
 
 .abstrait{
 	color:#F0E68C !important;
