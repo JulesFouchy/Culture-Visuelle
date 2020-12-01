@@ -9,15 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../ArticleMin.scss">
     <link rel="stylesheet" type="text/css" href="../Article.scss">
     <link rel="stylesheet" type="text/css" href="./Daigmorte_DeSmet/style.scss">
-    <title></title>
     <script type="text/javascript" src="./Daigmorte_DeSmet/3dnodes.ts"></script>
+    <title></title>
+    
     <script src="../starBackground.js"></script>
 </head>
 <body>
-    <script>
-        let app;
-    </script>
-
     <a class= 'back-arrow fas fa-arrow-left' href= './index.html'></a>
     <div id="starBackground"></div>
     <div id="canvasCss"></div>
@@ -27,7 +24,7 @@
             <h1>La Mémoire dans la narration interactive </h1>
             <p>
             Bienvenue dans cet article autour de la narration interactive. Il te suffit de cliquer sur les mots tel que <button>celui-ci</button> pour lire la suite de l’article. </br>
-            <button onclick="app.changeSection('introduction')">Bonne lecture ...</button>
+            <button class='sectionsBtn' data-link='introduction'>Bonne lecture ...</button>
             </p>
         </div>
         <div id="introduction" class="sections">
@@ -50,8 +47,8 @@
                 L’interaction peut ici s'interpréter au sens large “d'échange d'informations entre deux parties au travers d’un médium" peu importe l’information et le médium.</br>
                 </br> 
                 En l’occurrence, il s’agit ici d’influer sur le cours du récit, faire des choix pour orienter le cours des éléments narratifs qui vont suivre. </br>
-                Cette interaction peut prendre de multiples formes, que ce soit par le parcours des pages dans un <button onclick="app.changeSection('I_lecture')">livre</button>, 
-                via le visionnage d’un <button onclick="app.changeSection('I_films')">film ou une série</button> ou encore le gameplay dans les <button onclick="app.changeSection('I_jeuxVideo')">jeux vidéo</button>.
+                Cette interaction peut prendre de multiples formes, que ce soit par le parcours des pages dans un <button class='sectionsBtn' data-link='I_lecture'>livre</button>, 
+                via le visionnage d’un <button class='sectionsBtn' data-link='I_films'>film ou une série</button> ou encore le gameplay dans les <button class='sectionsBtn' data-link='I_jeuxVideo'>jeux vidéo</button>.
 
                 Cependant, peu importe qu’elle soit classique ou non, la narration implique toujours de se rappeler des événements passés d’une histoire pour représenter la globalité du récit. </br>
                 La mémoire du lecteur permet de lier les événements les uns aux autres, de créer une cohérence dans le récit.</br>
@@ -69,7 +66,7 @@
             </p>
             <img src="./Daigmorte_DeSmet/images/image4.png" width="50%">
             <p>
-            Nous allons maintenant voir comment la mémoire est impliquée dans la <button onclick="app.changeSection('II_intro')">construction d’histoire interactive</button>.
+            Nous allons maintenant voir comment la mémoire est impliquée dans la <button class='sectionsBtn' data-link='II_intro'>construction d’histoire interactive</button>.
             </p>
         </div>
         <div id="I_films" class="sections">
@@ -83,7 +80,7 @@
             </p>
             <img src="./Daigmorte_DeSmet/images/image5.png" width="50%">
             <p>
-            Nous allons maintenant voir comment la mémoire est impliquée dans la <button onclick="app.changeSection('II_intro')">construction d’histoire interactive</button>.
+            Nous allons maintenant voir comment la mémoire est impliquée dans la <button class='sectionsBtn' data-link='II_intro'>construction d’histoire interactive</button>.
             </p>
         </div>
         <div id="I_jeuxVideo" class="sections">
@@ -105,14 +102,14 @@
                 Ces différentes manières de faire n'entraînent généralement pas une modification du scénario, mais changent drastiquement l’expérience de jeu.
             </p>
             <p>
-            Nous allons maintenant voir comment la mémoire est impliquée dans la <button onclick="app.changeSection('II_intro')">construction d’histoire interactive</button>.
+            Nous allons maintenant voir comment la mémoire est impliquée dans la <button class='sectionsBtn' data-link='II_intro'>construction d’histoire interactive</button>.
             </p>
         </div>
         <div id="II_intro" class="sections">
             <p>
             Bien que des éléments narratifs peuvent toujours être mêlés à l'expérience du spectateur comme dans le cadre d’un jeu vidéo où certains éléments de l’histoire dévoilent 
             des possibilités futures pour le joueur, c’est réellement dans le cadre d’une histoire interactive que les choix du spectateur vont faire sens.  </br>
-            Ici, deux types de mémoires sont en jeu : <button onclick="app.changeSection('II_memoireSpectateur')">la mémoire du spectateur</button> et la mémoire de l’histoire.
+            Ici, deux types de mémoires sont en jeu : <button class='sectionsBtn' data-link='II_memoireSpectateur'>la mémoire du spectateur</button> et la mémoire de l’histoire.
             </p>
         </div>
         <div id="II_memoireSpectateur" class="sections">
@@ -126,7 +123,7 @@
             Dans l’histoire interactive, la mémoire du spectateur n’est donc pas seulement une représentation du récit dans sa généralité 
             mais une mémoire globale de toutes les expériences passées qui va influencer toutes les décisions à prendre.
             
-            Mais ce n’est la seule mémoire en jeu, il y a aussi <button onclick="app.changeSection('II_memoireHistoire')">la mémoire de l’histoire</button>.
+            Mais ce n’est la seule mémoire en jeu, il y a aussi <button class='sectionsBtn' data-link='II_memoireHistoire'>la mémoire de l’histoire</button>.
             </p>
         </div>
         <div id="II_memoireHistoire" class="sections">
@@ -139,7 +136,7 @@
             Cette mémoire ne fonctionne pas comme celle du spectateur, elle va se construire grâce à celle-ci et va permettre d’orienter la narration en fonction des actions du spectateur.
             C’est à travers l’implication de la mémoire du spectateur que s’articule la création d’histoires interactives.
             
-            C’est donc grâce à ces deux mémoires que l’expérience existe et nous allons en voir un <button onclick="app.changeSection('II_coexistance')">exemple</button>.
+            C’est donc grâce à ces deux mémoires que l’expérience existe et nous allons en voir un <button class='sectionsBtn' data-link='II_coexistance'>exemple</button>.
             </p>
         </div>
         <div id="II_coexistance" class="sections">
@@ -157,7 +154,7 @@
             <p>
             Ici, donc, un ensemble d’actions des deux mémoires va permettre de créer une divergence narrative.
 
-            C’est au travers de ces éléments que <button onclick="app.changeSection('III_intro')">l’expérience du spectateur</button> va être impactée.
+            C’est au travers de ces éléments que <button class='sectionsBtn' data-link='III_intro'>l’expérience du spectateur</button> va être impactée.
             </p>
         </div>
         <div id="III_intro" class="sections">
@@ -166,7 +163,7 @@
             la mémoire rentre encore en jeu.
             Cela peut avoir de nombreux points positifs mais également certains inconvenants.
 
-            <button onclick="app.changeSection('III_Positifs')">&rarr;</button>
+            <button class='sectionsBtn' data-link='III_Positifs'>&rarr;</button>
             <p>
         </div>
 
@@ -179,7 +176,7 @@
             Aussi un spectateur qui parcourt l’histoire une fois n’en verra pas la totalité de son contenu. Si jamais l’histoire l’a passionné, cela peut lui donner envie de refaire plusieurs fois l’expérience afin d’en voir toutes les possibilités, toutes les fins différentes.
 
             Dans l’exemple précédemment cité, Detroit Become Human, il faudra rejouer de nombreuses fois pour explorer chaque chemin de l’histoire. </br>
-            <button onclick="app.changeSection('III_Negatifs')">&rarr;</button>
+            <button class='sectionsBtn' data-link='III_Negatifs'>&rarr;</button>
             </p>
             <img src="./Daigmorte_DeSmet/images/image3.png" width="50%">
         </div>
@@ -192,7 +189,7 @@
 
 
             Tous ces points marquent chacun d’entre nous différemment en fonction de l’expérience que l’on a vécue.</br>
-            <button onclick="app.changeSection('III_Emotions')">&rarr;</button>
+            <button class='sectionsBtn' data-link='III_Emotions'>&rarr;</button>
             </p>
         </div>
         <div id="III_Emotions" class="sections">
@@ -203,7 +200,7 @@
             
             Ensuite, cela va préparer aux futures expériences, comme dit lors de la deuxième partie, et influencer de futurs choix.
             
-            Nos émotions de l’expérience forgent nos souvenirs et nos expériences <button onclick="app.changeSection('Conclusion')">futures</button>.
+            Nos émotions de l’expérience forgent nos souvenirs et nos expériences <button class='sectionsBtn' data-link='Conclusion'>futures</button>.
             </p>
         </div>
 
@@ -214,7 +211,7 @@
             
             Cette expérience impacte le ressenti et les souvenirs du spectateur durablement pour faire face aux prochaines. 
             </br>
-            <button onclick="app.changeSection('Bibliographie')">Bibiographie</button>
+            <button class='sectionsBtn' data-link='Bibliographie'>Bibiographie</button>
             </p>
         </div>
         <div id="Bibliographie" class="sections">

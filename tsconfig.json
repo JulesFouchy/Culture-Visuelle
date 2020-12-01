@@ -3,7 +3,7 @@
         "target": "es6",
         "sourceMap": true,
         "moduleResolution": "node",
-        "lib": ["ES2017"],
+        "lib": ["ES2017", "dom"],
         "types": [
             "three"
         ],

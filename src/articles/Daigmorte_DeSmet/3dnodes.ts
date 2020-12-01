@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
 import* as TWEEN from '@tweenjs/tween.js';
-import * as dat from 'dat.gui';
 
 const App = function () {
 
@@ -70,14 +69,19 @@ const App = function () {
         const source = document.getElementById(sectionId);
         
         if(source) {
-            const element = source.cloneNode(true);
+            const element = source.cloneNode(true) as HTMLElement;
             currentSectionId = element.id;
             // element.id = element.id+'Current';
             element.style.width = '65%';
-            element.style.opacity = 0.0;
+            element.style.opacity = '0.0';
             element.appendChild(arrowBack);
 
             const elementInfos = getNodeinfos(element);
+
+            // link buttons
+            const buttons = element.getElementsByClassName("sectionsBtn");
+            for (let i = 0; i < buttons.length; i++)
+                buttons[i].onclick = function() { scope.changeSection( buttons[i].dataset.link); };;
 
             scroolOffset = 0;
             if(elementInfos.height > window.innerHeight) {
@@ -266,6 +270,6 @@ const App = function () {
 };
 
 window.addEventListener("load", function() {
-    app = new App();
+    const app = new App();
 });
 
