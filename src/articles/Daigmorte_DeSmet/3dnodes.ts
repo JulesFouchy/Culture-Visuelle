@@ -23,7 +23,7 @@ const App = function () {
     // Scene variables
     let cssContainer: THREE.Object3D;
 
-    let cssBlockPosition = new THREE.Vector3(0, 0, -50);
+    let cssBlockPosition = new THREE.Vector3(0, 0, -60);
     let scroolMomentum = 0;
     let scroolOffset = 0;
     let maxScroolOffset = 300;
@@ -72,7 +72,7 @@ const App = function () {
         if(source) {
             const element = source.cloneNode(true);
             currentSectionId = element.id;
-            element.id = element.id+'Current';
+            // element.id = element.id+'Current';
             element.style.width = '65%';
             element.style.opacity = 0.0;
             element.appendChild(arrowBack);
@@ -118,8 +118,8 @@ const App = function () {
 
         cssContainer = new THREE.Object3D();
 
-        scope.loadSection('section01');
-        
+        scope.loadSection('title');
+
         cssContainer.scale.multiplyScalar(0.12);
 
         scene.add(cssContainer);
