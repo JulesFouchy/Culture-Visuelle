@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Topologie des mindmaps",
+    title: "Les mind maps et la mémoire",
     icon: "sitemap",
     iconUnicode: "\uf0e8",
     category: Category.Technical,
