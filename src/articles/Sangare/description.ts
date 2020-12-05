@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Mythes et mémoire",
+    title: "Mythologie et Arts de la mémoire : retour aux sources.",
     icon: "dragon",
     iconUnicode: "\uf6d5",
     category: Category.Cultural,
