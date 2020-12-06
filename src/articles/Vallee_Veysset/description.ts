@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Mémoire dans les rêves",
+    title: "La mémoire, clé des rêves",
     icon: "cloud",
     iconUnicode: "\uf0c2",
     category: Category.Cultural,
