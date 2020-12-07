@@ -1,10 +1,10 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Palais mental dans les séries et films",
-    icon: "photo-video",
-    iconUnicode: "\uf87c",
-    category: Category.Cultural,
+    title: "Comment mémoriser à la manière de Sherlock Holmes ?",
+    icon: "search",
+    iconUnicode: "\uf002",
+    category: Category.Memorisation,
     authors: ["Victorine MAUREL", "Margaux SÉGUY"],
     // Don't touch the folder name
     folderName: "Maurel_Seguy",
