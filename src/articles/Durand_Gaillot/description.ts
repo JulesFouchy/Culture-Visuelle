@@ -1,10 +1,10 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Apprendre de nouvelles langues/cultures peut changer nos représentation mentales des informations (hypothèse de Sapir-Whorf)",
+    title: "L'influence du langage",
     icon: "om",
     iconUnicode: "\uf679",
-    category: Category.Technical,
+    category: Category.Cultural,
     authors: ["Zoé DURAND", "Mélissande GAILLOT"],
     // Don't touch the folder name
     folderName: "Durand_Gaillot",
