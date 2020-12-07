@@ -1,0 +1,35 @@
+
+
+@font-face {
+  font-family: baskerville;
+  src: url(LibreBaskerville-Regular.ttf);
+}
+
+table, th, td{
+	border : 1px solid black;
+}
+
+th, td{
+	width : 20%;
+	text-align : center;
+	padding : 8px;
+}
+
+table{
+	margin : auto;
+}
+
+.legende{
+	font-style : italic;
+	text-align : center;
+}
+
+h1{
+	font-size : 3em !important;
+	text-align : center;
+}
+
+p, table, th, td{
+	font-family : baskerville;
+	font-size : 15px;
+}
