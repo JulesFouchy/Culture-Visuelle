@@ -16,11 +16,14 @@
     <title></title>
 </head>
 <style>
-    #header {
-        margin-bottom: 0;
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+    .article-name {
+        font-family: 'VT323', monospace;
+        font-size: 2.4em;
     }
     .mon-article {
-        margin: 20px 70px 35px 70px;
+        margin: 75px;
+        margin-top: 0;
     }
     section {
         margin: 50px 0;
@@ -28,6 +31,8 @@
     .mon-article h1 {
         color: #FFB800;
         margin: 20px 0;
+        font-family: 'VT323', monospace;
+        font-size: 1.8em;
     }
     p {
         font-size: 1em;
@@ -64,8 +69,8 @@
         margin: 0 0 20px 20px;
         width: calc(50% - 20px);
     }
-    .illustration>figure>figcaption, 
-    .illustration>figure>figcaption>cite {
+    figure>figcaption, 
+    figure>figcaption>cite {
         font-style: italic;
         text-align: left;
     }
@@ -97,20 +102,24 @@
         -webkit-hyphens: auto;
         hyphens: auto;
     }
+    .fancybox-container {
+        font-family: "Noto Sans";
+    }
 
     @media screen and (max-width: 991px) {
+        #header {
+            margin-bottom: 0;
+        }
         .mon-article {
-            margin: 0 30px 30px 30px;
+            margin: 40px;
+            margin-top: 0;
         }
         section {
-            margin: 30px 0;
-        }
-        p {
-            margin: 10px 0;
+            margin: 40px 0;
         }
         .illustration {
             flex-direction: column;
-            margin: 20px 0;
+            margin: 0 0 -20px 0;
         }
         .illustration>figure {
             flex: 0 0 auto;
@@ -136,16 +145,16 @@
         <section>
             <h1>Introduction</h1>
             <p>
-                Jeux vidéo et mémoire ont toujours été étroitement liés. En effet, <strong>plusieurs aspects de l’évolution du jeu vidéo sont corrélés à celle de la mémoire 
-                informatique</strong>. À l’origine, les jeux vidéo ne possédaient pas de sauvegarde de la partie : cela se prêtait bien aux jeux d’arcade. Par la suite, 
-                pour garder un souvenir de l’avancée dans le jeu, un code pouvait être donné puis réutilisé pour reprendre la partie vers là où le joueur s’était arrêté. 
-                Et enfin, la sauvegarde a pu se faire dans des fichiers, sur la mémoire interne ou à distance. Ainsi, la mémoire accordée à un jeu a pu être plus grande, 
-                permettant plus de libertés aux joueurs et aux programmeurs. Des <strong>nouveaux concepts de jeu, dont les hub worlds</strong> ont alors émergé et évolué, 
-                avec comme témoin de cette évolution la série <i>Super Mario</i><sup><a href="#note_1">[1]</a></sup> de Nintendo.
+                Jeux vidéo et mémoire ont toujours été étroitement liés. En effet, <strong>plusieurs aspects de l’évolution du jeu vidéo sont corrélés à celle de la mémoire informatique</strong>. 
+                À l’origine, les jeux vidéo ne possédaient pas de sauvegarde de la partie : cela se prêtait bien aux jeux d’arcade. Par la suite, pour garder un souvenir de l’avancée 
+                dans le jeu, un code pouvait être donné au joueur pour qu'il reprenne sa partie là où elle s'était arrêtée. Et enfin, la sauvegarde a pu se faire dans des fichiers, 
+                sur la mémoire interne ou à distance. Ainsi, la mémoire accordée à un jeu a pu être plus grande, permettant plus de libertés aux joueurs et aux programmeurs. 
+                De <strong>nouveaux concepts de jeu, dont les hub worlds</strong> ont alors émergé et évolué, avec comme témoin de cette évolution la série <i>Super Mario</i><sup><a href="#note_1">[1]</a></sup> de Nintendo.
             </p>
             <p>
-                <strong>L’art de la mémoire</strong> semble donc avoir sa déclinaison dans le hub world. Lieu où tous les niveaux s’interconnectent en un même lieu, il est une sorte de 
-                <strong>matérialisation dématérielle d’un palais mental vidéoludique gardant en mémoire la progression de la partie du joueur</strong>.
+                La <strong>mémoire et ses méthodes mnémotechniques (art de la mémoire)</strong> semblent donc avoir leur déclinaison dans le hub world. Lieu où tous les niveaux 
+                s’interconnectent en un même lieu, <strong>on se demandera en quoi le hub world est une sorte de palais mental vidéoludique et dématérialisé, gardant en mémoire la 
+                progression de la partie du joueur</strong>.
             </p>
         </section>
         <section>
@@ -161,13 +170,13 @@
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/niveaux_1.jpg" data-fancybox data-caption="Structure linéaire classique d'un jeu">
+                    <a href="./Ory_MaryVallee/img/niveaux_1.jpg" data-fancybox="structure" data-caption="Structure linéaire classique d'un jeu">
 						<img src="./Ory_MaryVallee/img/niveaux_1.jpg" alt="Structure linéaire classique d'un jeu" /> 
 					</a>
                     <figcaption>Structure linéaire classique d'un jeu</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/niveaux_2.jpg" data-fancybox data-caption="Structure « en hub » d'un jeu">
+                    <a href="./Ory_MaryVallee/img/niveaux_2.jpg" data-fancybox="structure" data-caption="Structure « en hub » d'un jeu">
 						<img src="./Ory_MaryVallee/img/niveaux_2.jpg" alt="Structure « en hub » d'un jeu" /> 
                     </a>
                     <figcaption>Structure « en hub » d'un jeu</figcaption>
@@ -182,13 +191,13 @@
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/1_donkeykong.png" data-fancybox data-caption="Donkey Kong (1981, arcade)">
+                    <a href="./Ory_MaryVallee/img/1_donkeykong.png" data-fancybox="game" data-caption="Donkey Kong (1981, arcade)">
 						<img src="./Ory_MaryVallee/img/1_donkeykong.png" alt="Écran de Donkey Kong" />  
 					</a>
                     <figcaption><cite>Donkey Kong</cite> (1981, arcade)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/2_supermariobros.png" data-fancybox data-caption="Super Mario Bros (1985, NES)">
+                    <a href="./Ory_MaryVallee/img/2_supermariobros.png" data-fancybox="game" data-caption="Super Mario Bros (1985, NES)">
 						<img src="./Ory_MaryVallee/img/2_supermariobros.png" alt="Niveau 1-1 de Super Mario Bros" />  
 					</a>
                     <figcaption><cite>Super Mario Bros</cite> (1985, NES)</figcaption>
@@ -196,64 +205,64 @@
             </div>
             <p>
                 Mais, à la fin des années 80, il devint possible de posséder des jeux vidéo dans son salon, sur sa propre console. Les jeux sont alors devenus davantage 
-                narratifs et moins à visée de <i>scoring</i><sup><a href="#note_2">[2]</a></sup>. Tous les niveaux se devaient donc d’être visités. Les développeurs ont alors inventé de nouveaux concepts 
-                d’accès aux différents niveaux du jeu. Il y eut d’abord l’<strong>interface de sélection de niveaux</strong> et la <strong>carte du monde</strong>, 
+                narratifs et moins à visée de <i>scoring</i><sup><a href="#note_2">[2]</a></sup>. Tous les niveaux se devaient d’être visités. Les développeurs ont donc inventé de nouveaux 
+                concepts d’accès aux différents niveaux du jeu. Il y eut d’abord l’<strong>interface de sélection de niveaux</strong> et la <strong>carte du monde</strong>, 
                 où le joueur sélectionnait le niveau où il souhaitait se rendre. Mais, les interactions y étaient très limitées et cela n’existait que pour transporter 
                 le joueur d’un niveau à un autre.
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/3_dragonbuster.png" data-fancybox data-caption="Dragon Buster (1985, arcade)">
+                    <a href="./Ory_MaryVallee/img/3_dragonbuster.png" data-fancybox="game" data-caption="Dragon Buster (1985, arcade)">
 						<img src="./Ory_MaryVallee/img/3_dragonbuster.png" alt="Interface de sélection de Dragon Buster" /> 
 					</a>
                     <figcaption><cite>Dragon Buster</cite> (1985, arcade)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/4_sorcerian.png" data-fancybox data-caption="Sorcerian (1987, PC-8801)">
+                    <a href="./Ory_MaryVallee/img/4_sorcerian.png" data-fancybox="game" data-caption="Sorcerian (1987, PC-8801)">
 						<img src="./Ory_MaryVallee/img/4_sorcerian.png" alt="Interface de sélection de Sorcerian" /> 
 					</a>
                     <figcaption><cite>Sorcerian</cite> (1987, PC-8801)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/5_supermariobros3.png" data-fancybox data-caption="Hub world de Super Mario Bros 3">
+                    <a href="./Ory_MaryVallee/img/5_supermariobros3.png" data-fancybox="game" data-caption="Hub world de Super Mario Bros 3">
 						<img src="./Ory_MaryVallee/img/5_supermariobros3.png" alt="Interface de sélection de Super Mario Bros 3" /> 
 					</a>
                     <figcaption><cite>Super Mario Bros 3</cite> (1988, NES)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/6_bioniccommando.png" data-fancybox data-caption="Bionic Commando (1988, NES)">
+                    <a href="./Ory_MaryVallee/img/6_bioniccommando.png" data-fancybox="game" data-caption="Bionic Commando (1988, NES)">
 						<img src="./Ory_MaryVallee/img/6_bioniccommando.png" alt="Interface de sélection de Bionic Commando" /> 
 					</a>
                     <figcaption><cite>Bionic Commando</cite> (1988, NES)</figcaption>
                 </figure>
             </div>
             <p>
-                Puis, dans les années  90, les premiers <strong>hub worlds modernes</strong> sont apparus, notamment grâce à l’amélioration des technologies informatiques et la 
+                Puis, dans les années  90, les <strong>premières sortes de hub worlds</strong> sont apparues, notamment grâce à l’amélioration des technologies informatiques et la 
                 possibilité de sauvegarde qui voit le jour. Ils prennent la forme de pseudo-niveaux, entre les niveaux, utilisant souvent le même moteur de jeu que ces 
-                derniers. Les différents niveaux étaient accessibles au moyen de <strong>portails</strong>, souvent représentés par des portes. Il était aussi possible d’avoir plusieurs 
-                hub worlds dans un même jeu.
+                derniers. Il était donc possible d’avoir plusieurs hub worlds dans un même jeu : on peut aussi parler de <strong>hub level</strong> (« niveau plateforme »). Les différents 
+                niveaux étaient accessibles au moyen de <strong>portails</strong>, souvent représentés par des portes.
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/7_wonderboyIII.png" data-fancybox data-caption="Wonder Boy III: The Dragon’s Trap (1989, Master System)">
+                    <a href="./Ory_MaryVallee/img/7_wonderboyIII.png" data-fancybox="game" data-caption="Wonder Boy III: The Dragon’s Trap (1989, Master System)">
 						<img src="./Ory_MaryVallee/img/7_wonderboyIII.png" alt="Hub world de Wonder Boy III" /> 
 					</a>
                     <figcaption><cite>Wonder Boy III: The Dragon’s Trap</cite> (1989, Master System)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/8_castleofillusion.png" data-fancybox data-caption="Castle of Illusion (1990, Mega Drive)">
+                    <a href="./Ory_MaryVallee/img/8_castleofillusion.png" data-fancybox="game" data-caption="Castle of Illusion (1990, Mega Drive)">
 						<img src="./Ory_MaryVallee/img/8_castleofillusion.png" alt="Hub world de Castle of Illusion" />
 					</a>
                     <figcaption><cite>Castle of Illusion</cite> (1990, Mega Drive)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/9_jamespond2.png" data-fancybox data-caption="James Pond 2 (1991, Amiga 500 & Atari ST)">
+                    <a href="./Ory_MaryVallee/img/9_jamespond2.png" data-fancybox="game" data-caption="James Pond 2 (1991, Amiga 500 & Atari ST)">
 						<img src="./Ory_MaryVallee/img/9_jamespond2.png" alt="Hub world de James Pond 2" /> 
 					</a>
                     <figcaption><cite>James Pond 2</cite> (1991, Amiga 500 & Atari ST)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/10_kirbysdreamland2.png" data-fancybox data-caption="Kirby’s Dream Land 2 (1995, Game Boy)">
+                    <a href="./Ory_MaryVallee/img/10_kirbysdreamland2.png" data-fancybox="game" data-caption="Kirby’s Dream Land 2 (1995, Game Boy)">
 						<img src="./Ory_MaryVallee/img/10_kirbysdreamland2.png" alt="Hub world de Kirby’s Dream Land 2" /> 
 					</a>
                     <figcaption><cite>Kirby’s Dream Land 2</cite> (1995, Game Boy)</figcaption>
@@ -261,18 +270,18 @@
             </div>
             <p>
                 En parallèle, les <i>RPGs</i><sup><a href="#note_3">[3]</a></sup> japonais popularisent le concept d’<strong>overworld</strong> : un monde « du dessus ». À leurs débuts, ils ressemblaient à une carte où le joueur pouvait se 
-                balader et rentrer dans des zones plus définies (donjons, villages, etc.). Plus tard, et avec la complexification et diversification des jeux, le terme d’overworld se 
-                mélangera à celui de hub world.
+                balader et rentrer dans des zones plus définies (donjons, villages, etc.). Plus tard, et avec la diversification des jeux, le terme d’overworld se mélangera à celui de hub 
+                world.
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/11_dragonquest.png" data-fancybox data-caption="Dragon Quest (1986, NES)">
+                    <a href="./Ory_MaryVallee/img/11_dragonquest.png" data-fancybox="game" data-caption="Dragon Quest (1986, NES)">
 						<img src="./Ory_MaryVallee/img/11_dragonquest.png" alt="Hub world de Dragon Quest" /> 
 					</a>
                     <figcaption><cite>Dragon Quest</cite> (1986, NES)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/12_zeldaII.png" data-fancybox data-caption="Zelda II : The Adventure of Link">
+                    <a href="./Ory_MaryVallee/img/12_zeldaII.png" data-fancybox="game" data-caption="Zelda II : The Adventure of Link">
 						<img src="./Ory_MaryVallee/img/12_zeldaII.png" alt="Hub world de Zelda II" /> 
 					</a>
                     <figcaption><cite>Zelda II : The Adventure of Link</cite> (1988, NES)</figcaption>
@@ -280,30 +289,30 @@
             </div>
             <p>
                 Finalement, depuis la fin des années 90 et avec l’arrivée de la 3D, <strong>les hub worlds se sont complexifiés et diversifiés</strong> : plus larges, de formes différentes, 
-                avec leurs propres géographies et leurs propres secrets (trésors cachés, portails cachés, etc.). Le célèbre jeu <cite>Super Mario 64</cite> (1996, N64) a codifié les règles des hub worlds 
-                modernes, avec le château de Peach qui fait office de hub world. Une analyse en est faite ci-après.
+                avec leurs propres géographies et leurs propres secrets (trésors cachés, portails cachés, etc.). Le célèbre jeu <cite>Super Mario 64</cite> (1996, N64) a codifié les règles des <strong>hub worlds 
+                modernes</strong>, avec le château de Peach qui fait office de hub world. Une analyse en est faite ci-après.
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/13_supermario64.png" data-fancybox data-caption="Super Mario 64 (1996, N64)">
+                    <a href="./Ory_MaryVallee/img/13_supermario64.png" data-fancybox="game" data-caption="Super Mario 64 (1996, N64)">
 						<img src="./Ory_MaryVallee/img/13_supermario64.png" alt="Hub world de Super Mario 64" /> 
 					</a>
                     <figcaption><cite>Super Mario 64</cite> (1996, N64)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/14_spyrothedragon.png" data-fancybox data-caption="Glover (1998, Windows & N64)">
+                    <a href="./Ory_MaryVallee/img/14_spyrothedragon.png" data-fancybox="game" data-caption="Glover (1998, Windows & N64)">
 						<img src="./Ory_MaryVallee/img/14_spyrothedragon.png" alt="Hub world de Glover" /> 
 					</a>
                     <figcaption><cite>Glover</cite> (1998, Windows & N64)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/15_glover.png" data-fancybox data-caption="Spyro the Dragon (1998, PlayStation)">
+                    <a href="./Ory_MaryVallee/img/15_glover.png" data-fancybox="game" data-caption="Spyro the Dragon (1998, PlayStation)">
 						<img src="./Ory_MaryVallee/img/15_glover.png" alt="Hub world de Spyro the Dragon" /> 
 					</a>
                     <figcaption><cite>Spyro the Dragon</cite> (1998, PlayStation)</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/16_supermariogalaxy.png" data-fancybox data-caption="Super Mario Galaxy (2007, Wii)">
+                    <a href="./Ory_MaryVallee/img/16_supermariogalaxy.png" data-fancybox="game" data-caption="Super Mario Galaxy (2007, Wii)">
 						<img src="./Ory_MaryVallee/img/16_supermariogalaxy.png" alt="Hub world de Super Mario Galaxy" /> 
 					</a>
                     <figcaption><cite>Super Mario Galaxy (2007, Wii)</cite></figcaption>
@@ -316,25 +325,25 @@
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/17_braid.png" data-fancybox data-caption="Braid (2008)">
+                    <a href="./Ory_MaryVallee/img/17_braid.png" data-fancybox="game" data-caption="Braid (2008)">
 						<img src="./Ory_MaryVallee/img/17_braid.png" alt="Hub world de Braid" /> 
 					</a>
                     <figcaption><cite>Braid (2008)</cite></figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/18_bastion.png" data-fancybox data-caption="Bastion (2011)">
+                    <a href="./Ory_MaryVallee/img/18_bastion.png" data-fancybox="game" data-caption="Bastion (2011)">
 						<img src="./Ory_MaryVallee/img/18_bastion.png" alt="Hub world de Bastion" /> 
 					</a>
                     <figcaption><cite>Bastion (2011)</cite></figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/19_supermarioodyssey.png" data-fancybox data-caption="Super Mario Odyssey (2017)">
+                    <a href="./Ory_MaryVallee/img/19_supermarioodyssey.png" data-fancybox="game" data-caption="Super Mario Odyssey (2017)">
 						<img src="./Ory_MaryVallee/img/19_supermarioodyssey.png" alt="Hub world de Super Mario Odyssey" /> 
 					</a>
                     <figcaption><cite>Super Mario Odyssey (2017)</cite></figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/20_overcooked2.png" data-fancybox data-caption="Overcooked 2 (2018)">
+                    <a href="./Ory_MaryVallee/img/20_overcooked2.png" data-fancybox="game" data-caption="Overcooked 2 (2018)">
 						<img src="./Ory_MaryVallee/img/20_overcooked2.png" alt="Hub world de Overcooked 2" /> 
 					</a>
                     <figcaption><cite>Overcooked 2 (2018)</cite></figcaption>
@@ -345,29 +354,29 @@
                 jeu, qu’on explore et voit évoluer au fur et à mesure de la progression, sans téléportation dans des niveaux via des portails. Par contre, la <i>base</i><sup><a href="#note_5">[5]</a></sup> du personnage peut être 
                 considérée comme un reliquat du hub world d’origine : on peut la voir évoluer au cours du jeu et la narration y est très présente. On peut prendre pour exemple <cite>Assassin’s 
                 Creed II</cite> (2009) et la Villa Auditore : une base que l’on répare au fil de la progression du jeu. Pour plus d’informations sur la série Assassin’s Creed et son rapport à la 
-                mémoire, vous pouvez lire « Le traitement de la mémoire génétique dans la franchise Assassin’s Creed ».
+                mémoire, vous pouvez lire <a href="./Kohlmuller_Boyer.html">« Le traitement de la mémoire génétique dans la franchise Assassin’s Creed »</a>.
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/21_assassinscreedII.png" data-fancybox data-caption="Assassin’s Creed II (2009)">
+                    <a href="./Ory_MaryVallee/img/21_assassinscreedII.png" data-fancybox="game" data-caption="Assassin’s Creed II (2009)">
 						<img src="./Ory_MaryVallee/img/21_assassinscreedII.png" alt="Monde ouvert de Assassin’s Creed II" /> 
 					</a>
                     <figcaption><cite>Assassin’s Creed II (2009)</cite></figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/22_grandtheftautoV.png" data-fancybox data-caption="Grand Theft Auto V (2013)">
+                    <a href="./Ory_MaryVallee/img/22_grandtheftautoV.png" data-fancybox="game" data-caption="Grand Theft Auto V (2013)">
 						<img src="./Ory_MaryVallee/img/22_grandtheftautoV.png" alt="Monde ouvert de Grand Theft Auto V" /> 
 					</a>
                     <figcaption><cite>Grand Theft Auto V (2013)</cite></figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/23_thewitcherIII.png" data-fancybox data-caption="The Witcher 3: Wild Hunt (2015)">
+                    <a href="./Ory_MaryVallee/img/23_thewitcherIII.png" data-fancybox="game" data-caption="The Witcher 3: Wild Hunt (2015)">
 						<img src="./Ory_MaryVallee/img/23_thewitcherIII.png" alt="Monde ouvert de The Witcher 3" /> 
 					</a>
                     <figcaption><cite>The Witcher 3: Wild Hunt (2015)</cite></figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/24_zeldabreathofthewild.png" data-fancybox data-caption="The Legend of Zelda: Breath of the Wild (2017)">
+                    <a href="./Ory_MaryVallee/img/24_zeldabreathofthewild.png" data-fancybox="game" data-caption="The Legend of Zelda: Breath of the Wild (2017)">
 						<img src="./Ory_MaryVallee/img/24_zeldabreathofthewild.png" alt="Monde ouvert de The Legend of Zelda: Breath of the Wild" /> 
 					</a>
                     <figcaption><cite>The Legend of Zelda: Breath of the Wild (2017)</cite></figcaption>
@@ -419,16 +428,16 @@
             </p>
             <div class="illustration">
                 <figure>
-                    <a href="./Ory_MaryVallee/img/peachcastle_1.jpg" data-fancybox data-caption="Concept art du Château de Peach 1">
+                    <a href="./Ory_MaryVallee/img/peachcastle_1.jpg" data-fancybox="concept_art" data-caption="Concept art du Château de Peach 1">
 						<img src="./Ory_MaryVallee/img/peachcastle_1.jpg" alt="Concept art du Château de Peach 1" /> 
 					</a>
-                    <figcaption>Concepts art du Château de Peach</figcaption>
+                    <figcaption>Concept art du Château de Peach : l'extérieur</figcaption>
                 </figure>
                 <figure>
-                    <a href="./Ory_MaryVallee/img/peachcastle_2.jpg" data-fancybox data-caption="Concept art du Château de Peach 2">
+                    <a href="./Ory_MaryVallee/img/peachcastle_2.jpg" data-fancybox="concept_art" data-caption="Concept art du Château de Peach 2">
 						<img src="./Ory_MaryVallee/img/peachcastle_2.jpg" alt="Concept art du Château de Peach 2" /> 
                     </a>
-                    <figcaption>Concepts art du Château de Peach</figcaption>
+                    <figcaption>Concept art du Château de Peach : l'intérieur</figcaption>
                 </figure>    
             </div>
             <div class="video">
@@ -475,16 +484,16 @@
         <section>
             <h1>Bibliographie</h1>
             <ul>
-                <li><cite>Hub Level</cite>. (2020, 6 novembre). TV Tropes. <a class="break" href="https://tvtropes.org/pmwiki/pmwiki.php/Main/HubLevel">https://tvtropes.org/pmwiki/pmwiki.php/Main/HubLevel</a></li>
-                <li><cite>hub world</cite>. (2020, 4 septembre). Wiktionary. <a class="break" href="https://en.wiktionary.org/wiki/hub_world">https://en.wiktionary.org/wiki/hub_world</a></li>
-                <li>Heather, A. (2018, 29 janvier). <cite>Hub Worlds Can Be Games’ Greatest Pleasure</cite>. Kotaku. <a class="break" href="https://kotaku.com/hub-worlds-can-be-games-greatest-pleasure-1822520149">https://kotaku.com/hub-worlds-can-be-games-greatest-pleasure-1822520149</a></li>
-                <li><cite>Hub World (Concept)</cite>. (2019, 10 octobre). Giant Bomb. <a class="break" href="https://www.giantbomb.com/hub-world/3015-1855/">https://www.giantbomb.com/hub-world/3015-1855/</a></li>
-                <li>Seifert, C. (2013, 19 mars). <cite>Level Design in a Day: Your Questions, Answered</cite>. Gamasutra. <a class="break" href="https://www.gamasutra.com/view/feature/188740/level_design_in_a_day_your_.php">https://www.gamasutra.com/view/feature/188740/level_design_in_a_day_your_.php</a></li>
-                <li><cite>Overworld. (2019, 4 novembre)</cite>. Codex Gamicus. <a class="break" href="https://gamicus.gamepedia.com/Overworld">https://gamicus.gamepedia.com/Overworld</a></li>
-                <li><cite>Overworld. (2020, 28 avril)</cite>. Wikipedia. <a class="break" href="https://en.wikipedia.org/wiki/Overworld">https://en.wikipedia.org/wiki/Overworld</a></li>
-                <li>Aska, A. (2017). <cite>Overworld/Field</cite>. Dans Introduction to the Study of Video Game Music (Second Edition, p. 87‑90). Lulu.com. <a class="break" href="https://books.google.fr/books?id=YO0oDwAAQBAJ&pg=PA87">https://books.google.fr/books?id=YO0oDwAAQBAJ&pg=PA87</a></li>
-                <li>Bacon, A. (s. d.). <cite>Overworld vs Open World</cite>. NocabSoftware. <a class="break" href="https://nocabsoftware.com/src/game_design/OverworldVOpenWorld.html">https://nocabsoftware.com/src/game_design/OverworldVOpenWorld.html</a></li>
-                <li>Schuller, D. (s. d.). <cite>What is a Hub World?</cite>. HowToMakeAnRPG.  <a class="break" href="http://howtomakeanrpg.com/a/what-is-a-hub-world.html">http://howtomakeanrpg.com/a/what-is-a-hub-world.html</a></li>
+                <li><cite>Hub Level</cite>. (2020, 6 novembre). TV Tropes. <a class="break" href="https://tvtropes.org/pmwiki/pmwiki.php/Main/HubLevel" target="_blank">https://tvtropes.org/pmwiki/pmwiki.php/Main/HubLevel</a></li>
+                <li><cite>hub world</cite>. (2020, 4 septembre). Wiktionary. <a class="break" href="https://en.wiktionary.org/wiki/hub_world" target="_blank">https://en.wiktionary.org/wiki/hub_world</a></li>
+                <li>Heather, A. (2018, 29 janvier). <cite>Hub Worlds Can Be Games’ Greatest Pleasure</cite>. Kotaku. <a class="break" href="https://kotaku.com/hub-worlds-can-be-games-greatest-pleasure-1822520149" target="_blank">https://kotaku.com/hub-worlds-can-be-games-greatest-pleasure-1822520149</a></li>
+                <li><cite>Hub World (Concept)</cite>. (2019, 10 octobre). Giant Bomb. <a class="break" href="https://www.giantbomb.com/hub-world/3015-1855/" target="_blank">https://www.giantbomb.com/hub-world/3015-1855/</a></li>
+                <li>Seifert, C. (2013, 19 mars). <cite>Level Design in a Day: Your Questions, Answered</cite>. Gamasutra. <a class="break" href="https://www.gamasutra.com/view/feature/188740/level_design_in_a_day_your_.php" target="_blank">https://www.gamasutra.com/view/feature/188740/level_design_in_a_day_your_.php</a></li>
+                <li><cite>Overworld. (2019, 4 novembre)</cite>. Codex Gamicus. <a class="break" href="https://gamicus.gamepedia.com/Overworld" target="_blank">https://gamicus.gamepedia.com/Overworld</a></li>
+                <li><cite>Overworld. (2020, 28 avril)</cite>. Wikipedia. <a class="break" href="https://en.wikipedia.org/wiki/Overworld" target="_blank">https://en.wikipedia.org/wiki/Overworld</a></li>
+                <li>Aska, A. (2017). <cite>Overworld/Field</cite>. Dans Introduction to the Study of Video Game Music (Second Edition, p. 87‑90). Lulu.com. <a class="break" href="https://books.google.fr/books?id=YO0oDwAAQBAJ&pg=PA87" target="_blank">https://books.google.fr/books?id=YO0oDwAAQBAJ&pg=PA87</a></li>
+                <li>Bacon, A. (s. d.). <cite>Overworld vs Open World</cite>. NocabSoftware. <a class="break" href="https://nocabsoftware.com/src/game_design/OverworldVOpenWorld.html" target="_blank">https://nocabsoftware.com/src/game_design/OverworldVOpenWorld.html</a></li>
+                <li>Schuller, D. (s. d.). <cite>What is a Hub World?</cite>. HowToMakeAnRPG.  <a class="break" href="http://howtomakeanrpg.com/a/what-is-a-hub-world.html" target="_blank">http://howtomakeanrpg.com/a/what-is-a-hub-world.html</a></li>
             </ul>
         </section>
     </div>
