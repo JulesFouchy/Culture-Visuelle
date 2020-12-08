@@ -1,9 +1,44 @@
-
-
-@font-face {
-  font-family: baskerville;
-  src: url(LibreBaskerville-Regular.ttf);
+.article-name{
+	color : #27DA79;
 }
+
+#header{
+
+	background: 
+    linear-gradient(
+      rgba(12, 8, 64, 0.7), 
+      rgba(12, 8, 64, 0.7)
+    ),
+    url(../background.png);
+
+    background-size: cover;
+}
+
+a{
+	color : rgb(12, 8, 64) !important;
+	text-decoration: none;
+}
+
+.article-name, .article-authors{
+	color : white;
+	font-style : normal;
+}
+
+.legende{
+	font-style : italic;
+	margin : 0;
+}
+
+h1{
+	font-size : 2em !important;
+	text-align : center;
+	margin : 0;
+}
+
+h2{
+	margin : 50px 0 15px 0;
+}
+
 
 table, th, td{
 	border : 1px solid black;
@@ -19,17 +54,16 @@ table{
 	margin : auto;
 }
 
-.legende{
+
+sup{
+	vertical-align: baseline;
+	position : relative;
+	top : -0.4em;
+}
+
+#finalquote{
+	margin-top : 0;
+	text-align : center;
+	font-size : 1.2em;
 	font-style : italic;
-	text-align : center;
-}
-
-h1{
-	font-size : 3em !important;
-	text-align : center;
-}
-
-p, table, th, td{
-	font-family : baskerville;
-	font-size : 15px;
 }
