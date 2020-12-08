@@ -226,9 +226,9 @@ const App = function () {
 
         window.addEventListener('resize', onWindowResize, false);
         
-        window.addEventListener("mousewheel", onWheel, false); // IE9, Chrome, Safari, Opera
-        window.addEventListener("DOMMouseScroll", onWheel, false); // Firefox
-
+        window.addEventListener("wheel", onWheel, false);
+        // window.addEventListener("mousewheel", onWheel, false); // IE9, Chrome, Safari, Opera
+        // window.addEventListener("DOMMouseScroll", onWheel, false); // Firefox
 
         document.addEventListener('mousemove', onDocumentMouseMove, false);
         document.addEventListener('mousedown', onDocumentMouseDown, false );
@@ -241,8 +241,9 @@ const App = function () {
 	this.disconnect = function () {
         window.removeEventListener('resize', onWindowResize, false);
 
-        window.removeEventListener("mousewheel", onWheel, false); // IE9, Chrome, Safari, Opera
-        window.removeEventListener("DOMMouseScroll", onWheel, false); // Firefox
+        window.addEventListener("wheel", onWheel, false);
+        // window.removeEventListener("mousewheel", onWheel, false); // IE9, Chrome, Safari, Opera
+        // window.removeEventListener("DOMMouseScroll", onWheel, false); // Firefox
 
         document.removeEventListener('mousemove', onDocumentMouseMove, false);
         document.removeEventListener('mousedown', onDocumentMouseDown, false );
