@@ -178,6 +178,19 @@ html, body {
     }
 }
 
+@media screen and (min-width: 1700px) {
+    #wrapper {
+        background-size: contain;
+    }
+    #header {
+        background-size: cover;
+        height: 375px;
+    }
+    .article-name {
+        margin-top: 100px;
+    }
+}
+
 .cls-1 {
     fill: none;
     stroke:#312783;
