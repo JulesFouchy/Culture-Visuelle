@@ -33,24 +33,11 @@ const App = function () {
         camera.position.z = 10;
         camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-        // renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        // renderer.setSize(window.innerWidth, window.innerHeight);
-        // renderer.setClearColor( 0x000000, 1 );
-        // renderer.setPixelRatio( window.devicePixelRatio );
-        // document.getElementById('canvas').appendChild(renderer.domElement);
-
         rendererCss = new CSS3DRenderer();
         rendererCss.setSize(window.innerWidth, window.innerHeight);
         document.getElementById('canvasCss').appendChild(rendererCss.domElement);
     }
-
-    // this.initGui = function() {
-    //     const settingsFolder = gui.addFolder('Settings');
-    //     settingsFolder.add(options, 'particlesCount', 10, options.maxParticles, 1).listen();
-    //     settingsFolder.add(options, 'animate').listen();
-    //     settingsFolder.add(options, 'speed', 0.1, 3).listen();
-    //     settingsFolder.open();
-    // }
+    
     this.initOthers = function() {
         arrowBack.classList.add('sectionBackArrow', 'fas', 'fa-arrow-left');
         arrowBack.onclick = function() {goBack()};
@@ -65,64 +52,70 @@ const App = function () {
         return infos
     }
 
-    this.loadSection = function (sectionId) {
-        const source = document.getElementById(sectionId);
+    this.loadSection = function (source) {
         
-        if(source) {
-            const element = source.cloneNode(true) as HTMLElement;
-            currentSectionId = element.id;
-            // element.id = element.id+'Current';
-            element.style.width = '65%';
-            element.style.opacity = '0.0';
-            element.appendChild(arrowBack);
+        const element = source.cloneNode(true) as HTMLElement;
+        currentSectionId = element.id;
+        // element.id = element.id+'Current';
+        element.style.width = '65%';
+        element.style.opacity = '0.0';
+        element.appendChild(arrowBack);
 
-            const elementInfos = getNodeinfos(element);
+        const elementInfos = getNodeinfos(element);
 
-            // link buttons
-            const buttons = element.getElementsByClassName("sectionsBtn");
-            for (let i = 0; i < buttons.length; i++)
-                buttons[i].onclick = function() { scope.changeSection( buttons[i].dataset.link); };;
+        // link buttons
+        const buttons = element.getElementsByClassName("sectionsBtn");
+        for (let i = 0; i < buttons.length; i++)
+            buttons[i].onclick = function() { scope.changeSection( buttons[i].dataset.link); };;
 
-            scroolOffset = 0;
-            if(elementInfos.height > window.innerHeight) {
-                maxScroolOffset = (elementInfos.height-window.innerHeight)/2/(elementInfos.height/window.innerHeight);
-                cssBlockPosition.y = -(elementInfos.height-window.innerHeight)/6/(elementInfos.height/window.innerHeight);
-            }else {
-                maxScroolOffset = 0;
-                cssBlockPosition.y = 0;
-            }
+        scroolOffset = 0;
 
-            const css3dObject = new CSS3DObject(element);
-            if(cssContainer.css3dObject)
-                cssContainer.remove(cssContainer.css3dObject)
-            cssContainer.css3dObject = css3dObject;
-            cssContainer.add(css3dObject);
-
-            if (cssContainer.currentAction) cssContainer.currentAction.stop();
-            cssContainer.currentAction = fadeOpacity(1.0).start();
+        if(elementInfos.height*1.2 > window.innerHeight) {
             
-            // console.log(document.getElementById(currentSectionId+'Current').getBoundingClientRect());
+            maxScroolOffset = (elementInfos.height*1.2-window.innerHeight)/2/(elementInfos.height*1.2/window.innerHeight);
+            cssBlockPosition.y = -(elementInfos.height*1.2-window.innerHeight)/8/(elementInfos.height*1.2/window.innerHeight);
+        }else {
+            maxScroolOffset = 0;
+            cssBlockPosition.y = 0;
+        }
+
+        const css3dObject = new CSS3DObject(element);
+        if(cssContainer.css3dObject)
+            cssContainer.remove(cssContainer.css3dObject)
+        cssContainer.css3dObject = css3dObject;
+        cssContainer.add(css3dObject);
+
+        if (cssContainer.currentAction) cssContainer.currentAction.stop();
+        cssContainer.currentAction = fadeOpacity(1.0).start();
+        
+        // console.log(document.getElementById(currentSectionId+'Current').getBoundingClientRect());
+        if(source) {
         }else {
             console.log(`unknow section : ${sectionId}`);
         }
     }
 
-    const fadeOpacity = (opacity, delay = 700) => new TWEEN.Tween(cssContainer.css3dObject.element.style).easing(TWEEN.Easing.Cubic.InOut).to({"opacity": opacity}, delay);
+    const fadeOpacity = (opacity, delay = 400) => new TWEEN.Tween(cssContainer.css3dObject.element.style).to({"opacity": opacity}, delay);
 
     this.changeSection = function(sectionId) {
-        scope.history.push(currentSectionId);
+        const source = document.getElementById(sectionId);
+        if(source) {
+            scope.history.push(currentSectionId);
         
-        if (cssContainer.currentAction) cssContainer.currentAction.stop();
-        cssContainer.currentAction = fadeOpacity(0.0).onComplete(() => { 
-            scope.loadSection(sectionId);
-        }).start();
+            if (cssContainer.currentAction) cssContainer.currentAction.stop();
+            cssContainer.currentAction = fadeOpacity(0.0).onComplete(() => { 
+                scope.loadSection(source);
+            }).start();
+        }else {
+            console.log(`unknow section : ${sectionId}`);
+        }
     }
 
     this.setupScene = function() {
 
         cssContainer = new THREE.Object3D();
 
-        scope.loadSection('title');
+        scope.loadSection(document.getElementById('title'));
 
         cssContainer.scale.multiplyScalar(0.12);
 
@@ -130,12 +123,12 @@ const App = function () {
     }
 
     const goBack = function() {
-        console.log('history:', scope.history);
+        // console.log('history:', scope.history);
         
         if(scope.history.length) {
             if (cssContainer.currentAction) cssContainer.currentAction.stop();
             cssContainer.currentAction = fadeOpacity(0.0).onComplete(() => { 
-                scope.loadSection(scope.history[scope.history.length-1]);
+                scope.loadSection(document.getElementById(scope.history[scope.history.length-1]));
                 scope.history.pop();
             }).start();
             
@@ -222,22 +215,21 @@ const App = function () {
     }
 
     const onKeyDown = function(evt) {
-        switch ( evt.keyCode ) {
-            case 83: // s
-                // switchText();
-                break;
-            default: 
-                // console.log(`unknown ${event.keyCode}`);    
-        }
+        // do nothing
     }
 
     const onKeyUp = function(evt) {
         // do nothing
     }
 
-    this.connect = function () {        
+    this.connect = function () {
+
         window.addEventListener('resize', onWindowResize, false);
+        
         window.addEventListener("wheel", onWheel, false);
+        // window.addEventListener("mousewheel", onWheel, false); // IE9, Chrome, Safari, Opera
+        // window.addEventListener("DOMMouseScroll", onWheel, false); // Firefox
+
         document.addEventListener('mousemove', onDocumentMouseMove, false);
         document.addEventListener('mousedown', onDocumentMouseDown, false );
         document.addEventListener('touchstart', onDocumentTouchStart, false);
@@ -248,7 +240,11 @@ const App = function () {
 
 	this.disconnect = function () {
         window.removeEventListener('resize', onWindowResize, false);
-        window.removeEventListener("wheel", onWheel, false);
+
+        window.addEventListener("wheel", onWheel, false);
+        // window.removeEventListener("mousewheel", onWheel, false); // IE9, Chrome, Safari, Opera
+        // window.removeEventListener("DOMMouseScroll", onWheel, false); // Firefox
+
         document.removeEventListener('mousemove', onDocumentMouseMove, false);
         document.removeEventListener('mousedown', onDocumentMouseDown, false );
         document.removeEventListener('touchstart', onDocumentTouchStart, false);

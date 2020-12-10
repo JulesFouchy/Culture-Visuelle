@@ -14,7 +14,7 @@
     background-size: cover;
 }
 
-a{
+.mon-article a{
 	color : rgb(12, 8, 64) !important;
 	text-decoration: none;
 }

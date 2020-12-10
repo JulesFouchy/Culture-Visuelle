@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Nature et Culture : la mémoire en informatique et parallèles en sociologie",
+    title: "Culture et mémoire numérique dans la science-fiction",
     icon: "database",
     iconUnicode: "\uf1c0",
     category: Category.Technical,

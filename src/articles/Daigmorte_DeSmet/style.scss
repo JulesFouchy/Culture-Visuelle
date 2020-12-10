@@ -25,17 +25,79 @@ body {
     padding: 40px 40px;
     opacity: 1;
 
+    font-size: 1.2em;
+
     margin-top: 0;
     p {
         text-align: justify !important;
     }
+
+    .sectionsBtn {
+        
+        position: relative;
+        padding: 0.1em 0.3em;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+
+        text-shadow: 0 0 10px #666; 
+        transition: text-shadow 0.5s;
+
+        &:hover {
+            text-shadow: none;
+        }
+        
+        &::after, &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 20%;
+          height: 20%;
+          border: 2px solid;
+          transition: all 0.4s ease;
+          border-radius: 2px;
+        }
+    
+        &::after {
+          bottom: 0;
+          right: 0;
+          border-top-color: transparent;
+          border-left-color: transparent;
+          border-bottom-color: #435a6b;
+          border-right-color: #435a6b;
+        }
+    
+        &::before {
+          top: 0;
+          left: 0;
+          border-bottom-color: transparent;
+          border-right-color: transparent;
+          border-top-color: #435a6b;
+          border-left-color: #435a6b;
+        }
+    
+        &:hover:after, &:hover:before {
+          border-bottom-color: #435a6b;
+          border-right-color: #435a6b;
+          border-top-color: #435a6b;
+          border-left-color: #435a6b;
+          width: 100%;
+          height: 100%;
+        }
+    }
+
     img {
         display: block;
         margin: 0 auto;
     }
     h1 {
-        text-align: center;
         text-decoration: underline;
+    }
+
+    .centered {
+        text-align: center !important;
     }
 }
 
@@ -46,7 +108,6 @@ body {
         &:visited {color: #222222;}
         &:hover {text-decoration: underline;}
     }
-    
 
     .it {
         font-style: italic;
@@ -59,6 +120,7 @@ body {
 .back-arrow {
     z-index: 1;
 }
+
 .sectionBackArrow {
     position: absolute;
     right: 10px;
@@ -68,4 +130,3 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-
