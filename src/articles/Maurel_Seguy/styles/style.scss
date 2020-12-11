@@ -1,5 +1,11 @@
 h1,h2,h3{
 	font-family: 'Courier Prime', monospace !important;
+	
+}
+.article-name{
+	font-family: 'Courier Prime', monospace !important;
+	font-style: normal;
+	font-weight: normal;
 }
 #quote{
 	font-family: 'Courier Prime', monospace;
@@ -8,13 +14,10 @@ h1,h2,h3{
 }
 #legend-img{
 	text-align : center;
-	font-size : x-small;
+	font-size : small;
 }
-
-#img-create-palais{
-	display: flex;
-	flex-direction: row;
-	margin-top: 2%;
+img{
+	width: 500px;
 }
 #source{
 	font-size: small;
@@ -22,4 +25,34 @@ h1,h2,h3{
 #info{
 	font-family: 'Noto Sans';
 	font-size: small,
+}
+#header{
+	background-image:url("../img/silouhette.svg");
+	background-repeat: no-repeat;
+    background-position: right 9%;
+    background-size: 29%;
+}
+.mon-article {
+	background-image:url("../img/footprints.svg");
+	background-repeat: repeat-y;
+	background-size: 25%;
+}
+video{
+	display:block;
+	width: 500px;
+	margin:0 auto;
+}
+.bold{
+	font-weight: 700 !important;
+}
+@media (max-width: 820px) {
+	.mon-article {
+		width: 90%;
+	}
+	#header,.mon-article{
+		background-size: 50%;
+	}
+	video{
+		width: 90%;
+	}
 }
