@@ -25,10 +25,11 @@ import PF from './articles/Pusung_Fan/description'
 import RL from './articles/Rathonie_Lienart/description'
 import RV from './articles/Rosenberg_Vallet/description'
 import Sa from './articles/Sangare/description'
-import SV from './articles/Segaux_Vo/description'
+import Se from './articles/Segaux/description'
+import Vo from './articles/Vo/description'
 import Th from './articles/Thiel/description'
 import VV from './articles/Vallee_Veysset/description'
 
-const articlesDescription: Array<ArticleDescription> = [ BK, BC, BL, CS, CL, DD, Du, DG, Fo, GJ, Ha, HG, KB, La, LL, Li, ML, MS, SM, OM, PF, RL, RV, Sa, SV, Th, VV ]
+const articlesDescription: Array<ArticleDescription> = [ BK, BC, BL, CS, CL, DD, Du, DG, Fo, GJ, Ha, HG, KB, La, LL, Li, ML, MS, SM, OM, PF, RL, RV, Sa, Se, Vo, Th, VV ]
 
 export default articlesDescription

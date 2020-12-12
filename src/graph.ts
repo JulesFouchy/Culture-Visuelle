@@ -6,8 +6,6 @@ import perlin from 'perlin.js'
 import ArticlesDescription from './ArticlesDescription'
 import ArticleInfos from './components/ArticleInfos'
 
-import* as TWEEN from '@tweenjs/tween.js';
-
 const articles: ArticleDescriptionAndPosition[] = []
 
 const articleColor = function (article: ArticleDescriptionAndPosition) {
@@ -52,6 +50,7 @@ const articlesPos: Point[] = [
     new Point( 0.2230572774561607, 0.31352937073703363),
     new Point( 0.37503236742673124, 0.4059799771161062),
     new Point( 0.16942102067453896, 0.030815080052763122),
+    new Point( 0.5, 0.5),
 ];
 
 ArticlesDescription.forEach((d, id) => {
