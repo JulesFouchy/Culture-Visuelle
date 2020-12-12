@@ -4,9 +4,9 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 "use strict";var e;Object.defineProperty(exports,"__esModule",{value:!0}),exports.Category=void 0,function(e){e[e.Technical=0]="Technical",e[e.Cultural=1]="Cultural",e[e.Memorisation=2]="Memorisation"}(e||(e={})),exports.Category=e;
 },{}],"NkeW":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("../framework/h")),a=require("../types/ArticleDescription"),r=function(e){var a=Math.floor(2*Math.random());return t.default("div",{class:"article-name"},e.title)+t.default("div",{class:"article-authors"},1==e.authors.length?e.authors:"".concat(e.authors[a]," & ").concat(e.authors[(a+1)%2]))+t.default("div",{class:"article-date"},"08.12.2020")},l=function(){return t.default("a",{class:"back-arrow fas fa-arrow-left",href:"./index.html"})};exports.default=function(e){document.title=e.title,document.getElementById("header").innerHTML=r(e),document.getElementById("header").classList.add(e.category===a.Category.Technical?"technical":e.category===a.Category.Cultural?"cultural":"memorisation"),document.getElementsByClassName("mon-article")[0].classList.add(e.category===a.Category.Technical?"technical":e.category===a.Category.Cultural?"cultural":"memorisation"),document.getElementById("wrapper").innerHTML+=l()};
-},{"../framework/h":"AvVX","../types/ArticleDescription":"XNoJ"}],"XROy":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../types/ArticleDescription"),r={title:"Mémoire dans la mode",icon:"mask",iconUnicode:"",category:e.Category.Cultural,authors:["Anya SÉGAUX","Minh-Tri VO"],folderName:"Segaux_Vo"};exports.default=r;
-},{"../../types/ArticleDescription":"XNoJ"}],"w0Hm":[function(require,module,exports) {
+},{"../framework/h":"AvVX","../types/ArticleDescription":"XNoJ"}],"wp4y":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../types/ArticleDescription"),t={title:"Mémoire des vêtements",icon:"tshirt",iconUnicode:"",category:e.Category.Cultural,authors:["Minh-Tri VO"],folderName:"Vo"};exports.default=t;
+},{"../../types/ArticleDescription":"XNoJ"}],"lsEk":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("../../components/GenerateArticlePage")),r=e(require("./description"));t.default(r.default);
-},{"../../components/GenerateArticlePage":"NkeW","./description":"XROy"}]},{},["w0Hm"], null)
-//# sourceMappingURL=generate.3c46f49a.js.map
+},{"../../components/GenerateArticlePage":"NkeW","./description":"wp4y"}]},{},["lsEk"], null)
+//# sourceMappingURL=generate.778b3b99.js.map
