@@ -2,8 +2,8 @@ import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
     title: "Éditorial",
-    icon: "pen-nib",
-    iconUnicode: "\uf5ad",
+    icon: "heading",
+    iconUnicode: "\uf1dc",
     category: Category.Cultural,
     authors: ["Laurelenn SANGARÉ"],
     // Don't touch the folder name
