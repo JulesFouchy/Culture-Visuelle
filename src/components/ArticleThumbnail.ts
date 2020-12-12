@@ -4,7 +4,8 @@ import { Category , ArticleDescriptionAndPosition } from '../types/ArticleDescri
 export default (article : ArticleDescriptionAndPosition, idx: number, radius: number = 50) => {
     const color = article.desc.category === Category.Cultural     ? ' 255, 184, 0' :
                   article.desc.category === Category.Memorisation ? '39, 218, 121' :
-                  article.desc.category === Category.Technical    ? ' 110, 51, 206'
+                  article.desc.category === Category.Technical    ? ' 110, 51, 206':
+                  article.desc.category === Category.Editorial    ? ' 0, 100, 255'
                   : '255, 255, 255'
     return h('a', 
         {

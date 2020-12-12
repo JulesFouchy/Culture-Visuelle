@@ -4,6 +4,7 @@ enum Category {
     Technical,
     Cultural,
     Memorisation,
+    Editorial,
 }
 
 interface ArticleDescription {

@@ -23,6 +23,7 @@ const articleColor = function (article: ArticleDescriptionAndPosition) {
 }
 
 const articlesPos: Point[] = [
+    new Point( 0.5, 0.5),
     new Point( 0.24816731376553577, 0.8136793362360089),
     new Point( 0.2728674319439582, 0.17844615748290543),
     new Point( 0.03170845279662466, 0.6438729884708927),
@@ -50,7 +51,7 @@ const articlesPos: Point[] = [
     new Point( 0.2230572774561607, 0.31352937073703363),
     new Point( 0.37503236742673124, 0.4059799771161062),
     new Point( 0.16942102067453896, 0.030815080052763122),
-    new Point( 0.5, 0.5),
+    new Point( 0.7, 0.5),
 ];
 
 ArticlesDescription.forEach((d, id) => {
