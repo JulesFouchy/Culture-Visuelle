@@ -1,13 +1,13 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Mémoire dans la mode",
+    title: "La mode dans nos souvenirs",
     icon: "mask",
     iconUnicode: "\uf6fa",
-    category: Category.Cultural,
-    authors: ["Anya SÉGAUX", "Minh-Tri VO"],
+    category: Category.Technical,
+    authors: ["Anya SÉGAUX"],
     // Don't touch the folder name
-    folderName: "Segaux_Vo",
+    folderName: "Segaux",
 }
 
 export default description
