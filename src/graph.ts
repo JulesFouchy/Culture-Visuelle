@@ -138,7 +138,7 @@ const Graph = function (canvasId) {
         scope.context.beginPath();
 
         if(!onlySelected) {
-            edges.forEach((edge, id) => {
+            edges.forEach(edge => {
                 scope.context.moveTo(articles[edge[0]].currentPos.x * scope.canvas.width, articles[edge[0]].currentPos.y * scope.canvas.height);
                 scope.context.lineTo(articles[edge[1]].currentPos.x * scope.canvas.width, articles[edge[1]].currentPos.y * scope.canvas.height);
             });
@@ -146,40 +146,18 @@ const Graph = function (canvasId) {
             {
                 const fromPos = articles[scope.currentEdges.fromEdge].currentPos;
                 scope.currentEdges.toEdges.forEach(edgeId => {
-                    if(edgeId==0 || scope.currentEdges.fromEdge==0) {
-                        scope.context.stroke();
-                        scope.context.lineWidth = scope.config.linethickness * 5;
-                        scope.context.beginPath();
-                    }
                     const dir = articles[edgeId].currentPos.clone().subtract(fromPos).multiplyScalar(scope.currentEdges.easing);
                     scope.context.moveTo(fromPos.x * scope.canvas.width, fromPos.y * scope.canvas.height);
                     scope.context.lineTo((fromPos.x + dir.x) * scope.canvas.width, (fromPos.y + dir.y) * scope.canvas.height);
-
-                    if(edgeId==0 || scope.currentEdges.fromEdge==0) {
-                        scope.context.stroke();
-                        scope.context.lineWidth = scope.config.linethickness;
-                        scope.context.beginPath();
-                    }
                 });
             }
 
             scope.oldEdgesBuffer.forEach(oeb => {
                 const fromPos = articles[oeb.fromEdge].currentPos;
                 oeb.toEdges.forEach(edgeId => {
-                    if(edgeId==0 || oeb.fromEdge==0) {
-                        scope.context.stroke();
-                        scope.context.lineWidth = scope.config.linethickness * 5;
-                        scope.context.beginPath();
-                    }
                     const dir = articles[edgeId].currentPos.clone().subtract(fromPos).multiplyScalar(oeb.easing);
                     scope.context.moveTo(fromPos.x * scope.canvas.width, fromPos.y * scope.canvas.height);
                     scope.context.lineTo((fromPos.x + dir.x) * scope.canvas.width, (fromPos.y + dir.y) * scope.canvas.height);
-
-                    if(edgeId==0 || oeb.fromEdge==0) {
-                        scope.context.stroke();
-                        scope.context.lineWidth = scope.config.linethickness;
-                        scope.context.beginPath();
-                    }
                 });
             });
         }
@@ -251,7 +229,7 @@ const Graph = function (canvasId) {
             // r = 1+r/10;
 
             scope.context.beginPath();
-            scope.context.arc(x, y, scope.config.pointsRadius*1.1, 0, 2*Math.PI); 
+            scope.context.arc(x, y, scope.config.pointsRadius*1.1 * ((id==0)? 1.4: 1), 0, 2*Math.PI); 
             scope.context.fillStyle = scope.config.pointsColor;
             scope.context.fill();
 
