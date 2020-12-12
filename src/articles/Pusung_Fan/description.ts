@@ -1,7 +1,7 @@
 import { ArticleDescription, Category } from '../../types/ArticleDescription'
 
 const description: ArticleDescription = {
-    title: "Mémoire dans les jeux vidéo: the legend of Zelda",
+    title: "Mémoire dans le jeux vidéo: The Legend of Zelda",
     icon: "dungeon",
     iconUnicode: "\uf6d9",
     category: Category.Cultural,
