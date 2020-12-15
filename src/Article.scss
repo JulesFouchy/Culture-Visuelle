@@ -17,7 +17,8 @@ html {
 }
 
 .mon-article {
-    // word-break: break-all;
+    hyphens: auto;
+    word-break: break-word;
     font-family: 'Noto Sans';
     font-size: 0.9em;
     h1, h2 {
