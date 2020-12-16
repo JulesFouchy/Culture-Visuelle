@@ -108,7 +108,8 @@ const Graph = function (canvasId) {
     this.context = this.canvas.getContext("2d");
 
     this.config = {
-        pointsRadius : 30,
+        pointsRadius : 33,
+        headerNodeRadius: 45,
         pointsColor : "#ffffff",
 
         jitterSpeed: 0.001,
@@ -231,7 +232,7 @@ const Graph = function (canvasId) {
             // r = 1+r/10;
 
             scope.context.beginPath();
-            scope.context.arc(x, y, scope.config.pointsRadius*1.1 * ((id==0)? 1.4: 1), 0, 2*Math.PI); 
+            scope.context.arc(x, y, id === 0 ? scope.config.headerNodeRadius : scope.config.pointsRadius, 0, 2*Math.PI); 
             scope.context.fillStyle = scope.config.pointsColor;
             scope.context.fill();
 
@@ -245,9 +246,11 @@ const Graph = function (canvasId) {
     this.getOverArticleId = function () {
         let id = undefined;
 
+        const normalRadiusSq = scope.config.pointsRadius * scope.config.pointsRadius;
         for (let i = 0; i < articles.length; ++i) {
             const article: ArticleDescription = articles[i];
-            if(article.currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2() < scope.config.pointsRadius*scope.config.pointsRadius) {
+            const radiusSq = i === 0 ? scope.config.headerNodeRadius*scope.config.headerNodeRadius : normalRadiusSq;
+            if(article.currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2() < radiusSq) {
                 id = i;
                 break;
             }
