@@ -4,6 +4,7 @@
 $technical_color: #6E33CE;
 $cultural_color: #FFB800;
 $memorisation_color: #27DA79;
+$editorial_color: #ff2e2e;
 
 html {
     color: black;
@@ -50,6 +51,11 @@ html {
             color: $memorisation_color;
         }
     }
+    &.editorial {
+        a {
+            color: $editorial_color;
+        }
+    }
 }
 
 #header {
@@ -66,6 +72,9 @@ html {
     }
     &.memorisation {
         background-color: $memorisation_color;
+    }
+    &.editorial {
+        background-color: $editorial_color;
     }
 }
 

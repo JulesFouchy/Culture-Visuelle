@@ -39,14 +39,16 @@ export default (description: ArticleDescription) => {
     document.title = description.title
     document.getElementById('header').innerHTML = Header(description)
     document.getElementById('header').classList.add(
-          (description.category === Category.Technical) ? 'technical'
-        : (description.category === Category.Cultural)  ? 'cultural'
-        :                                                 'memorisation'
+          (description.category === Category.Technical)    ? 'technical'
+        : (description.category === Category.Cultural)     ? 'cultural'
+        : (description.category === Category.Memorisation) ? 'memorisation'
+        :                                                    'editorial'
     )
     document.getElementsByClassName('mon-article')[0].classList.add(
-          (description.category === Category.Technical) ? 'technical'
-        : (description.category === Category.Cultural)  ? 'cultural'
-        :                                                 'memorisation'
+          (description.category === Category.Technical)    ? 'technical'
+        : (description.category === Category.Cultural)     ? 'cultural'
+        : (description.category === Category.Memorisation) ? 'memorisation'
+        :                                                    'editorial'
     )
     document.getElementById('wrapper').innerHTML += BackArrow()
 }
