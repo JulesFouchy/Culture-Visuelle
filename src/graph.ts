@@ -109,7 +109,9 @@ const Graph = function (canvasId) {
 
     this.config = {
         defaultNodeRadius : 33,
+        defaultNodeFontSize : 30,
         headerNodeRadius: 45,
+        headerNodeFontSize : 40,
         pointsColor : "#ffffff",
 
         jitterSpeed: 0.001,
@@ -216,10 +218,10 @@ const Graph = function (canvasId) {
 
     this.drawCircles = function () {
         
-        scope.context.font = "30px fontawesome";
         scope.context.textAlign='center';
         scope.context.textBaseline='middle';
         articles.forEach((article, id) => {
+            scope.context.font = `${id === 0 ? scope.config.headerNodeFontSize : scope.config.defaultNodeFontSize}px fontawesome`;
             scope.context.shadowBlur = 8;
             const color = articleColor(article);
             scope.context.fillStyle='#ffffff';
