@@ -1,5 +1,5 @@
 import h from '../framework/h'
-import ArticleDescription from '../articles/ArticleDescription'
+import { ArticleDescription } from '../types/ArticleDescription'
 
 export default (article: ArticleDescription, idx: number) => {
     const rand = Math.floor(Math.random()*2)
