@@ -108,7 +108,7 @@ const Graph = function (canvasId) {
     this.context = this.canvas.getContext("2d");
 
     this.config = {
-        pointsRadius : 33,
+        defaultNodeRadius : 33,
         headerNodeRadius: 45,
         pointsColor : "#ffffff",
 
@@ -232,7 +232,7 @@ const Graph = function (canvasId) {
             // r = 1+r/10;
 
             scope.context.beginPath();
-            scope.context.arc(x, y, id === 0 ? scope.config.headerNodeRadius : scope.config.pointsRadius, 0, 2*Math.PI); 
+            scope.context.arc(x, y, id === 0 ? scope.config.headerNodeRadius : scope.config.defaultNodeRadius, 0, 2*Math.PI); 
             scope.context.fillStyle = scope.config.pointsColor;
             scope.context.fill();
 
@@ -246,7 +246,7 @@ const Graph = function (canvasId) {
     this.getOverArticleId = function () {
         let id = undefined;
 
-        const normalRadiusSq = scope.config.pointsRadius * scope.config.pointsRadius;
+        const normalRadiusSq = scope.config.defaultNodeRadius * scope.config.defaultNodeRadius;
         for (let i = 0; i < articles.length; ++i) {
             const article: ArticleDescription = articles[i];
             const radiusSq = i === 0 ? scope.config.headerNodeRadius*scope.config.headerNodeRadius : normalRadiusSq;
