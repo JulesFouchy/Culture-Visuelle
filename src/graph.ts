@@ -17,6 +17,8 @@ const articleColor = function (article: ArticleDescriptionAndPosition) {
             return  '#27da79';
         case Category.Technical:
             return  '#6e33ce';
+        case Category.Editorial:
+            return  '#ff2e2e';
         default:
             return '#ffffff'
     }
