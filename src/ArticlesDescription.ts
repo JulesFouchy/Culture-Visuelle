@@ -1,7 +1,3 @@
-
-import  { ArticleDescription } from './types/ArticleDescription'
-
-import Edito from './articles/Editorial/description'
 import BK from './articles/Benharira_Koeppel/description'
 import BC from './articles/Boyer_Ciavaldini/description'
 import BL from './articles/Brami_Labendzki/description'
@@ -30,6 +26,9 @@ import Se from './articles/Segaux/description'
 import Vo from './articles/Vo/description'
 import Th from './articles/Thiel/description'
 import VV from './articles/Vallee_Veysset/description'
+import Edito from './articles/Editorial/description'
+
+import  { ArticleDescription } from './types/ArticleDescription'
 
 const articlesDescription: Array<ArticleDescription> = [ Edito, BK, BC, BL, CS, CL, DD, Du, DG, Fo, GJ, Ha, HG, KB, La, LL, Li, ML, MS, SM, OM, PF, RL, RV, Sa, Se, Vo, Th, VV ]
 
