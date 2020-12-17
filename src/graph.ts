@@ -110,8 +110,8 @@ const Graph = function (canvasId) {
     this.config = {
         defaultNodeRadius : 33,
         defaultNodeFontSize : 30,
-        headerNodeRadius: 45,
-        headerNodeFontSize : 40,
+        editorialNodeRadius: 45,
+        editorialNodeFontSize : 40,
         pointsColor : "#ffffff",
 
         jitterSpeed: 0.001,
@@ -221,7 +221,7 @@ const Graph = function (canvasId) {
         scope.context.textAlign='center';
         scope.context.textBaseline='middle';
         articles.forEach((article, id) => {
-            scope.context.font = `${id === 0 ? scope.config.headerNodeFontSize : scope.config.defaultNodeFontSize}px fontawesome`;
+            scope.context.font = `${id === 0 ? scope.config.editorialNodeFontSize : scope.config.defaultNodeFontSize}px fontawesome`;
             scope.context.shadowBlur = 8;
             const color = articleColor(article);
             scope.context.fillStyle='#ffffff';
@@ -234,7 +234,7 @@ const Graph = function (canvasId) {
             // r = 1+r/10;
 
             scope.context.beginPath();
-            scope.context.arc(x, y, id === 0 ? scope.config.headerNodeRadius : scope.config.defaultNodeRadius, 0, 2*Math.PI); 
+            scope.context.arc(x, y, id === 0 ? scope.config.editorialNodeRadius : scope.config.defaultNodeRadius, 0, 2*Math.PI); 
             scope.context.fillStyle = scope.config.pointsColor;
             scope.context.fill();
 
@@ -251,7 +251,7 @@ const Graph = function (canvasId) {
         const normalRadiusSq = scope.config.defaultNodeRadius * scope.config.defaultNodeRadius;
         for (let i = 0; i < articles.length; ++i) {
             const article: ArticleDescription = articles[i];
-            const radiusSq = i === 0 ? scope.config.headerNodeRadius*scope.config.headerNodeRadius : normalRadiusSq;
+            const radiusSq = i === 0 ? scope.config.editorialNodeRadius*scope.config.editorialNodeRadius : normalRadiusSq;
             if(article.currentPos.clone().multiplyValues(scope.canvas.width,scope.canvas.height).subtract(scope.mousePosition).mag2() < radiusSq) {
                 id = i;
                 break;
