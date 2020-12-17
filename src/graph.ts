@@ -41,7 +41,7 @@ const articlesPos: Point[] = [
     new Point( 0.01556893105069737, 0.018585951617098362),
     new Point( 0.09230869442316741, 0.6281009443684842),
     new Point( 0.8572073853536112, 0.38552500401738954),
-    new Point( 0.6683621870782597, 0.333421292647753),
+    new Point( 0.3799249530956848, 0.1955085865257596),
     new Point( 0.647195745919599, 0.06967319349711865),
     new Point( 0.5142404229038579, 0.2740478944219997),
     new Point( 0.7003495882808783, 0.15353835974166496),
@@ -133,6 +133,7 @@ const Graph = function (canvasId) {
 
     this.mousePosition = Point.zero();
     this.currentHoveArticle = undefined;
+    this.heldArticle = undefined
     this.nearestArticleId = 0;
     this.time = 0
 
@@ -307,6 +308,12 @@ const Graph = function (canvasId) {
             scope.getOverArticleId();
             // scope.computeNearest();
             scope.updateEdges();
+            
+            if (scope.heldArticle !== undefined) {
+                articlesPos[scope.heldArticle].set(scope.mousePosition.x / scope.canvas.width, scope.mousePosition.y / scope.canvas.height)
+                articles[scope.heldArticle].currentPos = articlesPos[scope.heldArticle].clone()
+                articles[scope.heldArticle].initPos = articlesPos[scope.heldArticle].clone()
+            }
              
         });
 
@@ -318,15 +325,31 @@ const Graph = function (canvasId) {
         scope.canvas.addEventListener('mousedown',  function (e) {
             
             if(scope.currentHoveArticle != undefined) {
-                const link = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
-                if (e.ctrlKey) {
-                    // Open in a new tab
-                    window.open(link)
-                }
-                else {
-                    window.location.href = link
-                }
+                scope.heldArticle = scope.currentHoveArticle
+                // const link = `./${articles[scope.currentHoveArticle].desc.folderName}.html`
+                // if (e.ctrlKey) {
+                //     // Open in a new tab
+                //     window.open(link)
+                // }
+                // else {
+                //     window.location.href = link
+                // }
             }
+        });
+
+        window.addEventListener('keydown',  function (e) {
+            if (e.key==" "){
+                let str = ""
+                articlesPos.forEach(p => {
+                    str += `new Point( ${p.x}, ${p.y}),\n`
+                })
+                console.log(str)
+            }
+        });
+
+        scope.canvas.addEventListener('mouseup',  function (e) {
+            
+                scope.heldArticle = undefined
         });
 
     }();
