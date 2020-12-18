@@ -153,9 +153,9 @@ const Graph = function (canvasId) {
     this.context = this.canvas.getContext("2d");
 
     this.config = {
-        defaultNodeRadius : 33,
-        defaultNodeFontSize : 30,
-        editorialNodeRadius: 45,
+        defaultNodeRadius : 29,
+        defaultNodeFontSize : 23,
+        editorialNodeRadius: 46,
         editorialNodeFontSize : 40,
         pointsColor : "#ffffff",
 
