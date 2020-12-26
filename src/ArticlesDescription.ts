@@ -15,7 +15,6 @@ import GJ from './articles/Geslin_Julien/description'
 import Ha from './articles/Haerinck/description'
 import HG from './articles/Haudegond_Guyonneau/description'
 import KB from './articles/Kohlmuller_Boyer/description'
-import La from './articles/Lagier/description'
 import LL from './articles/Lassare_Lesbats/description'
 import Li from './articles/Lisacek/description'
 import ML from './articles/Mallet_Libert/description'
@@ -31,6 +30,6 @@ import Vo from './articles/Vo/description'
 import Th from './articles/Thiel/description'
 import VV from './articles/Vallee_Veysset/description'
 
-const articlesDescription: Array<ArticleDescription> = [ Edito, BK, BC, BL, CS, CL, DD, Du, DG, Fo, GJ, Ha, HG, KB, La, LL, Li, ML, MS, SM, OM, PF, RL, RV, Sa, Se, Vo, Th, VV ]
+const articlesDescription: Array<ArticleDescription> = [ Edito, BK, BC, BL, CS, CL, DD, Du, DG, Fo, GJ, Ha, HG, KB, LL, Li, ML, MS, SM, OM, PF, RL, RV, Sa, Se, Vo, Th, VV ]
 
 export default articlesDescription
