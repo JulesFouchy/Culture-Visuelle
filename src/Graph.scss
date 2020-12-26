@@ -80,3 +80,19 @@ body {
 #startButton, #stopButton {
     color: white;
 }
+
+#credits {
+    z-index: 10;
+    color: white;
+    font-family: roboto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    font-size: 12px;
+    a {
+        color: white;
+        font-style: italic;
+        text-decoration: none;
+    }
+}

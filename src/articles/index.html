@@ -19,8 +19,38 @@
     <div class="fullscreen">
         <canvas id="graph"></canvas>
     </div>
-
+    <div id = "credits"></div>
     <script src="../graph.ts"></script>
     <script src="../starBackground.js"></script>
+    <script>
+        const authors = [
+            {
+                name: "Jules FOUCHY",
+                link: "https://julesfouchy.github.io/MyProjectsOverview/"
+            },
+            {
+                name: "Sophie BOYER",
+                link: "https://sophieboyer.fr/"
+            },
+            {
+                name: "Amandine KOHLMULLER",
+                link: ""
+            },
+            {
+                name: "Enguerrand DE SMET",
+                link: ""
+            },
+        ]
+        // Shuffle
+        for (let i = authors.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [authors[i], authors[j]] = [authors[j], authors[i]];
+        }
+        //
+        const credit = (author) => {
+            return `<a href = "${author.link}">${author.name}</a>`
+        }
+        document.getElementById("credits").innerHTML = `Site réalisé par ${credit(authors[0])}, ${credit(authors[1])}, ${credit(authors[2])} et ${credit(authors[3])}.`
+    </script>
 </body>
 </html>
