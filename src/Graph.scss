@@ -81,13 +81,11 @@ body {
     color: white;
 }
 
-#credits {
+.small-note {
     z-index: 10;
     color: white;
     font-family: roboto;
     position: absolute;
-    bottom: 0;
-    right: 0;
     margin: 5px;
     font-size: 12px;
     a {
@@ -95,4 +93,14 @@ body {
         font-style: italic;
         text-decoration: none;
     }
+}
+
+#credits {
+    bottom: 15px;
+    right: 0;
+}
+
+#formation {
+    bottom: 0;
+    right: 0;
 }
